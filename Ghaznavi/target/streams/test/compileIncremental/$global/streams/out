@@ -1,0 +1,32 @@
+[0m[[0m[0mdebug[0m] [0m[0mThe datapath.HazardDetect has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(io,[Default]), UsedName(if_id_memread,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) datapath.HazardDetect: Set(); now invalidating by inheritance (internally).[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting direct dependencies of all classes transitively invalidated by inheritance.[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) datapath.HazardDetect.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of datapath.Launcher. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of datapath.HazardDetectTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe datapath.branchlogic has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(branch2,[Default]), UsedName(id_ex_memread,[Default]), UsedName(io,[Default]), UsedName(branch,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) datapath.branchlogic: Set(); now invalidating by inheritance (internally).[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting direct dependencies of all classes transitively invalidated by inheritance.[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) datapath.branchlogic.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of datapath.Launcher. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of datapath.branchlogicTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe datapath.branchforward has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(io,[Default]), UsedName(id_ex_regwrite,[Default]), UsedName(mem_wb_regwrite,[Default]), UsedName(ex_mem_regwrite,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) datapath.branchforward: Set(); now invalidating by inheritance (internally).[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting direct dependencies of all classes transitively invalidated by inheritance.[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) datapath.branchforward.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of datapath.branchforwardTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of datapath.Launcher. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe datapath.Top has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(control,[Default]), UsedName(PC,[Default]), UsedName(alu,[Default]), UsedName(register,[Default]), UsedName(immediate,[Default]), UsedName(instmem,[Default]), UsedName(DataMemory,[Default]), UsedName(alucontrol,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll member reference dependencies will be considered within this context.[0m
+[0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) datapath.Top: Set(); now invalidating by inheritance (internally).[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting direct dependencies of all classes transitively invalidated by inheritance.[0m
+[0m[[0m[0mdebug[0m] [0m[0mGetting classes that directly depend on (external) datapath.Top.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of datapath.TopTests. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mNo changes[0m

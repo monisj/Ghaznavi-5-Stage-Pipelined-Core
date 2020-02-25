@@ -1,0 +1,1 @@
+/home/monis/Desktop/Ghaznavi-Core-master/Ghaznavi/test_run_dir/examples/Top/Top.InstructionMemory.mem.v

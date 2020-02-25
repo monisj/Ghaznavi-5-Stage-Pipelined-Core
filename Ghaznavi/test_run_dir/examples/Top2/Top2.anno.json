@@ -1,0 +1,10 @@
+[
+  {
+    "class":"firrtl.annotations.LoadMemoryAnnotation",
+    "target":"Top2.InstructionMemory.mem",
+    "fileName":"/home/monis/Desktop/Ghaznavi-5-Stage/Ghaznavi/5st12.txt",
+    "hexOrBinary":{
+      "name":"h"
+    }
+  }
+]
