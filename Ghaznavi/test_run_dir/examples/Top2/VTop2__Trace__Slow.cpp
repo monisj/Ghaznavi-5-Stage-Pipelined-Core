@@ -220,6 +220,7 @@ void VTop2::traceInitThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 	vcdp->declBus  (c+81,"Top2 branchforward_io_ex_mem_rd_sel",-1,4,0);
 	vcdp->declBit  (c+87,"Top2 branchforward_io_ex_mem_memread",-1);
 	vcdp->declBus  (c+64,"Top2 branchforward_io_mem_wb_rd_sel",-1,4,0);
+	vcdp->declBit  (c+63,"Top2 branchforward_io_mem_wb_regwrite",-1);
 	vcdp->declBus  (c+65,"Top2 branchforward_io_rs1_sel",-1,4,0);
 	vcdp->declBus  (c+66,"Top2 branchforward_io_rs2_sel",-1,4,0);
 	vcdp->declBit  (c+2,"Top2 branchforward_io_ctrl_branch",-1);
@@ -231,127 +232,135 @@ void VTop2::traceInitThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 	vcdp->declBus  (c+64,"Top2 structdetect_io_mem_wb_rd_sel",-1,4,0);
 	vcdp->declBit  (c+103,"Top2 structdetect_io_forward_rs1",-1);
 	vcdp->declBit  (c+104,"Top2 structdetect_io_forward_rs2",-1);
-	// Tracing: Top2 _T_17 // Ignored: Inlined leading underscore at Top2.v:2749
-	// Tracing: Top2 _T_26 // Ignored: Inlined leading underscore at Top2.v:2750
-	// Tracing: Top2 _T_28 // Ignored: Inlined leading underscore at Top2.v:2751
-	// Tracing: Top2 _T_30 // Ignored: Inlined leading underscore at Top2.v:2752
-	// Tracing: Top2 _T_32 // Ignored: Inlined leading underscore at Top2.v:2753
-	// Tracing: Top2 _T_34 // Ignored: Inlined leading underscore at Top2.v:2754
-	// Tracing: Top2 _T_36 // Ignored: Inlined leading underscore at Top2.v:2755
-	// Tracing: Top2 _T_38 // Ignored: Inlined leading underscore at Top2.v:2756
-	// Tracing: Top2 _T_40 // Ignored: Inlined leading underscore at Top2.v:2757
-	// Tracing: Top2 _T_42 // Ignored: Inlined leading underscore at Top2.v:2758
-	// Tracing: Top2 _T_44 // Ignored: Inlined leading underscore at Top2.v:2759
-	// Tracing: Top2 _T_46 // Ignored: Inlined leading underscore at Top2.v:2760
-	// Tracing: Top2 _GEN_0 // Ignored: Inlined leading underscore at Top2.v:2761
-	// Tracing: Top2 _GEN_1 // Ignored: Inlined leading underscore at Top2.v:2762
-	// Tracing: Top2 _GEN_2 // Ignored: Inlined leading underscore at Top2.v:2763
-	// Tracing: Top2 _GEN_3 // Ignored: Inlined leading underscore at Top2.v:2764
-	// Tracing: Top2 _GEN_4 // Ignored: Inlined leading underscore at Top2.v:2765
-	// Tracing: Top2 _GEN_5 // Ignored: Inlined leading underscore at Top2.v:2766
-	// Tracing: Top2 _GEN_6 // Ignored: Inlined leading underscore at Top2.v:2767
-	// Tracing: Top2 _GEN_7 // Ignored: Inlined leading underscore at Top2.v:2768
-	// Tracing: Top2 _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2769
-	// Tracing: Top2 _GEN_9 // Ignored: Inlined leading underscore at Top2.v:2770
-	// Tracing: Top2 _GEN_10 // Ignored: Inlined leading underscore at Top2.v:2771
-	// Tracing: Top2 _GEN_11 // Ignored: Inlined leading underscore at Top2.v:2772
-	// Tracing: Top2 _GEN_12 // Ignored: Inlined leading underscore at Top2.v:2773
-	// Tracing: Top2 _GEN_13 // Ignored: Inlined leading underscore at Top2.v:2774
-	// Tracing: Top2 _GEN_14 // Ignored: Inlined leading underscore at Top2.v:2775
-	// Tracing: Top2 _GEN_15 // Ignored: Inlined leading underscore at Top2.v:2776
-	// Tracing: Top2 _GEN_16 // Ignored: Inlined leading underscore at Top2.v:2777
-	// Tracing: Top2 _GEN_17 // Ignored: Inlined leading underscore at Top2.v:2778
-	// Tracing: Top2 _GEN_18 // Ignored: Inlined leading underscore at Top2.v:2779
-	// Tracing: Top2 _GEN_19 // Ignored: Inlined leading underscore at Top2.v:2780
-	// Tracing: Top2 _T_48 // Ignored: Inlined leading underscore at Top2.v:2781
-	// Tracing: Top2 _T_50 // Ignored: Inlined leading underscore at Top2.v:2782
-	// Tracing: Top2 _T_52 // Ignored: Inlined leading underscore at Top2.v:2783
-	// Tracing: Top2 _T_54 // Ignored: Inlined leading underscore at Top2.v:2784
-	// Tracing: Top2 _T_56 // Ignored: Inlined leading underscore at Top2.v:2785
-	// Tracing: Top2 _T_58 // Ignored: Inlined leading underscore at Top2.v:2786
-	// Tracing: Top2 _GEN_22 // Ignored: Inlined leading underscore at Top2.v:2787
-	// Tracing: Top2 _GEN_23 // Ignored: Inlined leading underscore at Top2.v:2788
-	// Tracing: Top2 _GEN_24 // Ignored: Inlined leading underscore at Top2.v:2789
-	// Tracing: Top2 _GEN_25 // Ignored: Inlined leading underscore at Top2.v:2790
-	// Tracing: Top2 _GEN_26 // Ignored: Inlined leading underscore at Top2.v:2791
-	// Tracing: Top2 _T_60 // Ignored: Inlined leading underscore at Top2.v:2792
-	// Tracing: Top2 _T_62 // Ignored: Inlined leading underscore at Top2.v:2793
-	// Tracing: Top2 _T_64 // Ignored: Inlined leading underscore at Top2.v:2794
-	// Tracing: Top2 _GEN_28 // Ignored: Inlined leading underscore at Top2.v:2795
-	// Tracing: Top2 _GEN_29 // Ignored: Inlined leading underscore at Top2.v:2796
-	// Tracing: Top2 _T_66 // Ignored: Inlined leading underscore at Top2.v:2797
-	// Tracing: Top2 _GEN_30 // Ignored: Inlined leading underscore at Top2.v:2798
-	// Tracing: Top2 _T_70 // Ignored: Inlined leading underscore at Top2.v:2799
-	// Tracing: Top2 _GEN_32 // Ignored: Inlined leading underscore at Top2.v:2800
-	// Tracing: Top2 _GEN_33 // Ignored: Inlined leading underscore at Top2.v:2801
-	// Tracing: Top2 _T_72 // Ignored: Inlined leading underscore at Top2.v:2802
-	// Tracing: Top2 _T_74 // Ignored: Inlined leading underscore at Top2.v:2803
-	// Tracing: Top2 _T_76 // Ignored: Inlined leading underscore at Top2.v:2804
-	// Tracing: Top2 _T_78 // Ignored: Inlined leading underscore at Top2.v:2805
-	// Tracing: Top2 _T_79 // Ignored: Inlined leading underscore at Top2.v:2806
-	// Tracing: Top2 _T_80 // Ignored: Inlined leading underscore at Top2.v:2807
-	// Tracing: Top2 _GEN_34 // Ignored: Inlined leading underscore at Top2.v:2808
-	// Tracing: Top2 _GEN_35 // Ignored: Inlined leading underscore at Top2.v:2809
-	// Tracing: Top2 _GEN_36 // Ignored: Inlined leading underscore at Top2.v:2810
-	// Tracing: Top2 _GEN_37 // Ignored: Inlined leading underscore at Top2.v:2811
+	// Tracing: Top2 _T_17 // Ignored: Inlined leading underscore at Top2.v:2753
+	// Tracing: Top2 _T_26 // Ignored: Inlined leading underscore at Top2.v:2754
+	// Tracing: Top2 _T_28 // Ignored: Inlined leading underscore at Top2.v:2755
+	// Tracing: Top2 _T_30 // Ignored: Inlined leading underscore at Top2.v:2756
+	// Tracing: Top2 _T_32 // Ignored: Inlined leading underscore at Top2.v:2757
+	// Tracing: Top2 _T_34 // Ignored: Inlined leading underscore at Top2.v:2758
+	// Tracing: Top2 _T_36 // Ignored: Inlined leading underscore at Top2.v:2759
+	// Tracing: Top2 _T_38 // Ignored: Inlined leading underscore at Top2.v:2760
+	// Tracing: Top2 _T_40 // Ignored: Inlined leading underscore at Top2.v:2761
+	// Tracing: Top2 _T_42 // Ignored: Inlined leading underscore at Top2.v:2762
+	// Tracing: Top2 _T_44 // Ignored: Inlined leading underscore at Top2.v:2763
+	// Tracing: Top2 _T_46 // Ignored: Inlined leading underscore at Top2.v:2764
+	// Tracing: Top2 _GEN_0 // Ignored: Inlined leading underscore at Top2.v:2765
+	// Tracing: Top2 _GEN_1 // Ignored: Inlined leading underscore at Top2.v:2766
+	// Tracing: Top2 _GEN_2 // Ignored: Inlined leading underscore at Top2.v:2767
+	// Tracing: Top2 _GEN_3 // Ignored: Inlined leading underscore at Top2.v:2768
+	// Tracing: Top2 _GEN_4 // Ignored: Inlined leading underscore at Top2.v:2769
+	// Tracing: Top2 _GEN_5 // Ignored: Inlined leading underscore at Top2.v:2770
+	// Tracing: Top2 _GEN_6 // Ignored: Inlined leading underscore at Top2.v:2771
+	// Tracing: Top2 _GEN_7 // Ignored: Inlined leading underscore at Top2.v:2772
+	// Tracing: Top2 _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2773
+	// Tracing: Top2 _GEN_9 // Ignored: Inlined leading underscore at Top2.v:2774
+	// Tracing: Top2 _GEN_10 // Ignored: Inlined leading underscore at Top2.v:2775
+	// Tracing: Top2 _GEN_11 // Ignored: Inlined leading underscore at Top2.v:2776
+	// Tracing: Top2 _GEN_12 // Ignored: Inlined leading underscore at Top2.v:2777
+	// Tracing: Top2 _GEN_13 // Ignored: Inlined leading underscore at Top2.v:2778
+	// Tracing: Top2 _GEN_14 // Ignored: Inlined leading underscore at Top2.v:2779
+	// Tracing: Top2 _GEN_15 // Ignored: Inlined leading underscore at Top2.v:2780
+	// Tracing: Top2 _GEN_16 // Ignored: Inlined leading underscore at Top2.v:2781
+	// Tracing: Top2 _GEN_17 // Ignored: Inlined leading underscore at Top2.v:2782
+	// Tracing: Top2 _GEN_18 // Ignored: Inlined leading underscore at Top2.v:2783
+	// Tracing: Top2 _GEN_19 // Ignored: Inlined leading underscore at Top2.v:2784
+	// Tracing: Top2 _T_48 // Ignored: Inlined leading underscore at Top2.v:2785
+	// Tracing: Top2 _T_50 // Ignored: Inlined leading underscore at Top2.v:2786
+	// Tracing: Top2 _T_52 // Ignored: Inlined leading underscore at Top2.v:2787
+	// Tracing: Top2 _T_54 // Ignored: Inlined leading underscore at Top2.v:2788
+	// Tracing: Top2 _T_56 // Ignored: Inlined leading underscore at Top2.v:2789
+	// Tracing: Top2 _T_58 // Ignored: Inlined leading underscore at Top2.v:2790
+	// Tracing: Top2 _GEN_22 // Ignored: Inlined leading underscore at Top2.v:2791
+	// Tracing: Top2 _GEN_23 // Ignored: Inlined leading underscore at Top2.v:2792
+	// Tracing: Top2 _GEN_24 // Ignored: Inlined leading underscore at Top2.v:2793
+	// Tracing: Top2 _GEN_25 // Ignored: Inlined leading underscore at Top2.v:2794
+	// Tracing: Top2 _GEN_26 // Ignored: Inlined leading underscore at Top2.v:2795
+	// Tracing: Top2 _T_60 // Ignored: Inlined leading underscore at Top2.v:2796
+	// Tracing: Top2 _T_62 // Ignored: Inlined leading underscore at Top2.v:2797
+	// Tracing: Top2 _T_64 // Ignored: Inlined leading underscore at Top2.v:2798
+	// Tracing: Top2 _GEN_28 // Ignored: Inlined leading underscore at Top2.v:2799
+	// Tracing: Top2 _GEN_29 // Ignored: Inlined leading underscore at Top2.v:2800
+	// Tracing: Top2 _T_66 // Ignored: Inlined leading underscore at Top2.v:2801
+	// Tracing: Top2 _GEN_30 // Ignored: Inlined leading underscore at Top2.v:2802
+	// Tracing: Top2 _T_70 // Ignored: Inlined leading underscore at Top2.v:2803
+	// Tracing: Top2 _GEN_32 // Ignored: Inlined leading underscore at Top2.v:2804
+	// Tracing: Top2 _GEN_33 // Ignored: Inlined leading underscore at Top2.v:2805
+	// Tracing: Top2 _T_72 // Ignored: Inlined leading underscore at Top2.v:2806
+	// Tracing: Top2 _T_74 // Ignored: Inlined leading underscore at Top2.v:2807
+	// Tracing: Top2 _T_76 // Ignored: Inlined leading underscore at Top2.v:2808
+	// Tracing: Top2 _T_78 // Ignored: Inlined leading underscore at Top2.v:2809
+	// Tracing: Top2 _T_79 // Ignored: Inlined leading underscore at Top2.v:2810
+	// Tracing: Top2 _T_80 // Ignored: Inlined leading underscore at Top2.v:2811
 	// Tracing: Top2 _T_85 // Ignored: Inlined leading underscore at Top2.v:2812
 	// Tracing: Top2 _T_86 // Ignored: Inlined leading underscore at Top2.v:2813
-	// Tracing: Top2 _T_91 // Ignored: Inlined leading underscore at Top2.v:2814
-	// Tracing: Top2 _T_92 // Ignored: Inlined leading underscore at Top2.v:2815
-	// Tracing: Top2 _T_97 // Ignored: Inlined leading underscore at Top2.v:2816
-	// Tracing: Top2 _T_99 // Ignored: Inlined leading underscore at Top2.v:2817
-	// Tracing: Top2 _T_101 // Ignored: Inlined leading underscore at Top2.v:2818
-	// Tracing: Top2 _GEN_38 // Ignored: Inlined leading underscore at Top2.v:2819
-	// Tracing: Top2 _GEN_39 // Ignored: Inlined leading underscore at Top2.v:2820
-	// Tracing: Top2 _GEN_40 // Ignored: Inlined leading underscore at Top2.v:2821
-	// Tracing: Top2 _GEN_41 // Ignored: Inlined leading underscore at Top2.v:2822
-	// Tracing: Top2 _GEN_42 // Ignored: Inlined leading underscore at Top2.v:2823
-	// Tracing: Top2 _GEN_43 // Ignored: Inlined leading underscore at Top2.v:2824
-	// Tracing: Top2 _GEN_44 // Ignored: Inlined leading underscore at Top2.v:2825
-	// Tracing: Top2 _GEN_45 // Ignored: Inlined leading underscore at Top2.v:2826
-	// Tracing: Top2 _GEN_46 // Ignored: Inlined leading underscore at Top2.v:2827
-	// Tracing: Top2 _GEN_47 // Ignored: Inlined leading underscore at Top2.v:2828
-	// Tracing: Top2 _GEN_48 // Ignored: Inlined leading underscore at Top2.v:2829
-	// Tracing: Top2 _GEN_49 // Ignored: Inlined leading underscore at Top2.v:2830
-	// Tracing: Top2 _GEN_50 // Ignored: Inlined leading underscore at Top2.v:2831
-	// Tracing: Top2 _GEN_51 // Ignored: Inlined leading underscore at Top2.v:2832
-	// Tracing: Top2 _GEN_52 // Ignored: Inlined leading underscore at Top2.v:2833
-	// Tracing: Top2 _T_103 // Ignored: Inlined leading underscore at Top2.v:2834
-	// Tracing: Top2 _T_120 // Ignored: Inlined leading underscore at Top2.v:2835
-	// Tracing: Top2 _T_124 // Ignored: Inlined leading underscore at Top2.v:2836
-	// Tracing: Top2 _GEN_68 // Ignored: Inlined leading underscore at Top2.v:2837
-	// Tracing: Top2 _T_128 // Ignored: Inlined leading underscore at Top2.v:2838
-	// Tracing: Top2 _T_129 // Ignored: Inlined leading underscore at Top2.v:2839
-	// Tracing: Top2 _T_131 // Ignored: Inlined leading underscore at Top2.v:2840
-	// Tracing: Top2 _T_132 // Ignored: Inlined leading underscore at Top2.v:2841
-	// Tracing: Top2 _T_134 // Ignored: Inlined leading underscore at Top2.v:2842
-	// Tracing: Top2 _T_136 // Ignored: Inlined leading underscore at Top2.v:2843
-	// Tracing: Top2 _T_138 // Ignored: Inlined leading underscore at Top2.v:2844
-	// Tracing: Top2 _T_140 // Ignored: Inlined leading underscore at Top2.v:2845
-	// Tracing: Top2 _GEN_70 // Ignored: Inlined leading underscore at Top2.v:2846
-	// Tracing: Top2 _GEN_71 // Ignored: Inlined leading underscore at Top2.v:2847
-	// Tracing: Top2 _GEN_72 // Ignored: Inlined leading underscore at Top2.v:2848
-	// Tracing: Top2 _GEN_73 // Ignored: Inlined leading underscore at Top2.v:2849
-	// Tracing: Top2 _GEN_74 // Ignored: Inlined leading underscore at Top2.v:2850
-	// Tracing: Top2 _T_142 // Ignored: Inlined leading underscore at Top2.v:2851
-	// Tracing: Top2 _T_144 // Ignored: Inlined leading underscore at Top2.v:2852
-	// Tracing: Top2 _T_146 // Ignored: Inlined leading underscore at Top2.v:2853
-	// Tracing: Top2 _T_148 // Ignored: Inlined leading underscore at Top2.v:2854
-	// Tracing: Top2 _GEN_76 // Ignored: Inlined leading underscore at Top2.v:2855
-	// Tracing: Top2 _GEN_77 // Ignored: Inlined leading underscore at Top2.v:2856
-	// Tracing: Top2 _GEN_78 // Ignored: Inlined leading underscore at Top2.v:2857
-	// Tracing: Top2 _T_150 // Ignored: Inlined leading underscore at Top2.v:2858
-	// Tracing: Top2 _GEN_79 // Ignored: Inlined leading underscore at Top2.v:2859
-	// Tracing: Top2 _GEN_80 // Ignored: Inlined leading underscore at Top2.v:2860
-	// Tracing: Top2 _GEN_81 // Ignored: Inlined leading underscore at Top2.v:2861
-	// Tracing: Top2 _GEN_82 // Ignored: Inlined leading underscore at Top2.v:2862
-	// Tracing: Top2 _GEN_83 // Ignored: Inlined leading underscore at Top2.v:2863
-	// Tracing: Top2 _GEN_84 // Ignored: Inlined leading underscore at Top2.v:2864
-	// Tracing: Top2 _GEN_85 // Ignored: Inlined leading underscore at Top2.v:2865
-	// Tracing: Top2 _GEN_86 // Ignored: Inlined leading underscore at Top2.v:2866
-	// Tracing: Top2 _T_160 // Ignored: Inlined leading underscore at Top2.v:2867
-	// Tracing: Top2 _T_162 // Ignored: Inlined leading underscore at Top2.v:2868
-	// Tracing: Top2 _GEN_89 // Ignored: Inlined leading underscore at Top2.v:2869
+	// Tracing: Top2 _GEN_34 // Ignored: Inlined leading underscore at Top2.v:2814
+	// Tracing: Top2 _GEN_35 // Ignored: Inlined leading underscore at Top2.v:2815
+	// Tracing: Top2 _GEN_36 // Ignored: Inlined leading underscore at Top2.v:2816
+	// Tracing: Top2 _GEN_37 // Ignored: Inlined leading underscore at Top2.v:2817
+	// Tracing: Top2 _GEN_38 // Ignored: Inlined leading underscore at Top2.v:2818
+	// Tracing: Top2 _GEN_39 // Ignored: Inlined leading underscore at Top2.v:2819
+	// Tracing: Top2 _GEN_40 // Ignored: Inlined leading underscore at Top2.v:2820
+	// Tracing: Top2 _GEN_41 // Ignored: Inlined leading underscore at Top2.v:2821
+	// Tracing: Top2 _GEN_42 // Ignored: Inlined leading underscore at Top2.v:2822
+	// Tracing: Top2 _GEN_43 // Ignored: Inlined leading underscore at Top2.v:2823
+	// Tracing: Top2 _GEN_44 // Ignored: Inlined leading underscore at Top2.v:2824
+	// Tracing: Top2 _T_91 // Ignored: Inlined leading underscore at Top2.v:2825
+	// Tracing: Top2 _T_92 // Ignored: Inlined leading underscore at Top2.v:2826
+	// Tracing: Top2 _T_97 // Ignored: Inlined leading underscore at Top2.v:2827
+	// Tracing: Top2 _T_98 // Ignored: Inlined leading underscore at Top2.v:2828
+	// Tracing: Top2 _T_103 // Ignored: Inlined leading underscore at Top2.v:2829
+	// Tracing: Top2 _T_107 // Ignored: Inlined leading underscore at Top2.v:2830
+	// Tracing: Top2 _GEN_45 // Ignored: Inlined leading underscore at Top2.v:2831
+	// Tracing: Top2 _GEN_46 // Ignored: Inlined leading underscore at Top2.v:2832
+	// Tracing: Top2 _GEN_47 // Ignored: Inlined leading underscore at Top2.v:2833
+	// Tracing: Top2 _GEN_48 // Ignored: Inlined leading underscore at Top2.v:2834
+	// Tracing: Top2 _GEN_49 // Ignored: Inlined leading underscore at Top2.v:2835
+	// Tracing: Top2 _GEN_50 // Ignored: Inlined leading underscore at Top2.v:2836
+	// Tracing: Top2 _GEN_51 // Ignored: Inlined leading underscore at Top2.v:2837
+	// Tracing: Top2 _GEN_52 // Ignored: Inlined leading underscore at Top2.v:2838
+	// Tracing: Top2 _GEN_53 // Ignored: Inlined leading underscore at Top2.v:2839
+	// Tracing: Top2 _GEN_54 // Ignored: Inlined leading underscore at Top2.v:2840
+	// Tracing: Top2 _GEN_55 // Ignored: Inlined leading underscore at Top2.v:2841
+	// Tracing: Top2 _GEN_56 // Ignored: Inlined leading underscore at Top2.v:2842
+	// Tracing: Top2 _GEN_57 // Ignored: Inlined leading underscore at Top2.v:2843
+	// Tracing: Top2 _GEN_58 // Ignored: Inlined leading underscore at Top2.v:2844
+	// Tracing: Top2 _GEN_59 // Ignored: Inlined leading underscore at Top2.v:2845
+	// Tracing: Top2 _T_109 // Ignored: Inlined leading underscore at Top2.v:2846
+	// Tracing: Top2 _T_126 // Ignored: Inlined leading underscore at Top2.v:2847
+	// Tracing: Top2 _T_130 // Ignored: Inlined leading underscore at Top2.v:2848
+	// Tracing: Top2 _GEN_75 // Ignored: Inlined leading underscore at Top2.v:2849
+	// Tracing: Top2 _T_134 // Ignored: Inlined leading underscore at Top2.v:2850
+	// Tracing: Top2 _T_135 // Ignored: Inlined leading underscore at Top2.v:2851
+	// Tracing: Top2 _T_137 // Ignored: Inlined leading underscore at Top2.v:2852
+	// Tracing: Top2 _T_138 // Ignored: Inlined leading underscore at Top2.v:2853
+	// Tracing: Top2 _T_140 // Ignored: Inlined leading underscore at Top2.v:2854
+	// Tracing: Top2 _T_142 // Ignored: Inlined leading underscore at Top2.v:2855
+	// Tracing: Top2 _T_144 // Ignored: Inlined leading underscore at Top2.v:2856
+	// Tracing: Top2 _T_146 // Ignored: Inlined leading underscore at Top2.v:2857
+	// Tracing: Top2 _GEN_77 // Ignored: Inlined leading underscore at Top2.v:2858
+	// Tracing: Top2 _GEN_78 // Ignored: Inlined leading underscore at Top2.v:2859
+	// Tracing: Top2 _GEN_79 // Ignored: Inlined leading underscore at Top2.v:2860
+	// Tracing: Top2 _GEN_80 // Ignored: Inlined leading underscore at Top2.v:2861
+	// Tracing: Top2 _GEN_81 // Ignored: Inlined leading underscore at Top2.v:2862
+	// Tracing: Top2 _T_148 // Ignored: Inlined leading underscore at Top2.v:2863
+	// Tracing: Top2 _T_150 // Ignored: Inlined leading underscore at Top2.v:2864
+	// Tracing: Top2 _T_152 // Ignored: Inlined leading underscore at Top2.v:2865
+	// Tracing: Top2 _T_154 // Ignored: Inlined leading underscore at Top2.v:2866
+	// Tracing: Top2 _GEN_83 // Ignored: Inlined leading underscore at Top2.v:2867
+	// Tracing: Top2 _GEN_84 // Ignored: Inlined leading underscore at Top2.v:2868
+	// Tracing: Top2 _GEN_85 // Ignored: Inlined leading underscore at Top2.v:2869
+	// Tracing: Top2 _T_156 // Ignored: Inlined leading underscore at Top2.v:2870
+	// Tracing: Top2 _GEN_86 // Ignored: Inlined leading underscore at Top2.v:2871
+	// Tracing: Top2 _GEN_87 // Ignored: Inlined leading underscore at Top2.v:2872
+	// Tracing: Top2 _GEN_88 // Ignored: Inlined leading underscore at Top2.v:2873
+	// Tracing: Top2 _GEN_89 // Ignored: Inlined leading underscore at Top2.v:2874
+	// Tracing: Top2 _GEN_90 // Ignored: Inlined leading underscore at Top2.v:2875
+	// Tracing: Top2 _GEN_91 // Ignored: Inlined leading underscore at Top2.v:2876
+	// Tracing: Top2 _GEN_92 // Ignored: Inlined leading underscore at Top2.v:2877
+	// Tracing: Top2 _GEN_93 // Ignored: Inlined leading underscore at Top2.v:2878
+	// Tracing: Top2 _T_166 // Ignored: Inlined leading underscore at Top2.v:2879
+	// Tracing: Top2 _T_168 // Ignored: Inlined leading underscore at Top2.v:2880
+	// Tracing: Top2 _GEN_96 // Ignored: Inlined leading underscore at Top2.v:2881
 	vcdp->declBus  (c+62,"Top2 control io_opcode",-1,6,0);
 	vcdp->declBit  (c+1,"Top2 control io_MemoryWrite",-1);
 	vcdp->declBit  (c+2,"Top2 control io_Branch2",-1);
@@ -1096,20 +1105,20 @@ void VTop2::traceInitThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 	vcdp->declBit  (c+2,"Top2 branchlogic io_branch",-1);
 	vcdp->declBit  (c+44,"Top2 branchlogic io_output_x",-1);
 	vcdp->declBit  (c+2,"Top2 branchlogic io_branch2",-1);
-	// Tracing: Top2 branchlogic _T_21 // Ignored: Inlined leading underscore at Top2.v:2340
-	// Tracing: Top2 branchlogic _T_22 // Ignored: Inlined leading underscore at Top2.v:2341
-	// Tracing: Top2 branchlogic _T_26 // Ignored: Inlined leading underscore at Top2.v:2342
-	// Tracing: Top2 branchlogic _T_27 // Ignored: Inlined leading underscore at Top2.v:2343
-	// Tracing: Top2 branchlogic _T_31 // Ignored: Inlined leading underscore at Top2.v:2344
-	// Tracing: Top2 branchlogic _T_32 // Ignored: Inlined leading underscore at Top2.v:2345
-	// Tracing: Top2 branchlogic _T_36 // Ignored: Inlined leading underscore at Top2.v:2346
-	// Tracing: Top2 branchlogic _T_37 // Ignored: Inlined leading underscore at Top2.v:2347
-	// Tracing: Top2 branchlogic _T_41 // Ignored: Inlined leading underscore at Top2.v:2348
-	// Tracing: Top2 branchlogic _T_42 // Ignored: Inlined leading underscore at Top2.v:2349
-	// Tracing: Top2 branchlogic _T_43 // Ignored: Inlined leading underscore at Top2.v:2350
-	// Tracing: Top2 branchlogic _T_44 // Ignored: Inlined leading underscore at Top2.v:2351
-	// Tracing: Top2 branchlogic _T_48 // Ignored: Inlined leading underscore at Top2.v:2352
-	// Tracing: Top2 branchlogic _T_51 // Ignored: Inlined leading underscore at Top2.v:2353
+	// Tracing: Top2 branchlogic _T_19 // Ignored: Inlined leading underscore at Top2.v:2340
+	// Tracing: Top2 branchlogic _T_20 // Ignored: Inlined leading underscore at Top2.v:2341
+	// Tracing: Top2 branchlogic _T_24 // Ignored: Inlined leading underscore at Top2.v:2342
+	// Tracing: Top2 branchlogic _T_25 // Ignored: Inlined leading underscore at Top2.v:2343
+	// Tracing: Top2 branchlogic _T_29 // Ignored: Inlined leading underscore at Top2.v:2344
+	// Tracing: Top2 branchlogic _T_30 // Ignored: Inlined leading underscore at Top2.v:2345
+	// Tracing: Top2 branchlogic _T_34 // Ignored: Inlined leading underscore at Top2.v:2346
+	// Tracing: Top2 branchlogic _T_35 // Ignored: Inlined leading underscore at Top2.v:2347
+	// Tracing: Top2 branchlogic _T_39 // Ignored: Inlined leading underscore at Top2.v:2348
+	// Tracing: Top2 branchlogic _T_40 // Ignored: Inlined leading underscore at Top2.v:2349
+	// Tracing: Top2 branchlogic _T_41 // Ignored: Inlined leading underscore at Top2.v:2350
+	// Tracing: Top2 branchlogic _T_42 // Ignored: Inlined leading underscore at Top2.v:2351
+	// Tracing: Top2 branchlogic _T_46 // Ignored: Inlined leading underscore at Top2.v:2352
+	// Tracing: Top2 branchlogic _T_49 // Ignored: Inlined leading underscore at Top2.v:2353
 	// Tracing: Top2 branchlogic _GEN_6 // Ignored: Inlined leading underscore at Top2.v:2354
 	// Tracing: Top2 branchlogic _GEN_7 // Ignored: Inlined leading underscore at Top2.v:2355
 	// Tracing: Top2 branchlogic _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2356
@@ -1120,102 +1129,104 @@ void VTop2::traceInitThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 	vcdp->declBus  (c+81,"Top2 branchforward io_ex_mem_rd_sel",-1,4,0);
 	vcdp->declBit  (c+87,"Top2 branchforward io_ex_mem_memread",-1);
 	vcdp->declBus  (c+64,"Top2 branchforward io_mem_wb_rd_sel",-1,4,0);
+	vcdp->declBit  (c+63,"Top2 branchforward io_mem_wb_regwrite",-1);
 	vcdp->declBus  (c+65,"Top2 branchforward io_rs1_sel",-1,4,0);
 	vcdp->declBus  (c+66,"Top2 branchforward io_rs2_sel",-1,4,0);
 	vcdp->declBit  (c+2,"Top2 branchforward io_ctrl_branch",-1);
 	vcdp->declBus  (c+45,"Top2 branchforward io_forward_a",-1,3,0);
 	vcdp->declBus  (c+46,"Top2 branchforward io_forward_b",-1,3,0);
-	// Tracing: Top2 branchforward _T_38 // Ignored: Inlined leading underscore at Top2.v:2393
-	// Tracing: Top2 branchforward _T_40 // Ignored: Inlined leading underscore at Top2.v:2394
-	// Tracing: Top2 branchforward _T_41 // Ignored: Inlined leading underscore at Top2.v:2395
-	// Tracing: Top2 branchforward _T_42 // Ignored: Inlined leading underscore at Top2.v:2396
-	// Tracing: Top2 branchforward _T_43 // Ignored: Inlined leading underscore at Top2.v:2397
-	// Tracing: Top2 branchforward _T_44 // Ignored: Inlined leading underscore at Top2.v:2398
-	// Tracing: Top2 branchforward _T_45 // Ignored: Inlined leading underscore at Top2.v:2399
-	// Tracing: Top2 branchforward _T_62 // Ignored: Inlined leading underscore at Top2.v:2400
-	// Tracing: Top2 branchforward _GEN_2 // Ignored: Inlined leading underscore at Top2.v:2401
-	// Tracing: Top2 branchforward _GEN_3 // Ignored: Inlined leading underscore at Top2.v:2402
-	// Tracing: Top2 branchforward _GEN_4 // Ignored: Inlined leading underscore at Top2.v:2403
-	// Tracing: Top2 branchforward _T_65 // Ignored: Inlined leading underscore at Top2.v:2404
-	// Tracing: Top2 branchforward _T_67 // Ignored: Inlined leading underscore at Top2.v:2405
-	// Tracing: Top2 branchforward _T_68 // Ignored: Inlined leading underscore at Top2.v:2406
-	// Tracing: Top2 branchforward _T_72 // Ignored: Inlined leading underscore at Top2.v:2407
-	// Tracing: Top2 branchforward _T_74 // Ignored: Inlined leading underscore at Top2.v:2408
-	// Tracing: Top2 branchforward _T_75 // Ignored: Inlined leading underscore at Top2.v:2409
-	// Tracing: Top2 branchforward _T_76 // Ignored: Inlined leading underscore at Top2.v:2410
-	// Tracing: Top2 branchforward _T_77 // Ignored: Inlined leading underscore at Top2.v:2411
-	// Tracing: Top2 branchforward _T_78 // Ignored: Inlined leading underscore at Top2.v:2412
-	// Tracing: Top2 branchforward _T_79 // Ignored: Inlined leading underscore at Top2.v:2413
-	// Tracing: Top2 branchforward _T_80 // Ignored: Inlined leading underscore at Top2.v:2414
-	// Tracing: Top2 branchforward _T_91 // Ignored: Inlined leading underscore at Top2.v:2415
-	// Tracing: Top2 branchforward _T_92 // Ignored: Inlined leading underscore at Top2.v:2416
-	// Tracing: Top2 branchforward _T_93 // Ignored: Inlined leading underscore at Top2.v:2417
-	// Tracing: Top2 branchforward _T_95 // Ignored: Inlined leading underscore at Top2.v:2418
-	// Tracing: Top2 branchforward _T_106 // Ignored: Inlined leading underscore at Top2.v:2419
-	// Tracing: Top2 branchforward _T_107 // Ignored: Inlined leading underscore at Top2.v:2420
-	// Tracing: Top2 branchforward _T_109 // Ignored: Inlined leading underscore at Top2.v:2421
-	// Tracing: Top2 branchforward _T_115 // Ignored: Inlined leading underscore at Top2.v:2422
-	// Tracing: Top2 branchforward _T_123 // Ignored: Inlined leading underscore at Top2.v:2423
-	// Tracing: Top2 branchforward _T_125 // Ignored: Inlined leading underscore at Top2.v:2424
-	// Tracing: Top2 branchforward _T_127 // Ignored: Inlined leading underscore at Top2.v:2425
-	// Tracing: Top2 branchforward _T_140 // Ignored: Inlined leading underscore at Top2.v:2426
-	// Tracing: Top2 branchforward _T_142 // Ignored: Inlined leading underscore at Top2.v:2427
-	// Tracing: Top2 branchforward _T_148 // Ignored: Inlined leading underscore at Top2.v:2428
-	// Tracing: Top2 branchforward _T_151 // Ignored: Inlined leading underscore at Top2.v:2429
-	// Tracing: Top2 branchforward _T_157 // Ignored: Inlined leading underscore at Top2.v:2430
-	// Tracing: Top2 branchforward _T_159 // Ignored: Inlined leading underscore at Top2.v:2431
-	// Tracing: Top2 branchforward _GEN_5 // Ignored: Inlined leading underscore at Top2.v:2432
-	// Tracing: Top2 branchforward _GEN_6 // Ignored: Inlined leading underscore at Top2.v:2433
-	// Tracing: Top2 branchforward _GEN_7 // Ignored: Inlined leading underscore at Top2.v:2434
-	// Tracing: Top2 branchforward _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2435
-	// Tracing: Top2 branchforward _GEN_9 // Ignored: Inlined leading underscore at Top2.v:2436
-	// Tracing: Top2 branchforward _GEN_10 // Ignored: Inlined leading underscore at Top2.v:2437
-	// Tracing: Top2 branchforward _GEN_11 // Ignored: Inlined leading underscore at Top2.v:2438
-	// Tracing: Top2 branchforward _GEN_12 // Ignored: Inlined leading underscore at Top2.v:2439
-	// Tracing: Top2 branchforward _GEN_13 // Ignored: Inlined leading underscore at Top2.v:2440
-	// Tracing: Top2 branchforward _GEN_14 // Ignored: Inlined leading underscore at Top2.v:2441
-	// Tracing: Top2 branchforward _GEN_15 // Ignored: Inlined leading underscore at Top2.v:2442
-	// Tracing: Top2 branchforward _T_162 // Ignored: Inlined leading underscore at Top2.v:2443
-	// Tracing: Top2 branchforward _T_173 // Ignored: Inlined leading underscore at Top2.v:2444
-	// Tracing: Top2 branchforward _T_177 // Ignored: Inlined leading underscore at Top2.v:2445
-	// Tracing: Top2 branchforward _T_179 // Ignored: Inlined leading underscore at Top2.v:2446
-	// Tracing: Top2 branchforward _T_180 // Ignored: Inlined leading underscore at Top2.v:2447
-	// Tracing: Top2 branchforward _T_181 // Ignored: Inlined leading underscore at Top2.v:2448
-	// Tracing: Top2 branchforward _T_182 // Ignored: Inlined leading underscore at Top2.v:2449
-	// Tracing: Top2 branchforward _T_183 // Ignored: Inlined leading underscore at Top2.v:2450
-	// Tracing: Top2 branchforward _T_184 // Ignored: Inlined leading underscore at Top2.v:2451
-	// Tracing: Top2 branchforward _T_185 // Ignored: Inlined leading underscore at Top2.v:2452
-	// Tracing: Top2 branchforward _T_198 // Ignored: Inlined leading underscore at Top2.v:2453
-	// Tracing: Top2 branchforward _T_202 // Ignored: Inlined leading underscore at Top2.v:2454
-	// Tracing: Top2 branchforward _T_203 // Ignored: Inlined leading underscore at Top2.v:2455
-	// Tracing: Top2 branchforward _T_204 // Ignored: Inlined leading underscore at Top2.v:2456
+	// Tracing: Top2 branchforward _T_38 // Ignored: Inlined leading underscore at Top2.v:2394
+	// Tracing: Top2 branchforward _T_40 // Ignored: Inlined leading underscore at Top2.v:2395
+	// Tracing: Top2 branchforward _T_41 // Ignored: Inlined leading underscore at Top2.v:2396
+	// Tracing: Top2 branchforward _T_42 // Ignored: Inlined leading underscore at Top2.v:2397
+	// Tracing: Top2 branchforward _T_43 // Ignored: Inlined leading underscore at Top2.v:2398
+	// Tracing: Top2 branchforward _T_44 // Ignored: Inlined leading underscore at Top2.v:2399
+	// Tracing: Top2 branchforward _T_45 // Ignored: Inlined leading underscore at Top2.v:2400
+	// Tracing: Top2 branchforward _T_62 // Ignored: Inlined leading underscore at Top2.v:2401
+	// Tracing: Top2 branchforward _GEN_2 // Ignored: Inlined leading underscore at Top2.v:2402
+	// Tracing: Top2 branchforward _GEN_3 // Ignored: Inlined leading underscore at Top2.v:2403
+	// Tracing: Top2 branchforward _GEN_4 // Ignored: Inlined leading underscore at Top2.v:2404
+	// Tracing: Top2 branchforward _T_65 // Ignored: Inlined leading underscore at Top2.v:2405
+	// Tracing: Top2 branchforward _T_67 // Ignored: Inlined leading underscore at Top2.v:2406
+	// Tracing: Top2 branchforward _T_68 // Ignored: Inlined leading underscore at Top2.v:2407
+	// Tracing: Top2 branchforward _T_72 // Ignored: Inlined leading underscore at Top2.v:2408
+	// Tracing: Top2 branchforward _T_74 // Ignored: Inlined leading underscore at Top2.v:2409
+	// Tracing: Top2 branchforward _T_75 // Ignored: Inlined leading underscore at Top2.v:2410
+	// Tracing: Top2 branchforward _T_76 // Ignored: Inlined leading underscore at Top2.v:2411
+	// Tracing: Top2 branchforward _T_77 // Ignored: Inlined leading underscore at Top2.v:2412
+	// Tracing: Top2 branchforward _T_78 // Ignored: Inlined leading underscore at Top2.v:2413
+	// Tracing: Top2 branchforward _T_79 // Ignored: Inlined leading underscore at Top2.v:2414
+	// Tracing: Top2 branchforward _T_80 // Ignored: Inlined leading underscore at Top2.v:2415
+	// Tracing: Top2 branchforward _T_91 // Ignored: Inlined leading underscore at Top2.v:2416
+	// Tracing: Top2 branchforward _T_92 // Ignored: Inlined leading underscore at Top2.v:2417
+	// Tracing: Top2 branchforward _T_93 // Ignored: Inlined leading underscore at Top2.v:2418
+	// Tracing: Top2 branchforward _T_95 // Ignored: Inlined leading underscore at Top2.v:2419
+	// Tracing: Top2 branchforward _T_106 // Ignored: Inlined leading underscore at Top2.v:2420
+	// Tracing: Top2 branchforward _T_107 // Ignored: Inlined leading underscore at Top2.v:2421
+	// Tracing: Top2 branchforward _T_109 // Ignored: Inlined leading underscore at Top2.v:2422
+	// Tracing: Top2 branchforward _T_115 // Ignored: Inlined leading underscore at Top2.v:2423
+	// Tracing: Top2 branchforward _T_123 // Ignored: Inlined leading underscore at Top2.v:2424
+	// Tracing: Top2 branchforward _T_125 // Ignored: Inlined leading underscore at Top2.v:2425
+	// Tracing: Top2 branchforward _T_127 // Ignored: Inlined leading underscore at Top2.v:2426
+	// Tracing: Top2 branchforward _T_140 // Ignored: Inlined leading underscore at Top2.v:2427
+	// Tracing: Top2 branchforward _T_142 // Ignored: Inlined leading underscore at Top2.v:2428
+	// Tracing: Top2 branchforward _T_148 // Ignored: Inlined leading underscore at Top2.v:2429
+	// Tracing: Top2 branchforward _T_151 // Ignored: Inlined leading underscore at Top2.v:2430
+	// Tracing: Top2 branchforward _T_157 // Ignored: Inlined leading underscore at Top2.v:2431
+	// Tracing: Top2 branchforward _T_159 // Ignored: Inlined leading underscore at Top2.v:2432
+	// Tracing: Top2 branchforward _GEN_5 // Ignored: Inlined leading underscore at Top2.v:2433
+	// Tracing: Top2 branchforward _GEN_6 // Ignored: Inlined leading underscore at Top2.v:2434
+	// Tracing: Top2 branchforward _GEN_7 // Ignored: Inlined leading underscore at Top2.v:2435
+	// Tracing: Top2 branchforward _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2436
+	// Tracing: Top2 branchforward _GEN_9 // Ignored: Inlined leading underscore at Top2.v:2437
+	// Tracing: Top2 branchforward _GEN_10 // Ignored: Inlined leading underscore at Top2.v:2438
+	// Tracing: Top2 branchforward _GEN_11 // Ignored: Inlined leading underscore at Top2.v:2439
+	// Tracing: Top2 branchforward _GEN_12 // Ignored: Inlined leading underscore at Top2.v:2440
+	// Tracing: Top2 branchforward _GEN_13 // Ignored: Inlined leading underscore at Top2.v:2441
+	// Tracing: Top2 branchforward _GEN_14 // Ignored: Inlined leading underscore at Top2.v:2442
+	// Tracing: Top2 branchforward _GEN_15 // Ignored: Inlined leading underscore at Top2.v:2443
+	// Tracing: Top2 branchforward _T_162 // Ignored: Inlined leading underscore at Top2.v:2444
+	// Tracing: Top2 branchforward _T_173 // Ignored: Inlined leading underscore at Top2.v:2445
+	// Tracing: Top2 branchforward _T_177 // Ignored: Inlined leading underscore at Top2.v:2446
+	// Tracing: Top2 branchforward _T_179 // Ignored: Inlined leading underscore at Top2.v:2447
+	// Tracing: Top2 branchforward _T_180 // Ignored: Inlined leading underscore at Top2.v:2448
+	// Tracing: Top2 branchforward _T_181 // Ignored: Inlined leading underscore at Top2.v:2449
+	// Tracing: Top2 branchforward _T_182 // Ignored: Inlined leading underscore at Top2.v:2450
+	// Tracing: Top2 branchforward _T_183 // Ignored: Inlined leading underscore at Top2.v:2451
+	// Tracing: Top2 branchforward _T_184 // Ignored: Inlined leading underscore at Top2.v:2452
+	// Tracing: Top2 branchforward _T_185 // Ignored: Inlined leading underscore at Top2.v:2453
+	// Tracing: Top2 branchforward _T_192 // Ignored: Inlined leading underscore at Top2.v:2454
+	// Tracing: Top2 branchforward _T_201 // Ignored: Inlined leading underscore at Top2.v:2455
+	// Tracing: Top2 branchforward _T_205 // Ignored: Inlined leading underscore at Top2.v:2456
 	// Tracing: Top2 branchforward _T_206 // Ignored: Inlined leading underscore at Top2.v:2457
-	// Tracing: Top2 branchforward _T_218 // Ignored: Inlined leading underscore at Top2.v:2458
-	// Tracing: Top2 branchforward _T_223 // Ignored: Inlined leading underscore at Top2.v:2459
-	// Tracing: Top2 branchforward _T_224 // Ignored: Inlined leading underscore at Top2.v:2460
+	// Tracing: Top2 branchforward _T_207 // Ignored: Inlined leading underscore at Top2.v:2458
+	// Tracing: Top2 branchforward _T_209 // Ignored: Inlined leading underscore at Top2.v:2459
+	// Tracing: Top2 branchforward _T_221 // Ignored: Inlined leading underscore at Top2.v:2460
 	// Tracing: Top2 branchforward _T_226 // Ignored: Inlined leading underscore at Top2.v:2461
-	// Tracing: Top2 branchforward _GEN_21 // Ignored: Inlined leading underscore at Top2.v:2462
-	// Tracing: Top2 branchforward _GEN_23 // Ignored: Inlined leading underscore at Top2.v:2463
-	// Tracing: Top2 branchforward _GEN_24 // Ignored: Inlined leading underscore at Top2.v:2464
-	// Tracing: Top2 branchforward _GEN_25 // Ignored: Inlined leading underscore at Top2.v:2465
-	// Tracing: Top2 branchforward _GEN_26 // Ignored: Inlined leading underscore at Top2.v:2466
-	// Tracing: Top2 branchforward _T_296 // Ignored: Inlined leading underscore at Top2.v:2467
-	// Tracing: Top2 branchforward _GEN_27 // Ignored: Inlined leading underscore at Top2.v:2468
-	// Tracing: Top2 branchforward _T_329 // Ignored: Inlined leading underscore at Top2.v:2469
-	// Tracing: Top2 branchforward _T_331 // Ignored: Inlined leading underscore at Top2.v:2470
-	// Tracing: Top2 branchforward _GEN_28 // Ignored: Inlined leading underscore at Top2.v:2471
-	// Tracing: Top2 branchforward _GEN_29 // Ignored: Inlined leading underscore at Top2.v:2472
-	// Tracing: Top2 branchforward _GEN_31 // Ignored: Inlined leading underscore at Top2.v:2473
-	// Tracing: Top2 branchforward _GEN_32 // Ignored: Inlined leading underscore at Top2.v:2474
-	// Tracing: Top2 branchforward _GEN_34 // Ignored: Inlined leading underscore at Top2.v:2475
+	// Tracing: Top2 branchforward _T_227 // Ignored: Inlined leading underscore at Top2.v:2462
+	// Tracing: Top2 branchforward _T_229 // Ignored: Inlined leading underscore at Top2.v:2463
+	// Tracing: Top2 branchforward _GEN_21 // Ignored: Inlined leading underscore at Top2.v:2464
+	// Tracing: Top2 branchforward _GEN_23 // Ignored: Inlined leading underscore at Top2.v:2465
+	// Tracing: Top2 branchforward _GEN_24 // Ignored: Inlined leading underscore at Top2.v:2466
+	// Tracing: Top2 branchforward _GEN_25 // Ignored: Inlined leading underscore at Top2.v:2467
+	// Tracing: Top2 branchforward _GEN_26 // Ignored: Inlined leading underscore at Top2.v:2468
+	// Tracing: Top2 branchforward _T_299 // Ignored: Inlined leading underscore at Top2.v:2469
+	// Tracing: Top2 branchforward _GEN_27 // Ignored: Inlined leading underscore at Top2.v:2470
+	// Tracing: Top2 branchforward _T_332 // Ignored: Inlined leading underscore at Top2.v:2471
+	// Tracing: Top2 branchforward _T_334 // Ignored: Inlined leading underscore at Top2.v:2472
+	// Tracing: Top2 branchforward _GEN_28 // Ignored: Inlined leading underscore at Top2.v:2473
+	// Tracing: Top2 branchforward _GEN_29 // Ignored: Inlined leading underscore at Top2.v:2474
+	// Tracing: Top2 branchforward _GEN_31 // Ignored: Inlined leading underscore at Top2.v:2475
+	// Tracing: Top2 branchforward _GEN_32 // Ignored: Inlined leading underscore at Top2.v:2476
+	// Tracing: Top2 branchforward _GEN_34 // Ignored: Inlined leading underscore at Top2.v:2477
 	vcdp->declBus  (c+65,"Top2 structdetect io_rs1_sel",-1,4,0);
 	vcdp->declBus  (c+66,"Top2 structdetect io_rs2_sel",-1,4,0);
 	vcdp->declBit  (c+63,"Top2 structdetect io_mem_wb_regwrite",-1);
 	vcdp->declBus  (c+64,"Top2 structdetect io_mem_wb_rd_sel",-1,4,0);
 	vcdp->declBit  (c+103,"Top2 structdetect io_forward_rs1",-1);
 	vcdp->declBit  (c+104,"Top2 structdetect io_forward_rs2",-1);
-	// Tracing: Top2 structdetect _T_19 // Ignored: Inlined leading underscore at Top2.v:2570
-	// Tracing: Top2 structdetect _T_25 // Ignored: Inlined leading underscore at Top2.v:2571
+	// Tracing: Top2 structdetect _T_19 // Ignored: Inlined leading underscore at Top2.v:2573
+	// Tracing: Top2 structdetect _T_25 // Ignored: Inlined leading underscore at Top2.v:2574
     }
 }
 
@@ -1284,8 +1295,10 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 				    ? ((IData)(vlTOPp->Top2__DOT___T_79)
 				        ? (vlTOPp->Top2__DOT__immediate__DOT__sbt13 
 					   + vlTOPp->Top2__DOT__if_id__DOT__pc_reg)
-				        : ((IData)(4U) 
-					   + vlTOPp->Top2__DOT__PC__DOT__pc1))
+				        : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
+					    ? 0U : 
+					   ((IData)(4U) 
+					    + vlTOPp->Top2__DOT__PC__DOT__pc1)))
 				    : ((2U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				        ? (vlTOPp->Top2__DOT__immediate__DOT__sbt19 
 					   + vlTOPp->Top2__DOT__if_id__DOT__pc_reg)
@@ -1408,7 +1421,12 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 			        ? vlTOPp->Top2__DOT___GEN_33
 			        : ((1U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				    ? ((IData)(vlTOPp->Top2__DOT___T_79)
-				        ? 0U : vlTOPp->Top2__DOT___GEN_33)
+				        ? 0U : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
+						 ? 
+						((IData)(vlTOPp->Top2__DOT___T_86)
+						  ? 0U
+						  : vlTOPp->Top2__DOT___GEN_33)
+						 : vlTOPp->Top2__DOT___GEN_33))
 				    : ((2U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				        ? 0U : ((3U 
 						 == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
@@ -1418,8 +1436,16 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 			        ? ((IData)(4U) + vlTOPp->Top2__DOT__PC__DOT__pc1)
 			        : ((1U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				    ? ((IData)(vlTOPp->Top2__DOT___T_79)
-				        ? 0U : ((IData)(4U) 
-						+ vlTOPp->Top2__DOT__PC__DOT__pc1))
+				        ? 0U : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
+						 ? 
+						((IData)(vlTOPp->Top2__DOT___T_86)
+						  ? 0U
+						  : 
+						 ((IData)(4U) 
+						  + vlTOPp->Top2__DOT__PC__DOT__pc1))
+						 : 
+						((IData)(4U) 
+						 + vlTOPp->Top2__DOT__PC__DOT__pc1)))
 				    : ((2U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				        ? 0U : ((3U 
 						 == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
@@ -1431,7 +1457,12 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 			        ? vlTOPp->Top2__DOT___GEN_32
 			        : ((1U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				    ? ((IData)(vlTOPp->Top2__DOT___T_79)
-				        ? 0U : vlTOPp->Top2__DOT___GEN_32)
+				        ? 0U : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
+						 ? 
+						((IData)(vlTOPp->Top2__DOT___T_86)
+						  ? 0U
+						  : vlTOPp->Top2__DOT___GEN_32)
+						 : vlTOPp->Top2__DOT___GEN_32))
 				    : ((2U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				        ? 0U : ((3U 
 						 == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))

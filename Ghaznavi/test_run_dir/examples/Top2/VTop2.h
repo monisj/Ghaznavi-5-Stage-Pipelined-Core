@@ -34,6 +34,7 @@ VL_MODULE(VTop2) {
     VL_SIG8(Top2__DOT__hazardDetection_io_ctrl_forward,0,0);
     VL_SIG8(Top2__DOT__branchforward_io_forward_a,3,0);
     VL_SIG8(Top2__DOT___T_79,0,0);
+    VL_SIG8(Top2__DOT___T_86,0,0);
     VL_SIG8(Top2__DOT__control__DOT__InstDecode_io_Load,0,0);
     VL_SIG8(Top2__DOT__control__DOT__InstDecode_io_Store,0,0);
     VL_SIG8(Top2__DOT__control__DOT__InstDecode_io_Branch,0,0);
@@ -108,8 +109,8 @@ VL_MODULE(VTop2) {
     VL_SIG8(Top2__DOT__branchforward__DOT___T_182,0,0);
     VL_SIG8(Top2__DOT__branchforward__DOT___T_184,0,0);
     VL_SIG8(Top2__DOT__branchforward__DOT___T_185,0,0);
-    VL_SIG8(Top2__DOT__branchforward__DOT___T_206,0,0);
-    VL_SIG8(Top2__DOT__branchforward__DOT___T_226,0,0);
+    VL_SIG8(Top2__DOT__branchforward__DOT___T_209,0,0);
+    VL_SIG8(Top2__DOT__branchforward__DOT___T_229,0,0);
     VL_SIG8(Top2__DOT__branchforward__DOT___GEN_34,2,0);
     VL_SIG(Top2__DOT__register_io_WriteData,31,0);
     VL_SIG(Top2__DOT__register_io_rs1,31,0);

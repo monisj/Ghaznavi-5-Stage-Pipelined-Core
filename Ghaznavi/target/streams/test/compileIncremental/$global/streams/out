@@ -7,7 +7,7 @@
 [0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of datapath.Launcher. This dependency is not being considered for invalidation.[0m
 [0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of datapath.HazardDetectTests. This dependency is not being considered for invalidation.[0m
 [0m[[0m[0mdebug[0m] [0m[0mThe datapath.branchlogic has the following regular definitions changed:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	UsedName(branch2,[Default]), UsedName(id_ex_memread,[Default]), UsedName(io,[Default]), UsedName(branch,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(branch2,[Default]), UsedName(io,[Default]), UsedName(branch,[Default]).[0m
 [0m[[0m[0mdebug[0m] [0m[0mAll member reference dependencies will be considered within this context.[0m
 [0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) datapath.branchlogic: Set(); now invalidating by inheritance (internally).[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting direct dependencies of all classes transitively invalidated by inheritance.[0m
@@ -23,7 +23,7 @@
 [0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of datapath.branchforwardTests. This dependency is not being considered for invalidation.[0m
 [0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of datapath.Launcher. This dependency is not being considered for invalidation.[0m
 [0m[[0m[0mdebug[0m] [0m[0mThe datapath.Top has the following regular definitions changed:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	UsedName(control,[Default]), UsedName(PC,[Default]), UsedName(alu,[Default]), UsedName(register,[Default]), UsedName(immediate,[Default]), UsedName(instmem,[Default]), UsedName(DataMemory,[Default]), UsedName(alucontrol,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(DataMemory,[Default]), UsedName(register,[Default]), UsedName(alucontrol,[Default]), UsedName(immediate,[Default]), UsedName(instmem,[Default]), UsedName(control,[Default]), UsedName(alu,[Default]), UsedName(PC,[Default]).[0m
 [0m[[0m[0mdebug[0m] [0m[0mAll member reference dependencies will be considered within this context.[0m
 [0m[[0m[0mdebug[0m] [0m[0mFiles invalidated by inheriting from (external) datapath.Top: Set(); now invalidating by inheritance (internally).[0m
 [0m[[0m[0mdebug[0m] [0m[0mGetting direct dependencies of all classes transitively invalidated by inheritance.[0m

@@ -102,8 +102,9 @@ void VTop2::traceChgThis__2(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp,
 				   ? ((IData)(vlTOPp->Top2__DOT___T_79)
 				       ? (vlTOPp->Top2__DOT__immediate__DOT__sbt13 
 					  + vlTOPp->Top2__DOT__if_id__DOT__pc_reg)
-				       : ((IData)(4U) 
-					  + vlTOPp->Top2__DOT__PC__DOT__pc1))
+				       : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
+					   ? 0U : ((IData)(4U) 
+						   + vlTOPp->Top2__DOT__PC__DOT__pc1)))
 				   : ((2U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				       ? (vlTOPp->Top2__DOT__immediate__DOT__sbt19 
 					  + vlTOPp->Top2__DOT__if_id__DOT__pc_reg)
@@ -220,7 +221,11 @@ void VTop2::traceChgThis__2(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp,
 			       ? vlTOPp->Top2__DOT___GEN_33
 			       : ((1U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				   ? ((IData)(vlTOPp->Top2__DOT___T_79)
-				       ? 0U : vlTOPp->Top2__DOT___GEN_33)
+				       ? 0U : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
+					        ? ((IData)(vlTOPp->Top2__DOT___T_86)
+						    ? 0U
+						    : vlTOPp->Top2__DOT___GEN_33)
+					        : vlTOPp->Top2__DOT___GEN_33))
 				   : ((2U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				       ? 0U : ((3U 
 						== (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
@@ -230,8 +235,14 @@ void VTop2::traceChgThis__2(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp,
 			       ? ((IData)(4U) + vlTOPp->Top2__DOT__PC__DOT__pc1)
 			       : ((1U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				   ? ((IData)(vlTOPp->Top2__DOT___T_79)
-				       ? 0U : ((IData)(4U) 
-					       + vlTOPp->Top2__DOT__PC__DOT__pc1))
+				       ? 0U : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
+					        ? ((IData)(vlTOPp->Top2__DOT___T_86)
+						    ? 0U
+						    : 
+						   ((IData)(4U) 
+						    + vlTOPp->Top2__DOT__PC__DOT__pc1))
+					        : ((IData)(4U) 
+						   + vlTOPp->Top2__DOT__PC__DOT__pc1)))
 				   : ((2U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				       ? 0U : ((3U 
 						== (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
@@ -242,7 +253,11 @@ void VTop2::traceChgThis__2(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp,
 			       ? vlTOPp->Top2__DOT___GEN_32
 			       : ((1U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				   ? ((IData)(vlTOPp->Top2__DOT___T_79)
-				       ? 0U : vlTOPp->Top2__DOT___GEN_32)
+				       ? 0U : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
+					        ? ((IData)(vlTOPp->Top2__DOT___T_86)
+						    ? 0U
+						    : vlTOPp->Top2__DOT___GEN_32)
+					        : vlTOPp->Top2__DOT___GEN_32))
 				   : ((2U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				       ? 0U : ((3U 
 						== (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))

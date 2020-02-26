@@ -83,7 +83,7 @@ class Top2 extends Module{
     		branchforward.io.ctrl_branch := control.io.Branch2
 		branchlogic.io.func3_in := if_id.io.rdData(14,12)
 		branchlogic.io.branch:=control.io.Branch2
-		branchlogic.io.id_ex_memread:=id_ex.io.MemRead
+		
 
 		/*For Branch Prediction taken from rs1 and rs2 and func3 along with JALR*/
 		when(branchforward.io.forward_a === "b0000".U) {
@@ -171,6 +171,8 @@ class Top2 extends Module{
         	hazardDetection.io.current_pc_in := if_id.io.pc_out
 		hazardDetection.io.rs1_sel:=if_id.io.rdData(19,15)
 		hazardDetection.io.rs2_sel:=if_id.io.rdData(24, 20)
+		
+		
 
 		
 		//Forwarding Instruction If Hazard Detected to be stalled
@@ -187,17 +189,21 @@ class Top2 extends Module{
       			PC.io.input := hazardDetection.io.pc_out
     		} .otherwise {
         		when(control.io.next_PC_sel === "b01".U) {
-         			 when(branchlogic.io.output_x === 1.U && branchlogic.io.branch2 === 1.U) {
+         			 when((branchlogic.io.output_x === 1.U && branchlogic.io.branch2 === 1.U)){
             				PC.io.input := immediate.io.SB_Immediate.asUInt
             				if_id.io.pc_in := 0.U
             				if_id.io.pc4_in := 0.U
             				if_id.io.data_in := 0.U
           			} .otherwise {
-					//when(id_ex.io.MemRead===1.U){
-						//PC.io.input:= id_ex.io.pc4_out
-					//}.elsewhen(id_ex.io.MemRead===0.U){
+					when(id_ex.io.MemRead === 1.U){
+						when(register.io.rs1_sel === id_ex.io.rd_sel_out){
+							if_id.io.pc_in := 0.U
+            						if_id.io.pc4_in := 0.U
+            						if_id.io.data_in := 0.U
+						}
+					}.otherwise{
 						PC.io.input:= PC.io.pc4
-					//}
+					}
 				}
 
         		} .elsewhen(control.io.next_PC_sel === "b10".U) {

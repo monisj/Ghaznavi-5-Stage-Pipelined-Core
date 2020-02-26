@@ -3,21 +3,19 @@ import chisel3._
 
 class branchlogic extends Module {
   val io = IO(new Bundle {
-    val rs1_in = Input(SInt(32.W))
-    val rs2_in = Input(SInt(32.W))
-    val func3_in = Input(UInt(3.W))
-    val id_ex_memread =Input(UInt(1.W))
-    val branch=Input(UInt(1.W))
-    val output_x = Output(UInt(1.W))
-    val branch2 = Output(UInt(1.W))
+    	val rs1_in = Input(SInt(32.W))
+    	val rs2_in = Input(SInt(32.W))
+    	val func3_in = Input(UInt(3.W))
+    	val branch=Input(UInt(1.W))
+    	val output_x = Output(UInt(1.W))
+    	val branch2 = Output(UInt(1.W))	
+	
   })
 
 	io.output_x := 0.U  
 	io.branch2:=io.branch
 	
-  	//when(io.branch === 1.U){
-		//io.output_x:=1.U
-	//}.otherwise{
+  	
 		when(io.func3_in === "b000".U) {
    			when(io.rs1_in === io.rs2_in) {
       				io.output_x := 1.U
@@ -57,6 +55,6 @@ class branchlogic extends Module {
   		}.otherwise{
 			io.output_x:=0.U
 		}	
-	//}
+	
 
 }

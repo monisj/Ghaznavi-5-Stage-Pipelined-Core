@@ -104,7 +104,9 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
     VL_SIG8(__Vdlyvset__Top2__DOT__DataMemory__DOT__mem__v0,0,0);
     VL_SIG16(__Vdlyvdim0__Top2__DOT__DataMemory__DOT__mem__v0,9,0);
     VL_SIG(__Vdlyvval__Top2__DOT__DataMemory__DOT__mem__v0,31,0);
+    VL_SIG(__Vdly__Top2__DOT__if_id__DOT__inst_reg,31,0);
     // Body
+    __Vdly__Top2__DOT__if_id__DOT__inst_reg = vlTOPp->Top2__DOT__if_id__DOT__inst_reg;
     __Vdlyvset__Top2__DOT__DataMemory__DOT__mem__v0 = 0U;
     // ALWAYS at Top2.v:2043
     vlTOPp->Top2__DOT__id_ex__DOT__OpA_sel_r = ((IData)(vlTOPp->reset)
@@ -113,12 +115,6 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 						((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
 						  ? 0U
 						  : (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_operand_A_sel)));
-    // ALWAYS at Top2.v:2043
-    vlTOPp->Top2__DOT__id_ex__DOT__pcr = ((IData)(vlTOPp->reset)
-					   ? 0U : vlTOPp->Top2__DOT__if_id__DOT__pc_reg);
-    // ALWAYS at Top2.v:2043
-    vlTOPp->Top2__DOT__id_ex__DOT__pc4r = ((IData)(vlTOPp->reset)
-					    ? 0U : vlTOPp->Top2__DOT__if_id__DOT__pc4_reg);
     // ALWAYS at Top2.v:2043
     vlTOPp->Top2__DOT__id_ex__DOT__AluOp_r = ((IData)(vlTOPp->reset)
 					       ? 0U
@@ -152,9 +148,6 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 							 ((IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_LUI)
 							   ? 6U
 							   : 0U))))))))));
-    // ALWAYS at Top2.v:1701
-    vlTOPp->Top2__DOT__mem_wb__DOT__data_mem_Reg = 
-	((IData)(vlTOPp->reset) ? 0U : vlTOPp->Top2__DOT__DataMemory_io_Data);
     // ALWAYS at Top2.v:2043
     vlTOPp->Top2__DOT__id_ex__DOT__func7_r = (1U & 
 					      ((~ (IData)(vlTOPp->reset)) 
@@ -196,6 +189,42 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 						     << 1U)) 
 						 | vlTOPp->Top2__DOT__immediate__DOT__output2)
 						 : vlTOPp->Top2__DOT__immediate_io_I_Immediate)));
+    // ALWAYS at Top2.v:2043
+    vlTOPp->Top2__DOT__id_ex__DOT__pcr = ((IData)(vlTOPp->reset)
+					   ? 0U : vlTOPp->Top2__DOT__if_id__DOT__pc_reg);
+    // ALWAYS at Top2.v:2043
+    vlTOPp->Top2__DOT__id_ex__DOT__pc4r = ((IData)(vlTOPp->reset)
+					    ? 0U : vlTOPp->Top2__DOT__if_id__DOT__pc4_reg);
+    // ALWAYS at Top2.v:1701
+    vlTOPp->Top2__DOT__mem_wb__DOT__data_mem_Reg = 
+	((IData)(vlTOPp->reset) ? 0U : vlTOPp->Top2__DOT__DataMemory_io_Data);
+    // ALWAYS at Top2.v:2188
+    __Vdly__Top2__DOT__if_id__DOT__inst_reg = ((IData)(vlTOPp->reset)
+					        ? 0U
+					        : ((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
+						    ? vlTOPp->Top2__DOT___GEN_32
+						    : 
+						   ((1U 
+						     == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
+						     ? 
+						    ((IData)(vlTOPp->Top2__DOT___T_79)
+						      ? 0U
+						      : 
+						     ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
+						       ? 
+						      ((IData)(vlTOPp->Top2__DOT___T_86)
+						        ? 0U
+						        : vlTOPp->Top2__DOT___GEN_32)
+						       : vlTOPp->Top2__DOT___GEN_32))
+						     : 
+						    ((2U 
+						      == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
+						      ? 0U
+						      : 
+						     ((3U 
+						       == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
+						       ? 0U
+						       : vlTOPp->Top2__DOT___GEN_32)))));
     // ALWAYS at Top2.v:1701
     vlTOPp->Top2__DOT__mem_wb__DOT__Aluout_Reg = ((IData)(vlTOPp->reset)
 						   ? 0U
@@ -647,6 +676,9 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 	vlTOPp->Top2__DOT__DataMemory__DOT__mem[__Vdlyvdim0__Top2__DOT__DataMemory__DOT__mem__v0] 
 	    = __Vdlyvval__Top2__DOT__DataMemory__DOT__mem__v0;
     }
+    vlTOPp->Top2__DOT__alucontrol__DOT___T_18 = (((IData)(vlTOPp->Top2__DOT__id_ex__DOT__func7_r) 
+						  << 3U) 
+						 | (IData)(vlTOPp->Top2__DOT__id_ex__DOT__func3_r));
     // ALWAYS at Top2.v:2188
     vlTOPp->Top2__DOT__if_id__DOT__pc_reg = ((IData)(vlTOPp->reset)
 					      ? 0U : 
@@ -657,7 +689,13 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 						   ? 
 						  ((IData)(vlTOPp->Top2__DOT___T_79)
 						    ? 0U
-						    : vlTOPp->Top2__DOT___GEN_33)
+						    : 
+						   ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
+						     ? 
+						    ((IData)(vlTOPp->Top2__DOT___T_86)
+						      ? 0U
+						      : vlTOPp->Top2__DOT___GEN_33)
+						     : vlTOPp->Top2__DOT___GEN_33))
 						   : 
 						  ((2U 
 						    == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
@@ -681,8 +719,16 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 						   ((IData)(vlTOPp->Top2__DOT___T_79)
 						     ? 0U
 						     : 
-						    ((IData)(4U) 
-						     + vlTOPp->Top2__DOT__PC__DOT__pc1))
+						    ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
+						      ? 
+						     ((IData)(vlTOPp->Top2__DOT___T_86)
+						       ? 0U
+						       : 
+						      ((IData)(4U) 
+						       + vlTOPp->Top2__DOT__PC__DOT__pc1))
+						      : 
+						     ((IData)(4U) 
+						      + vlTOPp->Top2__DOT__PC__DOT__pc1)))
 						    : 
 						   ((2U 
 						     == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
@@ -694,9 +740,6 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 						      : 
 						     ((IData)(4U) 
 						      + vlTOPp->Top2__DOT__PC__DOT__pc1))))));
-    vlTOPp->Top2__DOT__alucontrol__DOT___T_18 = (((IData)(vlTOPp->Top2__DOT__id_ex__DOT__func7_r) 
-						  << 3U) 
-						 | (IData)(vlTOPp->Top2__DOT__id_ex__DOT__func3_r));
     vlTOPp->io_reg_out = ((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__MemtoReg_Reg)
 			   ? vlTOPp->Top2__DOT__mem_wb__DOT__data_mem_Reg
 			   : 0U);
@@ -878,6 +921,7 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
     vlTOPp->Top2__DOT__forward__DOT___T_29 = ((IData)(vlTOPp->Top2__DOT__ex_mem__DOT__Regwr_Reg) 
 					      & (0U 
 						 != (IData)(vlTOPp->Top2__DOT__ex_mem__DOT__Rd_sel_Reg)));
+    vlTOPp->Top2__DOT__if_id__DOT__inst_reg = __Vdly__Top2__DOT__if_id__DOT__inst_reg;
     vlTOPp->Top2__DOT__forward__DOT___T_32 = ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_30) 
 					      & (IData)(vlTOPp->Top2__DOT__forward__DOT___T_31));
     vlTOPp->Top2__DOT__forward__DOT___T_53 = ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_29) 
@@ -886,75 +930,6 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
     vlTOPp->Top2__DOT__branchforward__DOT___T_41 = 
 	((0U != (IData)(vlTOPp->Top2__DOT__id_ex__DOT__rd_sel_r)) 
 	 & (~ (IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)));
-    // ALWAYS at Top2.v:2188
-    vlTOPp->Top2__DOT__if_id__DOT__inst_reg = ((IData)(vlTOPp->reset)
-					        ? 0U
-					        : ((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
-						    ? vlTOPp->Top2__DOT___GEN_32
-						    : 
-						   ((1U 
-						     == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
-						     ? 
-						    ((IData)(vlTOPp->Top2__DOT___T_79)
-						      ? 0U
-						      : vlTOPp->Top2__DOT___GEN_32)
-						     : 
-						    ((2U 
-						      == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
-						      ? 0U
-						      : 
-						     ((3U 
-						       == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
-						       ? 0U
-						       : vlTOPp->Top2__DOT___GEN_32)))));
-    vlTOPp->Top2__DOT__forward__DOT___GEN_5 = ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_29)
-					        ? ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_32)
-						    ? 2U
-						    : 
-						   ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_30)
-						     ? 2U
-						     : 0U))
-					        : 0U);
-    vlTOPp->Top2__DOT__forward__DOT___GEN_6 = ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_29)
-					        ? ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_32)
-						    ? 2U
-						    : 
-						   ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_30)
-						     ? 0U
-						     : 
-						    ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_31)
-						      ? 2U
-						      : 0U)))
-					        : 0U);
-    vlTOPp->Top2__DOT__forward__DOT___T_69 = ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_44) 
-					      & (~ (IData)(vlTOPp->Top2__DOT__forward__DOT___T_53)));
-    vlTOPp->Top2__DOT__forward__DOT___T_57 = (((IData)(vlTOPp->Top2__DOT__forward__DOT___T_44) 
-					       & (IData)(vlTOPp->Top2__DOT__forward__DOT___T_45)) 
-					      & (~ 
-						 ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_53) 
-						  & (IData)(vlTOPp->Top2__DOT__forward__DOT___T_54))));
-    vlTOPp->Top2__DOT__forward_io_forward_a = ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_43)
-					        ? ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_57)
-						    ? 1U
-						    : 
-						   ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_69)
-						     ? 1U
-						     : (IData)(vlTOPp->Top2__DOT__forward__DOT___GEN_5)))
-					        : (IData)(vlTOPp->Top2__DOT__forward__DOT___GEN_5));
-    vlTOPp->Top2__DOT__forward_io_forward_b = ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_43)
-					        ? ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_57)
-						    ? 1U
-						    : 
-						   ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_69)
-						     ? (IData)(vlTOPp->Top2__DOT__forward__DOT___GEN_6)
-						     : 
-						    (((IData)(vlTOPp->Top2__DOT__forward__DOT___T_45) 
-						      & (~ 
-							 ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_29) 
-							  & (IData)(vlTOPp->Top2__DOT__forward__DOT___T_54))))
-						      ? 1U
-						      : (IData)(vlTOPp->Top2__DOT__forward__DOT___GEN_6))))
-					        : (IData)(vlTOPp->Top2__DOT__forward__DOT___GEN_6));
     vlTOPp->io_instruction = vlTOPp->Top2__DOT__if_id__DOT__inst_reg;
     vlTOPp->Top2__DOT__immediate__DOT__output2 = ((
 						   ((0x80000000U 
@@ -968,6 +943,9 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 						     | (0x1fU 
 							& (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 							   >> 7U))));
+    vlTOPp->Top2__DOT___T_86 = ((0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+					  >> 0xfU)) 
+				== (IData)(vlTOPp->Top2__DOT__id_ex__DOT__rd_sel_r));
     vlTOPp->Top2__DOT__immediate__DOT__sbt13 = ((((0x80000000U 
 						   & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)
 						   ? 0x7ffffU
@@ -1515,39 +1493,32 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 	((IData)(vlTOPp->Top2__DOT__id_ex__DOT__rd_sel_r) 
 	 == (0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 		      >> 0xfU)));
-    vlTOPp->Top2__DOT__alu_io_A = ((2U == (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpA_sel_r))
-				    ? vlTOPp->Top2__DOT__id_ex__DOT__pc4r
-				    : ((1U == (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpA_sel_r))
-				        ? vlTOPp->Top2__DOT__id_ex__DOT__pcr
-				        : ((0U == (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpA_sel_r))
-					    ? ((0U 
-						== (IData)(vlTOPp->Top2__DOT__forward_io_forward_a))
-					        ? vlTOPp->Top2__DOT__id_ex__DOT__rs1r
-					        : (
-						   (1U 
-						    == (IData)(vlTOPp->Top2__DOT__forward_io_forward_a))
-						    ? vlTOPp->Top2__DOT__register_io_WriteData
+    vlTOPp->Top2__DOT__forward__DOT___GEN_5 = ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_29)
+					        ? ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_32)
+						    ? 2U
 						    : 
-						   ((2U 
-						     == (IData)(vlTOPp->Top2__DOT__forward_io_forward_a))
-						     ? vlTOPp->Top2__DOT__ex_mem__DOT__Alu_out_Reg
-						     : 0U)))
-					    : 0U)));
-    vlTOPp->Top2__DOT__alu_io_B = ((1U & (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpB_sel_r))
-				    ? vlTOPp->Top2__DOT__id_ex__DOT__immr
-				    : ((1U & (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpB_sel_r))
-				        ? 0U : ((0U 
-						 == (IData)(vlTOPp->Top2__DOT__forward_io_forward_b))
-						 ? vlTOPp->Top2__DOT__id_ex__DOT__rs2r
-						 : 
-						((1U 
-						  == (IData)(vlTOPp->Top2__DOT__forward_io_forward_b))
-						  ? vlTOPp->Top2__DOT__register_io_WriteData
-						  : 
-						 ((2U 
-						   == (IData)(vlTOPp->Top2__DOT__forward_io_forward_b))
-						   ? vlTOPp->Top2__DOT__ex_mem__DOT__Alu_out_Reg
-						   : 0U)))));
+						   ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_30)
+						     ? 2U
+						     : 0U))
+					        : 0U);
+    vlTOPp->Top2__DOT__forward__DOT___GEN_6 = ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_29)
+					        ? ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_32)
+						    ? 2U
+						    : 
+						   ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_30)
+						     ? 0U
+						     : 
+						    ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_31)
+						      ? 2U
+						      : 0U)))
+					        : 0U);
+    vlTOPp->Top2__DOT__forward__DOT___T_69 = ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_44) 
+					      & (~ (IData)(vlTOPp->Top2__DOT__forward__DOT___T_53)));
+    vlTOPp->Top2__DOT__forward__DOT___T_57 = (((IData)(vlTOPp->Top2__DOT__forward__DOT___T_44) 
+					       & (IData)(vlTOPp->Top2__DOT__forward__DOT___T_45)) 
+					      & (~ 
+						 ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_53) 
+						  & (IData)(vlTOPp->Top2__DOT__forward__DOT___T_54))));
     vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward 
 	= ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r) 
 	   & (IData)(vlTOPp->Top2__DOT__hazardDetection__DOT___T_37));
@@ -1601,9 +1572,28 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
     vlTOPp->Top2__DOT__branchforward__DOT___T_72 = 
 	((0U != (IData)(vlTOPp->Top2__DOT__id_ex__DOT__rd_sel_r)) 
 	 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_42));
-    vlTOPp->Top2__DOT__alu__DOT___T_78 = (vlTOPp->Top2__DOT__alu_io_A 
-					  == vlTOPp->Top2__DOT__alu_io_B);
-    vlTOPp->Top2__DOT__alu__DOT___T_32 = VL_LTS_III(1,32,32, vlTOPp->Top2__DOT__alu_io_A, vlTOPp->Top2__DOT__alu_io_B);
+    vlTOPp->Top2__DOT__forward_io_forward_a = ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_43)
+					        ? ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_57)
+						    ? 1U
+						    : 
+						   ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_69)
+						     ? 1U
+						     : (IData)(vlTOPp->Top2__DOT__forward__DOT___GEN_5)))
+					        : (IData)(vlTOPp->Top2__DOT__forward__DOT___GEN_5));
+    vlTOPp->Top2__DOT__forward_io_forward_b = ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_43)
+					        ? ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_57)
+						    ? 1U
+						    : 
+						   ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_69)
+						     ? (IData)(vlTOPp->Top2__DOT__forward__DOT___GEN_6)
+						     : 
+						    (((IData)(vlTOPp->Top2__DOT__forward__DOT___T_45) 
+						      & (~ 
+							 ((IData)(vlTOPp->Top2__DOT__forward__DOT___T_29) 
+							  & (IData)(vlTOPp->Top2__DOT__forward__DOT___T_54))))
+						      ? 1U
+						      : (IData)(vlTOPp->Top2__DOT__forward__DOT___GEN_6))))
+					        : (IData)(vlTOPp->Top2__DOT__forward__DOT___GEN_6));
     vlTOPp->Top2__DOT___GEN_33 = ((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
 				   ? vlTOPp->Top2__DOT__if_id__DOT__pc_reg
 				   : vlTOPp->Top2__DOT__PC__DOT__pc1);
@@ -1626,8 +1616,9 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 			      ? 2U : ((~ (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Branch)) 
 				      & ((~ (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_I_Type)) 
 					 & (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode__DOT___GEN_12))))));
-    vlTOPp->Top2__DOT__branchforward__DOT___T_206 = 
-	((((0U != (IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg)) 
+    vlTOPp->Top2__DOT__branchforward__DOT___T_209 = 
+	(((((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Regwr_Reg) 
+	    & (0U != (IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg))) 
 	   & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_91))) 
 	  & (~ ((0U != (IData)(vlTOPp->Top2__DOT__ex_mem__DOT__Rd_sel_Reg)) 
 		& (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_79)))) 
@@ -1643,7 +1634,7 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
     vlTOPp->Top2__DOT__branchforward__DOT___T_45 = 
 	((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_43) 
 	 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_44));
-    vlTOPp->Top2__DOT__branchforward__DOT___T_226 = 
+    vlTOPp->Top2__DOT__branchforward__DOT___T_229 = 
 	((((0U != (IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg)) 
 	   & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_72))) 
 	  & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_177))) 
@@ -1655,6 +1646,99 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
     vlTOPp->Top2__DOT__branchforward__DOT___T_74 = 
 	((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_72) 
 	 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_44));
+    vlTOPp->Top2__DOT__alu_io_A = ((2U == (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpA_sel_r))
+				    ? vlTOPp->Top2__DOT__id_ex__DOT__pc4r
+				    : ((1U == (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpA_sel_r))
+				        ? vlTOPp->Top2__DOT__id_ex__DOT__pcr
+				        : ((0U == (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpA_sel_r))
+					    ? ((0U 
+						== (IData)(vlTOPp->Top2__DOT__forward_io_forward_a))
+					        ? vlTOPp->Top2__DOT__id_ex__DOT__rs1r
+					        : (
+						   (1U 
+						    == (IData)(vlTOPp->Top2__DOT__forward_io_forward_a))
+						    ? vlTOPp->Top2__DOT__register_io_WriteData
+						    : 
+						   ((2U 
+						     == (IData)(vlTOPp->Top2__DOT__forward_io_forward_a))
+						     ? vlTOPp->Top2__DOT__ex_mem__DOT__Alu_out_Reg
+						     : 0U)))
+					    : 0U)));
+    vlTOPp->Top2__DOT__alu_io_B = ((1U & (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpB_sel_r))
+				    ? vlTOPp->Top2__DOT__id_ex__DOT__immr
+				    : ((1U & (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpB_sel_r))
+				        ? 0U : ((0U 
+						 == (IData)(vlTOPp->Top2__DOT__forward_io_forward_b))
+						 ? vlTOPp->Top2__DOT__id_ex__DOT__rs2r
+						 : 
+						((1U 
+						  == (IData)(vlTOPp->Top2__DOT__forward_io_forward_b))
+						  ? vlTOPp->Top2__DOT__register_io_WriteData
+						  : 
+						 ((2U 
+						   == (IData)(vlTOPp->Top2__DOT__forward_io_forward_b))
+						   ? vlTOPp->Top2__DOT__ex_mem__DOT__Alu_out_Reg
+						   : 0U)))));
+    vlTOPp->Top2__DOT__branchforward__DOT___GEN_4 = 
+	((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_45) 
+	 | ((~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_43)) 
+	    & ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_41) 
+	       & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_44))));
+    vlTOPp->Top2__DOT__branchforward__DOT___GEN_3 = 
+	((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_45) 
+	 | (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_43));
+    vlTOPp->Top2__DOT__branchforward__DOT___T_185 = 
+	(((((0U != (IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg)) 
+	    & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_74))) 
+	   & (~ ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_177) 
+		 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_79)))) 
+	  & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_182)) 
+	 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_184));
+    vlTOPp->Top2__DOT__branchforward__DOT___T_80 = 
+	((((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_68) 
+	   & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_74))) 
+	  & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_77)) 
+	 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_79));
+    vlTOPp->Top2__DOT__branchforward__DOT___T_127 = 
+	((((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_115) 
+	   & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_74))) 
+	  & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_77)) 
+	 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_79));
+    vlTOPp->Top2__DOT__alu__DOT___T_78 = (vlTOPp->Top2__DOT__alu_io_A 
+					  == vlTOPp->Top2__DOT__alu_io_B);
+    vlTOPp->Top2__DOT__alu__DOT___T_32 = VL_LTS_III(1,32,32, vlTOPp->Top2__DOT__alu_io_A, vlTOPp->Top2__DOT__alu_io_B);
+    vlTOPp->Top2__DOT__branchforward__DOT___GEN_34 
+	= ((IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_Branch2)
+	    ? ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_185)
+	        ? 3U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_209)
+			 ? 3U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_80)
+				  ? 2U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_95)
+					   ? 2U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_109)
+						    ? (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_4)
+						    : 
+						   ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_127)
+						     ? 4U
+						     : 
+						    ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_142)
+						      ? 4U
+						      : (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_4))))))))
+	    : 0U);
+    vlTOPp->Top2__DOT__branchforward__DOT___GEN_14 
+	= ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_80)
+	    ? 2U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_95)
+		     ? (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_3)
+		     : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_109)
+			 ? 2U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_127)
+				  ? 4U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_142)
+					   ? (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_3)
+					   : ((((((IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_Branch2) 
+						  & (0U 
+						     != (IData)(vlTOPp->Top2__DOT__ex_mem__DOT__Rd_sel_Reg))) 
+						 & (IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)) 
+						& (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_72))) 
+					       & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_77))
+					       ? 4U
+					       : (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_3)))))));
     vlTOPp->Top2__DOT__alu__DOT___GEN_11 = ((0x10U 
 					     == (IData)(vlTOPp->Top2__DOT__alucontrol_io_control))
 					     ? ((IData)(vlTOPp->Top2__DOT__alu__DOT___T_78)
@@ -1692,31 +1776,22 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 						     ? 1U
 						     : 0U)
 						    : 0U)))));
-    vlTOPp->Top2__DOT__branchforward__DOT___GEN_4 = 
-	((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_45) 
-	 | ((~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_43)) 
-	    & ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_41) 
-	       & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_44))));
-    vlTOPp->Top2__DOT__branchforward__DOT___GEN_3 = 
-	((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_45) 
-	 | (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_43));
-    vlTOPp->Top2__DOT__branchforward__DOT___T_185 = 
-	(((((0U != (IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg)) 
-	    & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_74))) 
-	   & (~ ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_177) 
-		 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_79)))) 
-	  & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_182)) 
-	 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_184));
-    vlTOPp->Top2__DOT__branchforward__DOT___T_80 = 
-	((((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_68) 
-	   & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_74))) 
-	  & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_77)) 
-	 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_79));
-    vlTOPp->Top2__DOT__branchforward__DOT___T_127 = 
-	((((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_115) 
-	   & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_74))) 
-	  & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_77)) 
-	 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_79));
+    vlTOPp->Top2__DOT__branchforward_io_forward_a = 
+	((IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_Branch2)
+	  ? ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_185)
+	      ? 3U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_209)
+		       ? (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_14)
+		       : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_229)
+			   ? 3U : (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_14))))
+	  : ((IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_Branch2)
+	      ? 0U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_229)
+		       ? 8U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_109)
+			        ? 7U : ((((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_115) 
+					  & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_72))) 
+					 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_77))
+					 ? 9U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_43)
+						  ? 6U
+						  : 0U))))));
     vlTOPp->Top2__DOT__alu__DOT___GEN_12 = (0x1fU & 
 					    ((0xdU 
 					      == (IData)(vlTOPp->Top2__DOT__alucontrol_io_control))
@@ -1732,38 +1807,6 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 									     >> 1U)))) 
 						     << 2U)) 
 						 | (IData)(vlTOPp->Top2__DOT__alu__DOT___GEN_11))));
-    vlTOPp->Top2__DOT__branchforward__DOT___GEN_34 
-	= ((IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_Branch2)
-	    ? ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_185)
-	        ? 3U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_206)
-			 ? 3U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_80)
-				  ? 2U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_95)
-					   ? 2U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_109)
-						    ? (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_4)
-						    : 
-						   ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_127)
-						     ? 4U
-						     : 
-						    ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_142)
-						      ? 4U
-						      : (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_4))))))))
-	    : 0U);
-    vlTOPp->Top2__DOT__branchforward__DOT___GEN_14 
-	= ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_80)
-	    ? 2U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_95)
-		     ? (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_3)
-		     : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_109)
-			 ? 2U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_127)
-				  ? 4U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_142)
-					   ? (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_3)
-					   : ((((((IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_Branch2) 
-						  & (0U 
-						     != (IData)(vlTOPp->Top2__DOT__ex_mem__DOT__Rd_sel_Reg))) 
-						 & (IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)) 
-						& (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_72))) 
-					       & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_77))
-					       ? 4U
-					       : (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_3)))))));
     vlTOPp->Top2__DOT__alu__DOT___GEN_20 = ((0x1fU 
 					     == (IData)(vlTOPp->Top2__DOT__alucontrol_io_control))
 					     ? vlTOPp->Top2__DOT__alu_io_A
@@ -1842,22 +1885,6 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 										>> 4U)))) 
 							   << 5U)) 
 						       | (IData)(vlTOPp->Top2__DOT__alu__DOT___GEN_12))))))))));
-    vlTOPp->Top2__DOT__branchforward_io_forward_a = 
-	((IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_Branch2)
-	  ? ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_185)
-	      ? 3U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_206)
-		       ? (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_14)
-		       : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_226)
-			   ? 3U : (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_14))))
-	  : ((IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_Branch2)
-	      ? 0U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_226)
-		       ? 8U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_109)
-			        ? 7U : ((((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_115) 
-					  & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_72))) 
-					 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_77))
-					 ? 9U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_43)
-						  ? 6U
-						  : 0U))))));
     vlTOPp->Top2__DOT__alu__DOT___GEN_22 = (VL_ULL(0x7fffffffffffffff) 
 					    & ((0U 
 						== (IData)(vlTOPp->Top2__DOT__alucontrol_io_control))
@@ -2016,8 +2043,11 @@ VL_INLINE_OPT void VTop2::_sequent__TOP__2(VTop2__Syms* __restrict vlSymsp) {
 					   ? ((IData)(vlTOPp->Top2__DOT___T_79)
 					       ? (vlTOPp->Top2__DOT__immediate__DOT__sbt13 
 						  + vlTOPp->Top2__DOT__if_id__DOT__pc_reg)
-					       : ((IData)(4U) 
-						  + vlTOPp->Top2__DOT__PC__DOT__pc1))
+					       : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
+						   ? 0U
+						   : 
+						  ((IData)(4U) 
+						   + vlTOPp->Top2__DOT__PC__DOT__pc1)))
 					   : ((2U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 					       ? (vlTOPp->Top2__DOT__immediate__DOT__sbt19 
 						  + vlTOPp->Top2__DOT__if_id__DOT__pc_reg)
@@ -2086,9 +2116,6 @@ void VTop2::_settle__TOP__3(VTop2__Syms* __restrict vlSymsp) {
     vlTOPp->Top2__DOT__forward__DOT___T_29 = ((IData)(vlTOPp->Top2__DOT__ex_mem__DOT__Regwr_Reg) 
 					      & (0U 
 						 != (IData)(vlTOPp->Top2__DOT__ex_mem__DOT__Rd_sel_Reg)));
-    vlTOPp->Top2__DOT__branchforward__DOT___T_41 = 
-	((0U != (IData)(vlTOPp->Top2__DOT__id_ex__DOT__rd_sel_r)) 
-	 & (~ (IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)));
     vlTOPp->io_instruction = vlTOPp->Top2__DOT__if_id__DOT__inst_reg;
     vlTOPp->Top2__DOT__immediate__DOT__output2 = ((
 						   ((0x80000000U 
@@ -2102,6 +2129,9 @@ void VTop2::_settle__TOP__3(VTop2__Syms* __restrict vlSymsp) {
 						     | (0x1fU 
 							& (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 							   >> 7U))));
+    vlTOPp->Top2__DOT___T_86 = ((0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+					  >> 0xfU)) 
+				== (IData)(vlTOPp->Top2__DOT__id_ex__DOT__rd_sel_r));
     vlTOPp->Top2__DOT__immediate__DOT__sbt13 = ((((0x80000000U 
 						   & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)
 						   ? 0x7ffffU
@@ -2641,6 +2671,9 @@ void VTop2::_settle__TOP__3(VTop2__Syms* __restrict vlSymsp) {
 	((IData)(vlTOPp->Top2__DOT__ex_mem__DOT__Rd_sel_Reg) 
 	 == (0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 		      >> 0xfU)));
+    vlTOPp->Top2__DOT__branchforward__DOT___T_41 = 
+	((0U != (IData)(vlTOPp->Top2__DOT__id_ex__DOT__rd_sel_r)) 
+	 & (~ (IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)));
     vlTOPp->Top2__DOT__branchforward__DOT___T_44 = 
 	((IData)(vlTOPp->Top2__DOT__id_ex__DOT__rd_sel_r) 
 	 == (0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
@@ -2785,8 +2818,9 @@ void VTop2::_settle__TOP__3(VTop2__Syms* __restrict vlSymsp) {
 			      ? 2U : ((~ (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Branch)) 
 				      & ((~ (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_I_Type)) 
 					 & (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode__DOT___GEN_12))))));
-    vlTOPp->Top2__DOT__branchforward__DOT___T_206 = 
-	((((0U != (IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg)) 
+    vlTOPp->Top2__DOT__branchforward__DOT___T_209 = 
+	(((((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Regwr_Reg) 
+	    & (0U != (IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg))) 
 	   & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_91))) 
 	  & (~ ((0U != (IData)(vlTOPp->Top2__DOT__ex_mem__DOT__Rd_sel_Reg)) 
 		& (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_79)))) 
@@ -2802,7 +2836,7 @@ void VTop2::_settle__TOP__3(VTop2__Syms* __restrict vlSymsp) {
     vlTOPp->Top2__DOT__branchforward__DOT___T_45 = 
 	((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_43) 
 	 & (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_44));
-    vlTOPp->Top2__DOT__branchforward__DOT___T_226 = 
+    vlTOPp->Top2__DOT__branchforward__DOT___T_229 = 
 	((((0U != (IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg)) 
 	   & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_72))) 
 	  & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_177))) 
@@ -2897,7 +2931,7 @@ void VTop2::_settle__TOP__3(VTop2__Syms* __restrict vlSymsp) {
     vlTOPp->Top2__DOT__branchforward__DOT___GEN_34 
 	= ((IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_Branch2)
 	    ? ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_185)
-	        ? 3U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_206)
+	        ? 3U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_209)
 			 ? 3U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_80)
 				  ? 2U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_95)
 					   ? 2U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_109)
@@ -2932,12 +2966,12 @@ void VTop2::_settle__TOP__3(VTop2__Syms* __restrict vlSymsp) {
     vlTOPp->Top2__DOT__branchforward_io_forward_a = 
 	((IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_Branch2)
 	  ? ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_185)
-	      ? 3U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_206)
+	      ? 3U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_209)
 		       ? (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_14)
-		       : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_226)
+		       : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_229)
 			   ? 3U : (IData)(vlTOPp->Top2__DOT__branchforward__DOT___GEN_14))))
 	  : ((IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_Branch2)
-	      ? 0U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_226)
+	      ? 0U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_229)
 		       ? 8U : ((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_109)
 			        ? 7U : ((((IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_115) 
 					  & (~ (IData)(vlTOPp->Top2__DOT__branchforward__DOT___T_72))) 
@@ -3233,8 +3267,11 @@ void VTop2::_settle__TOP__3(VTop2__Syms* __restrict vlSymsp) {
 					   ? ((IData)(vlTOPp->Top2__DOT___T_79)
 					       ? (vlTOPp->Top2__DOT__immediate__DOT__sbt13 
 						  + vlTOPp->Top2__DOT__if_id__DOT__pc_reg)
-					       : ((IData)(4U) 
-						  + vlTOPp->Top2__DOT__PC__DOT__pc1))
+					       : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
+						   ? 0U
+						   : 
+						  ((IData)(4U) 
+						   + vlTOPp->Top2__DOT__PC__DOT__pc1)))
 					   : ((2U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 					       ? (vlTOPp->Top2__DOT__immediate__DOT__sbt19 
 						  + vlTOPp->Top2__DOT__if_id__DOT__pc_reg)
@@ -3340,6 +3377,7 @@ void VTop2::_ctor_var_reset() {
     Top2__DOT___GEN_32 = VL_RAND_RESET_I(32);
     Top2__DOT___GEN_33 = VL_RAND_RESET_I(32);
     Top2__DOT___T_79 = VL_RAND_RESET_I(1);
+    Top2__DOT___T_86 = VL_RAND_RESET_I(1);
     Top2__DOT__control__DOT__InstDecode_io_Load = VL_RAND_RESET_I(1);
     Top2__DOT__control__DOT__InstDecode_io_Store = VL_RAND_RESET_I(1);
     Top2__DOT__control__DOT__InstDecode_io_Branch = VL_RAND_RESET_I(1);
@@ -3470,8 +3508,8 @@ void VTop2::_ctor_var_reset() {
     Top2__DOT__branchforward__DOT___T_182 = VL_RAND_RESET_I(1);
     Top2__DOT__branchforward__DOT___T_184 = VL_RAND_RESET_I(1);
     Top2__DOT__branchforward__DOT___T_185 = VL_RAND_RESET_I(1);
-    Top2__DOT__branchforward__DOT___T_206 = VL_RAND_RESET_I(1);
-    Top2__DOT__branchforward__DOT___T_226 = VL_RAND_RESET_I(1);
+    Top2__DOT__branchforward__DOT___T_209 = VL_RAND_RESET_I(1);
+    Top2__DOT__branchforward__DOT___T_229 = VL_RAND_RESET_I(1);
     Top2__DOT__branchforward__DOT___GEN_34 = VL_RAND_RESET_I(3);
     __Vclklast__TOP__clock = VL_RAND_RESET_I(1);
     __Vm_traceActivity = VL_RAND_RESET_I(32);

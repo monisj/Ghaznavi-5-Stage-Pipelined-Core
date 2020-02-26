@@ -87,7 +87,7 @@ class branchforward extends Module {
         io.forward_b := "b0011".U
 
       }
-        .elsewhen(io.mem_wb_rd_sel =/= "b00000".U && io.mem_wb_memread =/= 1.U &&
+        .elsewhen(io.mem_wb_regwrite === 1.U && io.mem_wb_rd_sel =/= "b00000".U && io.mem_wb_memread =/= 1.U &&
           
           ~((io.id_ex_rd_sel =/= "b00000".U) && (io.id_ex_rd_sel === io.rs2_sel)) &&
           
