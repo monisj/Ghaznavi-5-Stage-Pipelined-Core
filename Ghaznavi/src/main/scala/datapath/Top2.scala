@@ -4,6 +4,7 @@ class Top2 extends Module{
 	val io=IO(new Bundle{
 		val instruction=Output(UInt(32.W))			
 		val reg_out=Output(SInt(32.W))
+		val branch_stall = Output(UInt(1.W))
 		
 		
 	})
@@ -36,11 +37,11 @@ class Top2 extends Module{
 		JALR.io.A:=0.S
 		alu.io.A:=0.S
 		alu.io.B:=0.S
-
+		io.branch_stall:=0.U
+		
 
 		/*PC and Instruction Memory Module*/
 		instmem.io.wrAddr:=PC.io.pc(11,2)
-
 		
 		/*Instruction Fetch to Instruction Decode Stage*/
 		if_id.io.pc_in:=PC.io.pc
@@ -83,6 +84,7 @@ class Top2 extends Module{
     		branchforward.io.ctrl_branch := control.io.Branch2
 		branchlogic.io.func3_in := if_id.io.rdData(14,12)
 		branchlogic.io.branch:=control.io.Branch2
+		
 		
 
 		/*For Branch Prediction taken from rs1 and rs2 and func3 along with JALR*/
@@ -171,6 +173,7 @@ class Top2 extends Module{
         	hazardDetection.io.current_pc_in := if_id.io.pc_out
 		hazardDetection.io.rs1_sel:=if_id.io.rdData(19,15)
 		hazardDetection.io.rs2_sel:=if_id.io.rdData(24, 20)
+		hazardDetection.io.control_branch:=control.io.Branch2
 		
 		
 
@@ -188,23 +191,25 @@ class Top2 extends Module{
 		when(hazardDetection.io.pc_forward === "b1".U) {
       			PC.io.input := hazardDetection.io.pc_out
     		} .otherwise {
-        		when(control.io.next_PC_sel === "b01".U) {
+        		when(control.io.next_PC_sel === "b01".U){
          			 when((branchlogic.io.output_x === 1.U && branchlogic.io.branch2 === 1.U)){
             				PC.io.input := immediate.io.SB_Immediate.asUInt
             				if_id.io.pc_in := 0.U
             				if_id.io.pc4_in := 0.U
             				if_id.io.data_in := 0.U
           			} .otherwise {
-					when(id_ex.io.MemRead === 1.U){
-						when(register.io.rs1_sel === id_ex.io.rd_sel_out){
-							if_id.io.pc_in := 0.U
-            						if_id.io.pc4_in := 0.U
-            						if_id.io.data_in := 0.U
-						}
+					when(control.io.Branch2 === 1.U && id_ex.io.MemRead === 1.U){
+						io.branch_stall:=1.U
+						PC.io.input := immediate.io.SB_Immediate.asUInt
+						if_id.io.pc_in := 0.U
+            					if_id.io.pc4_in := 0.U
+            					if_id.io.data_in := 0.U
 					}.otherwise{
-						PC.io.input:= PC.io.pc4
+					PC.io.input:= PC.io.pc4
 					}
 				}
+			
+			
 
         		} .elsewhen(control.io.next_PC_sel === "b10".U) {
           			PC.io.input := immediate.io.UJ_Immediate.asUInt
@@ -258,7 +263,7 @@ class Top2 extends Module{
 		id_ex.io.rs1_in:=register.io.rs1
 		id_ex.io.rs2_in:=register.io.rs2
 		id_ex.io.func3_in:=if_id.io.rdData(14,12)
-		id_ex.io.func7_in:=if_id.io.rdData(30)
+		id_ex.io.func7_in:=if_id.io.rdData(31,25)
 		id_ex.io.rs1_sel_in:=if_id.io.rdData(19,15)
 		id_ex.io.rs2_sel_in:=if_id.io.rdData(24,20)
 		

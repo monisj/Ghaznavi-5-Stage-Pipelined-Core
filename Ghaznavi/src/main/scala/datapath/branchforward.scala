@@ -142,19 +142,19 @@ class branchforward extends Module {
       
       .elsewhen(io.ctrl_branch === 0.U) {
         
-        when(io.id_ex_rd_sel =/= "b00000".U && io.id_ex_memread =/= 1.U && (io.id_ex_rd_sel === io.rs1_sel)){
+        when(io.id_ex_regwrite === 1.U && io.id_ex_rd_sel =/= "b00000".U && io.id_ex_memread =/= 1.U && (io.id_ex_rd_sel === io.rs1_sel)){
           io.forward_a := "b0110".U
         }
 
         
-        when( io.ex_mem_rd_sel =/= "b00000".U && io.ex_mem_memread =/= 1.U &&
+        when(io.ex_mem_regwrite === 1.U && io.ex_mem_rd_sel =/= "b00000".U && io.ex_mem_memread =/= 1.U &&
           ~((io.id_ex_rd_sel =/= "b00000".U) && (io.id_ex_rd_sel === io.rs1_sel)) &&
           (io.ex_mem_rd_sel === io.rs1_sel)) {
 
           io.forward_a := "b0111".U
 
         }
-          .elsewhen( io.ex_mem_rd_sel =/= "b00000".U && io.ex_mem_memread === 1.U &&
+          .elsewhen(io.ex_mem_regwrite === 1.U && io.ex_mem_rd_sel =/= "b00000".U && io.ex_mem_memread === 1.U &&
             ~((io.id_ex_rd_sel =/= "b00000".U) && (io.id_ex_rd_sel === io.rs1_sel)) &&
             (io.ex_mem_rd_sel === io.rs1_sel)) {
             
@@ -164,7 +164,7 @@ class branchforward extends Module {
 
 
         
-        when(io.mem_wb_rd_sel =/= "b00000".U && io.mem_wb_memread =/= 1.U &&
+        when(io.mem_wb_regwrite === 1.U && io.mem_wb_rd_sel =/= "b00000".U && io.mem_wb_memread =/= 1.U &&
          
           ~((io.id_ex_rd_sel =/= "b00000".U) && (io.id_ex_rd_sel === io.rs1_sel)) &&
          
@@ -174,7 +174,7 @@ class branchforward extends Module {
           io.forward_a := "b1000".U
 
         }
-           .elsewhen(io.mem_wb_rd_sel =/= "b00000".U && io.mem_wb_memread === 1.U &&
+           .elsewhen(io.mem_wb_regwrite === 1.U && io.mem_wb_rd_sel =/= "b00000".U && io.mem_wb_memread === 1.U &&
           
           ~((io.id_ex_rd_sel =/= "b00000".U) && (io.id_ex_rd_sel === io.rs1_sel)) &&
          

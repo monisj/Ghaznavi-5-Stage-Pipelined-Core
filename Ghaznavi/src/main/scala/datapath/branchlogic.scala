@@ -7,12 +7,15 @@ class branchlogic extends Module {
     	val rs2_in = Input(SInt(32.W))
     	val func3_in = Input(UInt(3.W))
     	val branch=Input(UInt(1.W))
+	
     	val output_x = Output(UInt(1.W))
     	val branch2 = Output(UInt(1.W))	
 	
+	
   })
 
-	io.output_x := 0.U  
+	io.output_x := 0.U 
+	
 	io.branch2:=io.branch
 	
   	

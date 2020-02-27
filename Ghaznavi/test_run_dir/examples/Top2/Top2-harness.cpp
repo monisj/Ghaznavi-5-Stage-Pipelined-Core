@@ -23,6 +23,7 @@ class Top2_api_t: public sim_api_t<VerilatorDataWrapper*> {
 
         sim_data.inputs.push_back(new VerilatorCData(&(dut->clock)));
         sim_data.inputs.push_back(new VerilatorCData(&(dut->reset)));
+        sim_data.outputs.push_back(new VerilatorCData(&(dut->io_branch_stall)));
         sim_data.outputs.push_back(new VerilatorIData(&(dut->io_reg_out)));
         sim_data.outputs.push_back(new VerilatorIData(&(dut->io_instruction)));
         sim_data.signals.push_back(new VerilatorCData(&(dut->reset)));

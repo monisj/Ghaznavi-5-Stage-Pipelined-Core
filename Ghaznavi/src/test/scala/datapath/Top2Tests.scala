@@ -4,7 +4,7 @@ import chisel3.iotesters.PeekPokeTester
 
 
 class Top2Tests(c: Top2) extends PeekPokeTester(c) {
-	step(500)
+	step(10000)
 	
 	
 	

@@ -13,7 +13,7 @@ class DataMemory extends Module{
 			
 	})
 		io.Data:=0.S
-		val mem=Mem(1024,SInt(32.W))
+		val mem=Mem(16384,SInt(32.W))
 		
 		when(io.MemWrite===1.U){
 			mem.write(io.wrAddr,io.wrData)

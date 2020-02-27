@@ -23,18 +23,18 @@ VL_MODULE(VTop2) {
     // propagate new values into/out from the Verilated model.
     VL_IN8(clock,0,0);
     VL_IN8(reset,0,0);
+    VL_OUT8(io_branch_stall,0,0);
     VL_OUT(io_instruction,31,0);
     VL_OUT(io_reg_out,31,0);
     
     // LOCAL SIGNALS
     // Internals; generally not touched by application code
-    VL_SIG8(Top2__DOT__alucontrol_io_control,4,0);
     VL_SIG8(Top2__DOT__forward_io_forward_a,1,0);
     VL_SIG8(Top2__DOT__forward_io_forward_b,1,0);
     VL_SIG8(Top2__DOT__hazardDetection_io_ctrl_forward,0,0);
     VL_SIG8(Top2__DOT__branchforward_io_forward_a,3,0);
-    VL_SIG8(Top2__DOT___T_79,0,0);
-    VL_SIG8(Top2__DOT___T_86,0,0);
+    VL_SIG8(Top2__DOT___T_82,0,0);
+    VL_SIG8(Top2__DOT___T_91,0,0);
     VL_SIG8(Top2__DOT__control__DOT__InstDecode_io_Load,0,0);
     VL_SIG8(Top2__DOT__control__DOT__InstDecode_io_Store,0,0);
     VL_SIG8(Top2__DOT__control__DOT__InstDecode_io_Branch,0,0);
@@ -43,20 +43,20 @@ VL_MODULE(VTop2) {
     VL_SIG8(Top2__DOT__control__DOT__InstDecode_io_JAL,0,0);
     VL_SIG8(Top2__DOT__control__DOT__InstDecode_io_LUI,0,0);
     VL_SIG8(Top2__DOT__control__DOT__CtrlDecode_io_Branch2,0,0);
+    VL_SIG8(Top2__DOT__control__DOT__CtrlDecode_io_MemRead,0,0);
     VL_SIG8(Top2__DOT__control__DOT__CtrlDecode_io_operand_A_sel,1,0);
     VL_SIG8(Top2__DOT__control__DOT__CtrlDecode_io_extend_sel,1,0);
     VL_SIG8(Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel,1,0);
     VL_SIG8(Top2__DOT__control__DOT__CtrlDecode__DOT___GEN_12,0,0);
     VL_SIG8(Top2__DOT__control__DOT__CtrlDecode__DOT___GEN_45,0,0);
     VL_SIG8(Top2__DOT__alu__DOT___T_32,0,0);
-    VL_SIG8(Top2__DOT__alu__DOT___T_78,0,0);
+    VL_SIG8(Top2__DOT__alu__DOT___T_69,0,0);
     VL_SIG8(Top2__DOT__alu__DOT___GEN_11,1,0);
-    VL_SIG8(Top2__DOT__alu__DOT___GEN_12,4,0);
-    VL_SIG8(Top2__DOT__alucontrol__DOT___T_18,4,0);
     VL_SIG8(Top2__DOT__mem_wb__DOT__Regwr_Reg,0,0);
     VL_SIG8(Top2__DOT__mem_wb__DOT__MemtoReg_Reg,0,0);
     VL_SIG8(Top2__DOT__mem_wb__DOT__Rd_sel_Reg,4,0);
     VL_SIG8(Top2__DOT__ex_mem__DOT__Memwr_Reg,0,0);
+    VL_SIG8(Top2__DOT__ex_mem__DOT__Memrd_Reg,0,0);
     VL_SIG8(Top2__DOT__ex_mem__DOT__Regwr_Reg,0,0);
     VL_SIG8(Top2__DOT__ex_mem__DOT__MemtoReg_Reg,0,0);
     VL_SIG8(Top2__DOT__ex_mem__DOT__Rd_sel_Reg,4,0);
@@ -64,10 +64,11 @@ VL_MODULE(VTop2) {
     VL_SIG8(Top2__DOT__id_ex__DOT__rs1_sel_r,4,0);
     VL_SIG8(Top2__DOT__id_ex__DOT__rs2_sel_r,4,0);
     VL_SIG8(Top2__DOT__id_ex__DOT__func3_r,2,0);
-    VL_SIG8(Top2__DOT__id_ex__DOT__func7_r,0,0);
+    VL_SIG8(Top2__DOT__id_ex__DOT__func7_r,6,0);
     VL_SIG8(Top2__DOT__id_ex__DOT__MemWr_r,0,0);
     VL_SIG8(Top2__DOT__id_ex__DOT__MemRd_r,0,0);
     VL_SIG8(Top2__DOT__id_ex__DOT__RegWr_r,0,0);
+    VL_SIG8(Top2__DOT__id_ex__DOT__MemToReg_r,0,0);
     VL_SIG8(Top2__DOT__id_ex__DOT__AluOp_r,2,0);
     VL_SIG8(Top2__DOT__id_ex__DOT__OpA_sel_r,1,0);
     VL_SIG8(Top2__DOT__id_ex__DOT__OpB_sel_r,1,0);
@@ -84,9 +85,10 @@ VL_MODULE(VTop2) {
     VL_SIG8(Top2__DOT__forward__DOT___T_54,0,0);
     VL_SIG8(Top2__DOT__forward__DOT___T_57,0,0);
     VL_SIG8(Top2__DOT__forward__DOT___T_69,0,0);
-    VL_SIG8(Top2__DOT__hazardDetection__DOT___T_37,0,0);
+    VL_SIG8(Top2__DOT__hazardDetection__DOT___T_39,0,0);
+    VL_SIG8(Top2__DOT__hazardDetection__DOT___T_40,0,0);
+    VL_SIG8(Top2__DOT__hazardDetection__DOT___GEN_8,0,0);
     VL_SIG8(Top2__DOT__branchforward__DOT___T_41,0,0);
-    VL_SIG8(Top2__DOT__branchforward__DOT___T_42,0,0);
     VL_SIG8(Top2__DOT__branchforward__DOT___T_43,0,0);
     VL_SIG8(Top2__DOT__branchforward__DOT___T_44,0,0);
     VL_SIG8(Top2__DOT__branchforward__DOT___T_45,0,0);
@@ -110,8 +112,9 @@ VL_MODULE(VTop2) {
     VL_SIG8(Top2__DOT__branchforward__DOT___T_184,0,0);
     VL_SIG8(Top2__DOT__branchforward__DOT___T_185,0,0);
     VL_SIG8(Top2__DOT__branchforward__DOT___T_209,0,0);
-    VL_SIG8(Top2__DOT__branchforward__DOT___T_229,0,0);
     VL_SIG8(Top2__DOT__branchforward__DOT___GEN_34,2,0);
+    VL_SIG16(Top2__DOT__alucontrol__DOT___T_21,10,0);
+    VL_SIG16(Top2__DOT__alucontrol__DOT___GEN_8,10,0);
     VL_SIG(Top2__DOT__register_io_WriteData,31,0);
     VL_SIG(Top2__DOT__register_io_rs1,31,0);
     VL_SIG(Top2__DOT__register_io_rs2,31,0);
@@ -157,9 +160,10 @@ VL_MODULE(VTop2) {
     VL_SIG(Top2__DOT__register__DOT__registers_c_29,31,0);
     VL_SIG(Top2__DOT__register__DOT__registers_c_30,31,0);
     VL_SIG(Top2__DOT__register__DOT__registers_c_31,31,0);
-    VL_SIG(Top2__DOT__alu__DOT___GEN_20,31,0);
+    VL_SIG(Top2__DOT__alu__DOT___GEN_19,31,0);
     VL_SIG(Top2__DOT__immediate__DOT__output2,30,0);
     VL_SIG(Top2__DOT__immediate__DOT__sbt13,31,0);
+    VL_SIG(Top2__DOT__immediate__DOT__output5,31,0);
     VL_SIG(Top2__DOT__immediate__DOT__sbt19,31,0);
     VL_SIG(Top2__DOT__PC__DOT__pc1,31,0);
     VL_SIG(Top2__DOT__mem_wb__DOT__data_mem_Reg,31,0);
@@ -174,9 +178,10 @@ VL_MODULE(VTop2) {
     VL_SIG(Top2__DOT__if_id__DOT__pc_reg,31,0);
     VL_SIG(Top2__DOT__if_id__DOT__pc4_reg,31,0);
     VL_SIG(Top2__DOT__if_id__DOT__inst_reg,31,0);
-    VL_SIG64(Top2__DOT__alu__DOT___GEN_22,62,0);
-    VL_SIG(Top2__DOT__instmem__DOT__mem[1024],31,0);
-    VL_SIG(Top2__DOT__DataMemory__DOT__mem[1024],31,0);
+    VL_SIG64(Top2__DOT__alu__DOT___GEN_20,62,0);
+    VL_SIG64(Top2__DOT__alu__DOT___GEN_22,63,0);
+    VL_SIG(Top2__DOT__instmem__DOT__mem[16384],31,0);
+    VL_SIG(Top2__DOT__DataMemory__DOT__mem[16384],31,0);
     
     // LOCAL VARIABLES
     // Internals; generally not touched by application code

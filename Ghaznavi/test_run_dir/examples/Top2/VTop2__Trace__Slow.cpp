@@ -57,357 +57,363 @@ void VTop2::traceInitThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
     if (0 && vcdp && c) {}  // Prevent unused
     // Body
     {
-	vcdp->declBit  (c+159,"clock",-1);
-	vcdp->declBit  (c+160,"reset",-1);
-	vcdp->declBus  (c+161,"io_instruction",-1,31,0);
-	vcdp->declBus  (c+162,"io_reg_out",-1,31,0);
-	vcdp->declBit  (c+159,"Top2 clock",-1);
-	vcdp->declBit  (c+160,"Top2 reset",-1);
-	vcdp->declBus  (c+161,"Top2 io_instruction",-1,31,0);
-	vcdp->declBus  (c+162,"Top2 io_reg_out",-1,31,0);
-	vcdp->declBus  (c+62,"Top2 control_io_opcode",-1,6,0);
+	vcdp->declBit  (c+163,"clock",-1);
+	vcdp->declBit  (c+164,"reset",-1);
+	vcdp->declBus  (c+165,"io_instruction",-1,31,0);
+	vcdp->declBus  (c+166,"io_reg_out",-1,31,0);
+	vcdp->declBit  (c+167,"io_branch_stall",-1);
+	vcdp->declBit  (c+163,"Top2 clock",-1);
+	vcdp->declBit  (c+164,"Top2 reset",-1);
+	vcdp->declBus  (c+165,"Top2 io_instruction",-1,31,0);
+	vcdp->declBus  (c+166,"Top2 io_reg_out",-1,31,0);
+	vcdp->declBit  (c+167,"Top2 io_branch_stall",-1);
+	vcdp->declBus  (c+65,"Top2 control_io_opcode",-1,6,0);
 	vcdp->declBit  (c+1,"Top2 control_io_MemoryWrite",-1);
 	vcdp->declBit  (c+2,"Top2 control_io_Branch2",-1);
 	vcdp->declBit  (c+3,"Top2 control_io_MemRead",-1);
 	vcdp->declBit  (c+4,"Top2 control_io_RegWrite",-1);
-	vcdp->declBit  (c+3,"Top2 control_io_MemtoReg",-1);
-	vcdp->declBus  (c+5,"Top2 control_io_ALUoperation",-1,2,0);
-	vcdp->declBus  (c+6,"Top2 control_io_operand_A_sel",-1,1,0);
-	vcdp->declBit  (c+7,"Top2 control_io_operand_B_sel",-1);
-	vcdp->declBus  (c+8,"Top2 control_io_extend_sel",-1,1,0);
-	vcdp->declBus  (c+9,"Top2 control_io_next_PC_sel",-1,1,0);
-	vcdp->declBit  (c+159,"Top2 register_clock",-1);
-	vcdp->declBit  (c+63,"Top2 register_io_regwrite",-1);
-	vcdp->declBus  (c+64,"Top2 register_io_rd_sel",-1,4,0);
-	vcdp->declBus  (c+65,"Top2 register_io_rs1_sel",-1,4,0);
-	vcdp->declBus  (c+66,"Top2 register_io_rs2_sel",-1,4,0);
-	vcdp->declBus  (c+10,"Top2 register_io_WriteData",-1,31,0);
-	vcdp->declBus  (c+11,"Top2 register_io_rs1",-1,31,0);
-	vcdp->declBus  (c+12,"Top2 register_io_rs2",-1,31,0);
-	vcdp->declBus  (c+13,"Top2 alu_io_A",-1,31,0);
-	vcdp->declBus  (c+14,"Top2 alu_io_B",-1,31,0);
-	vcdp->declBus  (c+15,"Top2 alu_io_x",-1,31,0);
-	vcdp->declBus  (c+16,"Top2 alu_io_Aluop",-1,4,0);
-	vcdp->declBus  (c+67,"Top2 alucontrol_io_Aluop",-1,2,0);
-	vcdp->declBit  (c+68,"Top2 alucontrol_io_Func7",-1);
-	vcdp->declBus  (c+69,"Top2 alucontrol_io_Func3",-1,2,0);
-	vcdp->declBus  (c+16,"Top2 alucontrol_io_control",-1,4,0);
-	vcdp->declBus  (c+70,"Top2 immediate_io_Instruction",-1,31,0);
-	vcdp->declBus  (c+71,"Top2 immediate_io_PC",-1,31,0);
-	vcdp->declBus  (c+17,"Top2 immediate_io_I_Immediate",-1,31,0);
-	vcdp->declBus  (c+18,"Top2 immediate_io_S_Immediate",-1,31,0);
-	vcdp->declBus  (c+72,"Top2 immediate_io_U_Immediate",-1,31,0);
-	vcdp->declBus  (c+19,"Top2 immediate_io_SB_Immediate",-1,31,0);
-	vcdp->declBus  (c+20,"Top2 immediate_io_UJ_Immediate",-1,31,0);
-	vcdp->declBit  (c+159,"Top2 PC_clock",-1);
-	vcdp->declBit  (c+160,"Top2 PC_reset",-1);
-	vcdp->declBus  (c+21,"Top2 PC_io_input",-1,31,0);
-	vcdp->declBus  (c+73,"Top2 PC_io_pc",-1,31,0);
-	vcdp->declBus  (c+74,"Top2 PC_io_pc4",-1,31,0);
-	vcdp->declBit  (c+159,"Top2 instmem_clock",-1);
-	vcdp->declBus  (c+75,"Top2 instmem_io_wrAddr",-1,31,0);
-	vcdp->declBus  (c+22,"Top2 instmem_io_rdData",-1,31,0);
-	vcdp->declBit  (c+159,"Top2 DataMemory_clock",-1);
-	vcdp->declBus  (c+76,"Top2 DataMemory_io_wrAddr",-1,7,0);
-	vcdp->declBus  (c+77,"Top2 DataMemory_io_wrData",-1,31,0);
-	vcdp->declBit  (c+78,"Top2 DataMemory_io_MemRead",-1);
-	vcdp->declBus  (c+23,"Top2 DataMemory_io_Data",-1,31,0);
-	vcdp->declBit  (c+79,"Top2 DataMemory_io_MemWrite",-1);
-	vcdp->declBit  (c+159,"Top2 mem_wb_clock",-1);
-	vcdp->declBit  (c+160,"Top2 mem_wb_reset",-1);
-	vcdp->declBit  (c+80,"Top2 mem_wb_io_Regwr",-1);
-	vcdp->declBit  (c+78,"Top2 mem_wb_io_MemtoReg",-1);
-	vcdp->declBus  (c+81,"Top2 mem_wb_io_Rd_sel",-1,4,0);
-	vcdp->declBus  (c+23,"Top2 mem_wb_io_data_mem_in",-1,31,0);
-	vcdp->declBus  (c+82,"Top2 mem_wb_io_Aluout",-1,31,0);
-	vcdp->declBit  (c+63,"Top2 mem_wb_io_Regwr_out",-1);
-	vcdp->declBit  (c+83,"Top2 mem_wb_io_MemtoReg_out",-1);
-	vcdp->declBus  (c+64,"Top2 mem_wb_io_Rd_sel_out",-1,4,0);
-	vcdp->declBus  (c+84,"Top2 mem_wb_io_data_mem_out",-1,31,0);
-	vcdp->declBus  (c+85,"Top2 mem_wb_io_Aluout_2",-1,31,0);
-	vcdp->declBit  (c+159,"Top2 ex_mem_clock",-1);
-	vcdp->declBit  (c+160,"Top2 ex_mem_reset",-1);
-	vcdp->declBit  (c+86,"Top2 ex_mem_io_Memwr",-1);
-	vcdp->declBit  (c+87,"Top2 ex_mem_io_Memrd",-1);
-	vcdp->declBit  (c+88,"Top2 ex_mem_io_Regwr",-1);
-	vcdp->declBit  (c+87,"Top2 ex_mem_io_MemtoReg",-1);
-	vcdp->declBus  (c+24,"Top2 ex_mem_io_Rs2",-1,31,0);
-	vcdp->declBus  (c+89,"Top2 ex_mem_io_Rd_sel",-1,4,0);
-	vcdp->declBus  (c+15,"Top2 ex_mem_io_Alu_out",-1,31,0);
-	vcdp->declBit  (c+79,"Top2 ex_mem_io_Memwr_out",-1);
-	vcdp->declBit  (c+78,"Top2 ex_mem_io_Memrd_out",-1);
-	vcdp->declBit  (c+80,"Top2 ex_mem_io_Regwr_out",-1);
-	vcdp->declBit  (c+78,"Top2 ex_mem_io_MemtoReg_out",-1);
-	vcdp->declBus  (c+77,"Top2 ex_mem_io_Rs2_out",-1,31,0);
-	vcdp->declBus  (c+81,"Top2 ex_mem_io_Rd_sel_out",-1,4,0);
-	vcdp->declBus  (c+82,"Top2 ex_mem_io_Alu_out2",-1,31,0);
-	vcdp->declBit  (c+159,"Top2 id_ex_clock",-1);
-	vcdp->declBit  (c+160,"Top2 id_ex_reset",-1);
-	vcdp->declBus  (c+71,"Top2 id_ex_io_PC",-1,31,0);
-	vcdp->declBus  (c+90,"Top2 id_ex_io_PC4",-1,31,0);
-	vcdp->declBus  (c+25,"Top2 id_ex_io_Immediate",-1,31,0);
-	vcdp->declBus  (c+26,"Top2 id_ex_io_rs1_in",-1,31,0);
-	vcdp->declBus  (c+27,"Top2 id_ex_io_rs2_in",-1,31,0);
-	vcdp->declBus  (c+91,"Top2 id_ex_io_rd_sel_in",-1,4,0);
-	vcdp->declBus  (c+92,"Top2 id_ex_io_func3_in",-1,2,0);
-	vcdp->declBit  (c+93,"Top2 id_ex_io_func7_in",-1);
-	vcdp->declBit  (c+28,"Top2 id_ex_io_ctMemWr_in",-1);
-	vcdp->declBit  (c+29,"Top2 id_ex_io_ctMemRd_in",-1);
-	vcdp->declBit  (c+30,"Top2 id_ex_io_ctRegWr_in",-1);
-	vcdp->declBit  (c+29,"Top2 id_ex_io_ctMemToReg_in",-1);
-	vcdp->declBus  (c+31,"Top2 id_ex_io_ctAluOp_in",-1,2,0);
-	vcdp->declBus  (c+32,"Top2 id_ex_io_ctOpA_sel_in",-1,1,0);
-	vcdp->declBit  (c+33,"Top2 id_ex_io_ctOpB_sel_in",-1);
-	vcdp->declBus  (c+65,"Top2 id_ex_io_rs1_sel_in",-1,4,0);
-	vcdp->declBus  (c+66,"Top2 id_ex_io_rs2_sel_in",-1,4,0);
-	vcdp->declBus  (c+94,"Top2 id_ex_io_pc_out",-1,31,0);
-	vcdp->declBus  (c+95,"Top2 id_ex_io_pc4_out",-1,31,0);
-	vcdp->declBus  (c+96,"Top2 id_ex_io_rs1",-1,31,0);
-	vcdp->declBus  (c+97,"Top2 id_ex_io_rs2",-1,31,0);
-	vcdp->declBus  (c+98,"Top2 id_ex_io_Immediate_out",-1,31,0);
-	vcdp->declBus  (c+69,"Top2 id_ex_io_func3_out",-1,2,0);
-	vcdp->declBit  (c+68,"Top2 id_ex_io_func7_out",-1);
-	vcdp->declBus  (c+89,"Top2 id_ex_io_rd_sel_out",-1,4,0);
-	vcdp->declBit  (c+86,"Top2 id_ex_io_MemWrite",-1);
-	vcdp->declBit  (c+87,"Top2 id_ex_io_MemRead",-1);
-	vcdp->declBit  (c+88,"Top2 id_ex_io_RegWrite",-1);
-	vcdp->declBit  (c+87,"Top2 id_ex_io_MemtoReg",-1);
-	vcdp->declBus  (c+67,"Top2 id_ex_io_ALUoperation",-1,2,0);
-	vcdp->declBus  (c+99,"Top2 id_ex_io_operand_A_sel",-1,1,0);
-	vcdp->declBit  (c+100,"Top2 id_ex_io_operand_B_sel",-1);
-	vcdp->declBus  (c+101,"Top2 id_ex_io_rs1_sel_out",-1,4,0);
-	vcdp->declBus  (c+102,"Top2 id_ex_io_rs2_sel_out",-1,4,0);
-	vcdp->declBit  (c+159,"Top2 if_id_clock",-1);
-	vcdp->declBit  (c+160,"Top2 if_id_reset",-1);
-	vcdp->declBus  (c+34,"Top2 if_id_io_pc_in",-1,31,0);
-	vcdp->declBus  (c+35,"Top2 if_id_io_pc4_in",-1,31,0);
-	vcdp->declBus  (c+36,"Top2 if_id_io_data_in",-1,31,0);
-	vcdp->declBus  (c+71,"Top2 if_id_io_pc_out",-1,31,0);
-	vcdp->declBus  (c+90,"Top2 if_id_io_pc4_out",-1,31,0);
-	vcdp->declBus  (c+70,"Top2 if_id_io_rdData",-1,31,0);
-	vcdp->declBus  (c+37,"Top2 JALR_io_A",-1,31,0);
-	vcdp->declBus  (c+17,"Top2 JALR_io_B",-1,31,0);
-	vcdp->declBus  (c+38,"Top2 JALR_io_x",-1,31,0);
-	vcdp->declBus  (c+101,"Top2 forward_io_rs1_sel_id",-1,4,0);
-	vcdp->declBus  (c+102,"Top2 forward_io_rs2_sel_id",-1,4,0);
-	vcdp->declBus  (c+81,"Top2 forward_io_ex_mem_rd",-1,4,0);
-	vcdp->declBus  (c+64,"Top2 forward_io_mem_wb_rd",-1,4,0);
-	vcdp->declBit  (c+80,"Top2 forward_io_ex_mem_regwrite",-1);
-	vcdp->declBit  (c+63,"Top2 forward_io_mem_wb_regwrite",-1);
-	vcdp->declBus  (c+39,"Top2 forward_io_forward_a",-1,1,0);
-	vcdp->declBus  (c+40,"Top2 forward_io_forward_b",-1,1,0);
-	vcdp->declBus  (c+70,"Top2 hazardDetection_io_if_id_inst",-1,31,0);
-	vcdp->declBit  (c+87,"Top2 hazardDetection_io_id_ex_memread",-1);
-	vcdp->declBus  (c+89,"Top2 hazardDetection_io_id_ex_rd_sel",-1,4,0);
-	vcdp->declBus  (c+90,"Top2 hazardDetection_io_if_id_pc_in",-1,31,0);
-	vcdp->declBus  (c+71,"Top2 hazardDetection_io_current_pc_in",-1,31,0);
-	vcdp->declBit  (c+41,"Top2 hazardDetection_io_inst_forward",-1);
-	vcdp->declBit  (c+41,"Top2 hazardDetection_io_pc_forward",-1);
-	vcdp->declBit  (c+41,"Top2 hazardDetection_io_ctrl_forward",-1);
-	vcdp->declBus  (c+70,"Top2 hazardDetection_io_inst_out",-1,31,0);
-	vcdp->declBus  (c+90,"Top2 hazardDetection_io_pc_out",-1,31,0);
-	vcdp->declBus  (c+71,"Top2 hazardDetection_io_current_pc_out",-1,31,0);
-	vcdp->declBus  (c+65,"Top2 hazardDetection_io_rs1_sel",-1,4,0);
-	vcdp->declBus  (c+66,"Top2 hazardDetection_io_rs2_sel",-1,4,0);
-	vcdp->declBus  (c+42,"Top2 branchlogic_io_rs1_in",-1,31,0);
-	vcdp->declBus  (c+43,"Top2 branchlogic_io_rs2_in",-1,31,0);
-	vcdp->declBus  (c+92,"Top2 branchlogic_io_func3_in",-1,2,0);
+	vcdp->declBit  (c+5,"Top2 control_io_MemtoReg",-1);
+	vcdp->declBus  (c+6,"Top2 control_io_ALUoperation",-1,2,0);
+	vcdp->declBus  (c+7,"Top2 control_io_operand_A_sel",-1,1,0);
+	vcdp->declBit  (c+8,"Top2 control_io_operand_B_sel",-1);
+	vcdp->declBus  (c+9,"Top2 control_io_extend_sel",-1,1,0);
+	vcdp->declBus  (c+10,"Top2 control_io_next_PC_sel",-1,1,0);
+	vcdp->declBit  (c+163,"Top2 register_clock",-1);
+	vcdp->declBit  (c+66,"Top2 register_io_regwrite",-1);
+	vcdp->declBus  (c+67,"Top2 register_io_rd_sel",-1,4,0);
+	vcdp->declBus  (c+68,"Top2 register_io_rs1_sel",-1,4,0);
+	vcdp->declBus  (c+69,"Top2 register_io_rs2_sel",-1,4,0);
+	vcdp->declBus  (c+11,"Top2 register_io_WriteData",-1,31,0);
+	vcdp->declBus  (c+12,"Top2 register_io_rs1",-1,31,0);
+	vcdp->declBus  (c+13,"Top2 register_io_rs2",-1,31,0);
+	vcdp->declBus  (c+14,"Top2 alu_io_A",-1,31,0);
+	vcdp->declBus  (c+15,"Top2 alu_io_B",-1,31,0);
+	vcdp->declBus  (c+16,"Top2 alu_io_x",-1,31,0);
+	vcdp->declBus  (c+17,"Top2 alu_io_Aluop",-1,4,0);
+	vcdp->declBus  (c+70,"Top2 alucontrol_io_Aluop",-1,2,0);
+	vcdp->declBus  (c+71,"Top2 alucontrol_io_Func7",-1,6,0);
+	vcdp->declBus  (c+72,"Top2 alucontrol_io_Func3",-1,2,0);
+	vcdp->declBus  (c+17,"Top2 alucontrol_io_control",-1,4,0);
+	vcdp->declBus  (c+73,"Top2 immediate_io_Instruction",-1,31,0);
+	vcdp->declBus  (c+74,"Top2 immediate_io_PC",-1,31,0);
+	vcdp->declBus  (c+18,"Top2 immediate_io_I_Immediate",-1,31,0);
+	vcdp->declBus  (c+19,"Top2 immediate_io_S_Immediate",-1,31,0);
+	vcdp->declBus  (c+75,"Top2 immediate_io_U_Immediate",-1,31,0);
+	vcdp->declBus  (c+20,"Top2 immediate_io_SB_Immediate",-1,31,0);
+	vcdp->declBus  (c+21,"Top2 immediate_io_UJ_Immediate",-1,31,0);
+	vcdp->declBit  (c+163,"Top2 PC_clock",-1);
+	vcdp->declBit  (c+164,"Top2 PC_reset",-1);
+	vcdp->declBus  (c+22,"Top2 PC_io_input",-1,31,0);
+	vcdp->declBus  (c+76,"Top2 PC_io_pc",-1,31,0);
+	vcdp->declBus  (c+77,"Top2 PC_io_pc4",-1,31,0);
+	vcdp->declBit  (c+163,"Top2 instmem_clock",-1);
+	vcdp->declBus  (c+78,"Top2 instmem_io_wrAddr",-1,31,0);
+	vcdp->declBus  (c+23,"Top2 instmem_io_rdData",-1,31,0);
+	vcdp->declBit  (c+163,"Top2 DataMemory_clock",-1);
+	vcdp->declBus  (c+79,"Top2 DataMemory_io_wrAddr",-1,7,0);
+	vcdp->declBus  (c+80,"Top2 DataMemory_io_wrData",-1,31,0);
+	vcdp->declBit  (c+81,"Top2 DataMemory_io_MemRead",-1);
+	vcdp->declBus  (c+24,"Top2 DataMemory_io_Data",-1,31,0);
+	vcdp->declBit  (c+82,"Top2 DataMemory_io_MemWrite",-1);
+	vcdp->declBit  (c+163,"Top2 mem_wb_clock",-1);
+	vcdp->declBit  (c+164,"Top2 mem_wb_reset",-1);
+	vcdp->declBit  (c+83,"Top2 mem_wb_io_Regwr",-1);
+	vcdp->declBit  (c+84,"Top2 mem_wb_io_MemtoReg",-1);
+	vcdp->declBus  (c+85,"Top2 mem_wb_io_Rd_sel",-1,4,0);
+	vcdp->declBus  (c+24,"Top2 mem_wb_io_data_mem_in",-1,31,0);
+	vcdp->declBus  (c+86,"Top2 mem_wb_io_Aluout",-1,31,0);
+	vcdp->declBit  (c+66,"Top2 mem_wb_io_Regwr_out",-1);
+	vcdp->declBit  (c+87,"Top2 mem_wb_io_MemtoReg_out",-1);
+	vcdp->declBus  (c+67,"Top2 mem_wb_io_Rd_sel_out",-1,4,0);
+	vcdp->declBus  (c+88,"Top2 mem_wb_io_data_mem_out",-1,31,0);
+	vcdp->declBus  (c+89,"Top2 mem_wb_io_Aluout_2",-1,31,0);
+	vcdp->declBit  (c+163,"Top2 ex_mem_clock",-1);
+	vcdp->declBit  (c+164,"Top2 ex_mem_reset",-1);
+	vcdp->declBit  (c+90,"Top2 ex_mem_io_Memwr",-1);
+	vcdp->declBit  (c+91,"Top2 ex_mem_io_Memrd",-1);
+	vcdp->declBit  (c+92,"Top2 ex_mem_io_Regwr",-1);
+	vcdp->declBit  (c+93,"Top2 ex_mem_io_MemtoReg",-1);
+	vcdp->declBus  (c+25,"Top2 ex_mem_io_Rs2",-1,31,0);
+	vcdp->declBus  (c+94,"Top2 ex_mem_io_Rd_sel",-1,4,0);
+	vcdp->declBus  (c+16,"Top2 ex_mem_io_Alu_out",-1,31,0);
+	vcdp->declBit  (c+82,"Top2 ex_mem_io_Memwr_out",-1);
+	vcdp->declBit  (c+81,"Top2 ex_mem_io_Memrd_out",-1);
+	vcdp->declBit  (c+83,"Top2 ex_mem_io_Regwr_out",-1);
+	vcdp->declBit  (c+84,"Top2 ex_mem_io_MemtoReg_out",-1);
+	vcdp->declBus  (c+80,"Top2 ex_mem_io_Rs2_out",-1,31,0);
+	vcdp->declBus  (c+85,"Top2 ex_mem_io_Rd_sel_out",-1,4,0);
+	vcdp->declBus  (c+86,"Top2 ex_mem_io_Alu_out2",-1,31,0);
+	vcdp->declBit  (c+163,"Top2 id_ex_clock",-1);
+	vcdp->declBit  (c+164,"Top2 id_ex_reset",-1);
+	vcdp->declBus  (c+74,"Top2 id_ex_io_PC",-1,31,0);
+	vcdp->declBus  (c+95,"Top2 id_ex_io_PC4",-1,31,0);
+	vcdp->declBus  (c+26,"Top2 id_ex_io_Immediate",-1,31,0);
+	vcdp->declBus  (c+27,"Top2 id_ex_io_rs1_in",-1,31,0);
+	vcdp->declBus  (c+28,"Top2 id_ex_io_rs2_in",-1,31,0);
+	vcdp->declBus  (c+96,"Top2 id_ex_io_rd_sel_in",-1,4,0);
+	vcdp->declBus  (c+97,"Top2 id_ex_io_func3_in",-1,2,0);
+	vcdp->declBus  (c+98,"Top2 id_ex_io_func7_in",-1,6,0);
+	vcdp->declBit  (c+29,"Top2 id_ex_io_ctMemWr_in",-1);
+	vcdp->declBit  (c+30,"Top2 id_ex_io_ctMemRd_in",-1);
+	vcdp->declBit  (c+31,"Top2 id_ex_io_ctRegWr_in",-1);
+	vcdp->declBit  (c+32,"Top2 id_ex_io_ctMemToReg_in",-1);
+	vcdp->declBus  (c+33,"Top2 id_ex_io_ctAluOp_in",-1,2,0);
+	vcdp->declBus  (c+34,"Top2 id_ex_io_ctOpA_sel_in",-1,1,0);
+	vcdp->declBit  (c+35,"Top2 id_ex_io_ctOpB_sel_in",-1);
+	vcdp->declBus  (c+68,"Top2 id_ex_io_rs1_sel_in",-1,4,0);
+	vcdp->declBus  (c+69,"Top2 id_ex_io_rs2_sel_in",-1,4,0);
+	vcdp->declBus  (c+99,"Top2 id_ex_io_pc_out",-1,31,0);
+	vcdp->declBus  (c+100,"Top2 id_ex_io_pc4_out",-1,31,0);
+	vcdp->declBus  (c+101,"Top2 id_ex_io_rs1",-1,31,0);
+	vcdp->declBus  (c+102,"Top2 id_ex_io_rs2",-1,31,0);
+	vcdp->declBus  (c+103,"Top2 id_ex_io_Immediate_out",-1,31,0);
+	vcdp->declBus  (c+72,"Top2 id_ex_io_func3_out",-1,2,0);
+	vcdp->declBus  (c+71,"Top2 id_ex_io_func7_out",-1,6,0);
+	vcdp->declBus  (c+94,"Top2 id_ex_io_rd_sel_out",-1,4,0);
+	vcdp->declBit  (c+90,"Top2 id_ex_io_MemWrite",-1);
+	vcdp->declBit  (c+91,"Top2 id_ex_io_MemRead",-1);
+	vcdp->declBit  (c+92,"Top2 id_ex_io_RegWrite",-1);
+	vcdp->declBit  (c+93,"Top2 id_ex_io_MemtoReg",-1);
+	vcdp->declBus  (c+70,"Top2 id_ex_io_ALUoperation",-1,2,0);
+	vcdp->declBus  (c+104,"Top2 id_ex_io_operand_A_sel",-1,1,0);
+	vcdp->declBit  (c+105,"Top2 id_ex_io_operand_B_sel",-1);
+	vcdp->declBus  (c+106,"Top2 id_ex_io_rs1_sel_out",-1,4,0);
+	vcdp->declBus  (c+107,"Top2 id_ex_io_rs2_sel_out",-1,4,0);
+	vcdp->declBit  (c+163,"Top2 if_id_clock",-1);
+	vcdp->declBit  (c+164,"Top2 if_id_reset",-1);
+	vcdp->declBus  (c+36,"Top2 if_id_io_pc_in",-1,31,0);
+	vcdp->declBus  (c+37,"Top2 if_id_io_pc4_in",-1,31,0);
+	vcdp->declBus  (c+38,"Top2 if_id_io_data_in",-1,31,0);
+	vcdp->declBus  (c+74,"Top2 if_id_io_pc_out",-1,31,0);
+	vcdp->declBus  (c+95,"Top2 if_id_io_pc4_out",-1,31,0);
+	vcdp->declBus  (c+73,"Top2 if_id_io_rdData",-1,31,0);
+	vcdp->declBus  (c+39,"Top2 JALR_io_A",-1,31,0);
+	vcdp->declBus  (c+18,"Top2 JALR_io_B",-1,31,0);
+	vcdp->declBus  (c+40,"Top2 JALR_io_x",-1,31,0);
+	vcdp->declBus  (c+106,"Top2 forward_io_rs1_sel_id",-1,4,0);
+	vcdp->declBus  (c+107,"Top2 forward_io_rs2_sel_id",-1,4,0);
+	vcdp->declBus  (c+85,"Top2 forward_io_ex_mem_rd",-1,4,0);
+	vcdp->declBus  (c+67,"Top2 forward_io_mem_wb_rd",-1,4,0);
+	vcdp->declBit  (c+83,"Top2 forward_io_ex_mem_regwrite",-1);
+	vcdp->declBit  (c+66,"Top2 forward_io_mem_wb_regwrite",-1);
+	vcdp->declBus  (c+41,"Top2 forward_io_forward_a",-1,1,0);
+	vcdp->declBus  (c+42,"Top2 forward_io_forward_b",-1,1,0);
+	vcdp->declBus  (c+73,"Top2 hazardDetection_io_if_id_inst",-1,31,0);
+	vcdp->declBit  (c+3,"Top2 hazardDetection_io_if_id_memread",-1);
+	vcdp->declBit  (c+91,"Top2 hazardDetection_io_id_ex_memread",-1);
+	vcdp->declBus  (c+94,"Top2 hazardDetection_io_id_ex_rd_sel",-1,4,0);
+	vcdp->declBus  (c+95,"Top2 hazardDetection_io_if_id_pc_in",-1,31,0);
+	vcdp->declBus  (c+74,"Top2 hazardDetection_io_current_pc_in",-1,31,0);
+	vcdp->declBit  (c+43,"Top2 hazardDetection_io_inst_forward",-1);
+	vcdp->declBit  (c+43,"Top2 hazardDetection_io_pc_forward",-1);
+	vcdp->declBit  (c+43,"Top2 hazardDetection_io_ctrl_forward",-1);
+	vcdp->declBus  (c+73,"Top2 hazardDetection_io_inst_out",-1,31,0);
+	vcdp->declBus  (c+95,"Top2 hazardDetection_io_pc_out",-1,31,0);
+	vcdp->declBus  (c+74,"Top2 hazardDetection_io_current_pc_out",-1,31,0);
+	vcdp->declBus  (c+68,"Top2 hazardDetection_io_rs1_sel",-1,4,0);
+	vcdp->declBus  (c+69,"Top2 hazardDetection_io_rs2_sel",-1,4,0);
+	vcdp->declBit  (c+2,"Top2 hazardDetection_io_control_branch",-1);
+	vcdp->declBus  (c+44,"Top2 branchlogic_io_rs1_in",-1,31,0);
+	vcdp->declBus  (c+45,"Top2 branchlogic_io_rs2_in",-1,31,0);
+	vcdp->declBus  (c+97,"Top2 branchlogic_io_func3_in",-1,2,0);
 	vcdp->declBit  (c+2,"Top2 branchlogic_io_branch",-1);
-	vcdp->declBit  (c+44,"Top2 branchlogic_io_output_x",-1);
+	vcdp->declBit  (c+46,"Top2 branchlogic_io_output_x",-1);
 	vcdp->declBit  (c+2,"Top2 branchlogic_io_branch2",-1);
-	vcdp->declBus  (c+89,"Top2 branchforward_io_id_ex_rd_sel",-1,4,0);
-	vcdp->declBit  (c+87,"Top2 branchforward_io_id_ex_memread",-1);
-	vcdp->declBus  (c+81,"Top2 branchforward_io_ex_mem_rd_sel",-1,4,0);
-	vcdp->declBit  (c+87,"Top2 branchforward_io_ex_mem_memread",-1);
-	vcdp->declBus  (c+64,"Top2 branchforward_io_mem_wb_rd_sel",-1,4,0);
-	vcdp->declBit  (c+63,"Top2 branchforward_io_mem_wb_regwrite",-1);
-	vcdp->declBus  (c+65,"Top2 branchforward_io_rs1_sel",-1,4,0);
-	vcdp->declBus  (c+66,"Top2 branchforward_io_rs2_sel",-1,4,0);
+	vcdp->declBus  (c+94,"Top2 branchforward_io_id_ex_rd_sel",-1,4,0);
+	vcdp->declBit  (c+91,"Top2 branchforward_io_id_ex_memread",-1);
+	vcdp->declBit  (c+92,"Top2 branchforward_io_id_ex_regwrite",-1);
+	vcdp->declBit  (c+83,"Top2 branchforward_io_ex_mem_regwrite",-1);
+	vcdp->declBus  (c+85,"Top2 branchforward_io_ex_mem_rd_sel",-1,4,0);
+	vcdp->declBit  (c+91,"Top2 branchforward_io_ex_mem_memread",-1);
+	vcdp->declBus  (c+67,"Top2 branchforward_io_mem_wb_rd_sel",-1,4,0);
+	vcdp->declBit  (c+66,"Top2 branchforward_io_mem_wb_regwrite",-1);
+	vcdp->declBus  (c+68,"Top2 branchforward_io_rs1_sel",-1,4,0);
+	vcdp->declBus  (c+69,"Top2 branchforward_io_rs2_sel",-1,4,0);
 	vcdp->declBit  (c+2,"Top2 branchforward_io_ctrl_branch",-1);
-	vcdp->declBus  (c+45,"Top2 branchforward_io_forward_a",-1,3,0);
-	vcdp->declBus  (c+46,"Top2 branchforward_io_forward_b",-1,3,0);
-	vcdp->declBus  (c+65,"Top2 structdetect_io_rs1_sel",-1,4,0);
-	vcdp->declBus  (c+66,"Top2 structdetect_io_rs2_sel",-1,4,0);
-	vcdp->declBit  (c+63,"Top2 structdetect_io_mem_wb_regwrite",-1);
-	vcdp->declBus  (c+64,"Top2 structdetect_io_mem_wb_rd_sel",-1,4,0);
-	vcdp->declBit  (c+103,"Top2 structdetect_io_forward_rs1",-1);
-	vcdp->declBit  (c+104,"Top2 structdetect_io_forward_rs2",-1);
-	// Tracing: Top2 _T_17 // Ignored: Inlined leading underscore at Top2.v:2753
-	// Tracing: Top2 _T_26 // Ignored: Inlined leading underscore at Top2.v:2754
-	// Tracing: Top2 _T_28 // Ignored: Inlined leading underscore at Top2.v:2755
-	// Tracing: Top2 _T_30 // Ignored: Inlined leading underscore at Top2.v:2756
-	// Tracing: Top2 _T_32 // Ignored: Inlined leading underscore at Top2.v:2757
-	// Tracing: Top2 _T_34 // Ignored: Inlined leading underscore at Top2.v:2758
-	// Tracing: Top2 _T_36 // Ignored: Inlined leading underscore at Top2.v:2759
-	// Tracing: Top2 _T_38 // Ignored: Inlined leading underscore at Top2.v:2760
-	// Tracing: Top2 _T_40 // Ignored: Inlined leading underscore at Top2.v:2761
-	// Tracing: Top2 _T_42 // Ignored: Inlined leading underscore at Top2.v:2762
-	// Tracing: Top2 _T_44 // Ignored: Inlined leading underscore at Top2.v:2763
-	// Tracing: Top2 _T_46 // Ignored: Inlined leading underscore at Top2.v:2764
-	// Tracing: Top2 _GEN_0 // Ignored: Inlined leading underscore at Top2.v:2765
-	// Tracing: Top2 _GEN_1 // Ignored: Inlined leading underscore at Top2.v:2766
-	// Tracing: Top2 _GEN_2 // Ignored: Inlined leading underscore at Top2.v:2767
-	// Tracing: Top2 _GEN_3 // Ignored: Inlined leading underscore at Top2.v:2768
-	// Tracing: Top2 _GEN_4 // Ignored: Inlined leading underscore at Top2.v:2769
-	// Tracing: Top2 _GEN_5 // Ignored: Inlined leading underscore at Top2.v:2770
-	// Tracing: Top2 _GEN_6 // Ignored: Inlined leading underscore at Top2.v:2771
-	// Tracing: Top2 _GEN_7 // Ignored: Inlined leading underscore at Top2.v:2772
-	// Tracing: Top2 _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2773
-	// Tracing: Top2 _GEN_9 // Ignored: Inlined leading underscore at Top2.v:2774
-	// Tracing: Top2 _GEN_10 // Ignored: Inlined leading underscore at Top2.v:2775
-	// Tracing: Top2 _GEN_11 // Ignored: Inlined leading underscore at Top2.v:2776
-	// Tracing: Top2 _GEN_12 // Ignored: Inlined leading underscore at Top2.v:2777
-	// Tracing: Top2 _GEN_13 // Ignored: Inlined leading underscore at Top2.v:2778
-	// Tracing: Top2 _GEN_14 // Ignored: Inlined leading underscore at Top2.v:2779
-	// Tracing: Top2 _GEN_15 // Ignored: Inlined leading underscore at Top2.v:2780
-	// Tracing: Top2 _GEN_16 // Ignored: Inlined leading underscore at Top2.v:2781
-	// Tracing: Top2 _GEN_17 // Ignored: Inlined leading underscore at Top2.v:2782
-	// Tracing: Top2 _GEN_18 // Ignored: Inlined leading underscore at Top2.v:2783
-	// Tracing: Top2 _GEN_19 // Ignored: Inlined leading underscore at Top2.v:2784
-	// Tracing: Top2 _T_48 // Ignored: Inlined leading underscore at Top2.v:2785
-	// Tracing: Top2 _T_50 // Ignored: Inlined leading underscore at Top2.v:2786
-	// Tracing: Top2 _T_52 // Ignored: Inlined leading underscore at Top2.v:2787
-	// Tracing: Top2 _T_54 // Ignored: Inlined leading underscore at Top2.v:2788
-	// Tracing: Top2 _T_56 // Ignored: Inlined leading underscore at Top2.v:2789
-	// Tracing: Top2 _T_58 // Ignored: Inlined leading underscore at Top2.v:2790
-	// Tracing: Top2 _GEN_22 // Ignored: Inlined leading underscore at Top2.v:2791
-	// Tracing: Top2 _GEN_23 // Ignored: Inlined leading underscore at Top2.v:2792
-	// Tracing: Top2 _GEN_24 // Ignored: Inlined leading underscore at Top2.v:2793
-	// Tracing: Top2 _GEN_25 // Ignored: Inlined leading underscore at Top2.v:2794
-	// Tracing: Top2 _GEN_26 // Ignored: Inlined leading underscore at Top2.v:2795
-	// Tracing: Top2 _T_60 // Ignored: Inlined leading underscore at Top2.v:2796
-	// Tracing: Top2 _T_62 // Ignored: Inlined leading underscore at Top2.v:2797
-	// Tracing: Top2 _T_64 // Ignored: Inlined leading underscore at Top2.v:2798
-	// Tracing: Top2 _GEN_28 // Ignored: Inlined leading underscore at Top2.v:2799
-	// Tracing: Top2 _GEN_29 // Ignored: Inlined leading underscore at Top2.v:2800
-	// Tracing: Top2 _T_66 // Ignored: Inlined leading underscore at Top2.v:2801
-	// Tracing: Top2 _GEN_30 // Ignored: Inlined leading underscore at Top2.v:2802
-	// Tracing: Top2 _T_70 // Ignored: Inlined leading underscore at Top2.v:2803
-	// Tracing: Top2 _GEN_32 // Ignored: Inlined leading underscore at Top2.v:2804
-	// Tracing: Top2 _GEN_33 // Ignored: Inlined leading underscore at Top2.v:2805
-	// Tracing: Top2 _T_72 // Ignored: Inlined leading underscore at Top2.v:2806
-	// Tracing: Top2 _T_74 // Ignored: Inlined leading underscore at Top2.v:2807
-	// Tracing: Top2 _T_76 // Ignored: Inlined leading underscore at Top2.v:2808
-	// Tracing: Top2 _T_78 // Ignored: Inlined leading underscore at Top2.v:2809
-	// Tracing: Top2 _T_79 // Ignored: Inlined leading underscore at Top2.v:2810
-	// Tracing: Top2 _T_80 // Ignored: Inlined leading underscore at Top2.v:2811
-	// Tracing: Top2 _T_85 // Ignored: Inlined leading underscore at Top2.v:2812
-	// Tracing: Top2 _T_86 // Ignored: Inlined leading underscore at Top2.v:2813
-	// Tracing: Top2 _GEN_34 // Ignored: Inlined leading underscore at Top2.v:2814
-	// Tracing: Top2 _GEN_35 // Ignored: Inlined leading underscore at Top2.v:2815
-	// Tracing: Top2 _GEN_36 // Ignored: Inlined leading underscore at Top2.v:2816
-	// Tracing: Top2 _GEN_37 // Ignored: Inlined leading underscore at Top2.v:2817
-	// Tracing: Top2 _GEN_38 // Ignored: Inlined leading underscore at Top2.v:2818
-	// Tracing: Top2 _GEN_39 // Ignored: Inlined leading underscore at Top2.v:2819
-	// Tracing: Top2 _GEN_40 // Ignored: Inlined leading underscore at Top2.v:2820
-	// Tracing: Top2 _GEN_41 // Ignored: Inlined leading underscore at Top2.v:2821
-	// Tracing: Top2 _GEN_42 // Ignored: Inlined leading underscore at Top2.v:2822
-	// Tracing: Top2 _GEN_43 // Ignored: Inlined leading underscore at Top2.v:2823
-	// Tracing: Top2 _GEN_44 // Ignored: Inlined leading underscore at Top2.v:2824
-	// Tracing: Top2 _T_91 // Ignored: Inlined leading underscore at Top2.v:2825
-	// Tracing: Top2 _T_92 // Ignored: Inlined leading underscore at Top2.v:2826
-	// Tracing: Top2 _T_97 // Ignored: Inlined leading underscore at Top2.v:2827
-	// Tracing: Top2 _T_98 // Ignored: Inlined leading underscore at Top2.v:2828
-	// Tracing: Top2 _T_103 // Ignored: Inlined leading underscore at Top2.v:2829
-	// Tracing: Top2 _T_107 // Ignored: Inlined leading underscore at Top2.v:2830
-	// Tracing: Top2 _GEN_45 // Ignored: Inlined leading underscore at Top2.v:2831
-	// Tracing: Top2 _GEN_46 // Ignored: Inlined leading underscore at Top2.v:2832
-	// Tracing: Top2 _GEN_47 // Ignored: Inlined leading underscore at Top2.v:2833
-	// Tracing: Top2 _GEN_48 // Ignored: Inlined leading underscore at Top2.v:2834
-	// Tracing: Top2 _GEN_49 // Ignored: Inlined leading underscore at Top2.v:2835
-	// Tracing: Top2 _GEN_50 // Ignored: Inlined leading underscore at Top2.v:2836
-	// Tracing: Top2 _GEN_51 // Ignored: Inlined leading underscore at Top2.v:2837
-	// Tracing: Top2 _GEN_52 // Ignored: Inlined leading underscore at Top2.v:2838
-	// Tracing: Top2 _GEN_53 // Ignored: Inlined leading underscore at Top2.v:2839
-	// Tracing: Top2 _GEN_54 // Ignored: Inlined leading underscore at Top2.v:2840
-	// Tracing: Top2 _GEN_55 // Ignored: Inlined leading underscore at Top2.v:2841
-	// Tracing: Top2 _GEN_56 // Ignored: Inlined leading underscore at Top2.v:2842
-	// Tracing: Top2 _GEN_57 // Ignored: Inlined leading underscore at Top2.v:2843
-	// Tracing: Top2 _GEN_58 // Ignored: Inlined leading underscore at Top2.v:2844
-	// Tracing: Top2 _GEN_59 // Ignored: Inlined leading underscore at Top2.v:2845
-	// Tracing: Top2 _T_109 // Ignored: Inlined leading underscore at Top2.v:2846
-	// Tracing: Top2 _T_126 // Ignored: Inlined leading underscore at Top2.v:2847
-	// Tracing: Top2 _T_130 // Ignored: Inlined leading underscore at Top2.v:2848
-	// Tracing: Top2 _GEN_75 // Ignored: Inlined leading underscore at Top2.v:2849
-	// Tracing: Top2 _T_134 // Ignored: Inlined leading underscore at Top2.v:2850
-	// Tracing: Top2 _T_135 // Ignored: Inlined leading underscore at Top2.v:2851
-	// Tracing: Top2 _T_137 // Ignored: Inlined leading underscore at Top2.v:2852
-	// Tracing: Top2 _T_138 // Ignored: Inlined leading underscore at Top2.v:2853
-	// Tracing: Top2 _T_140 // Ignored: Inlined leading underscore at Top2.v:2854
-	// Tracing: Top2 _T_142 // Ignored: Inlined leading underscore at Top2.v:2855
-	// Tracing: Top2 _T_144 // Ignored: Inlined leading underscore at Top2.v:2856
-	// Tracing: Top2 _T_146 // Ignored: Inlined leading underscore at Top2.v:2857
-	// Tracing: Top2 _GEN_77 // Ignored: Inlined leading underscore at Top2.v:2858
-	// Tracing: Top2 _GEN_78 // Ignored: Inlined leading underscore at Top2.v:2859
-	// Tracing: Top2 _GEN_79 // Ignored: Inlined leading underscore at Top2.v:2860
-	// Tracing: Top2 _GEN_80 // Ignored: Inlined leading underscore at Top2.v:2861
-	// Tracing: Top2 _GEN_81 // Ignored: Inlined leading underscore at Top2.v:2862
-	// Tracing: Top2 _T_148 // Ignored: Inlined leading underscore at Top2.v:2863
-	// Tracing: Top2 _T_150 // Ignored: Inlined leading underscore at Top2.v:2864
-	// Tracing: Top2 _T_152 // Ignored: Inlined leading underscore at Top2.v:2865
-	// Tracing: Top2 _T_154 // Ignored: Inlined leading underscore at Top2.v:2866
-	// Tracing: Top2 _GEN_83 // Ignored: Inlined leading underscore at Top2.v:2867
-	// Tracing: Top2 _GEN_84 // Ignored: Inlined leading underscore at Top2.v:2868
-	// Tracing: Top2 _GEN_85 // Ignored: Inlined leading underscore at Top2.v:2869
-	// Tracing: Top2 _T_156 // Ignored: Inlined leading underscore at Top2.v:2870
-	// Tracing: Top2 _GEN_86 // Ignored: Inlined leading underscore at Top2.v:2871
-	// Tracing: Top2 _GEN_87 // Ignored: Inlined leading underscore at Top2.v:2872
-	// Tracing: Top2 _GEN_88 // Ignored: Inlined leading underscore at Top2.v:2873
-	// Tracing: Top2 _GEN_89 // Ignored: Inlined leading underscore at Top2.v:2874
-	// Tracing: Top2 _GEN_90 // Ignored: Inlined leading underscore at Top2.v:2875
-	// Tracing: Top2 _GEN_91 // Ignored: Inlined leading underscore at Top2.v:2876
-	// Tracing: Top2 _GEN_92 // Ignored: Inlined leading underscore at Top2.v:2877
-	// Tracing: Top2 _GEN_93 // Ignored: Inlined leading underscore at Top2.v:2878
-	// Tracing: Top2 _T_166 // Ignored: Inlined leading underscore at Top2.v:2879
-	// Tracing: Top2 _T_168 // Ignored: Inlined leading underscore at Top2.v:2880
-	// Tracing: Top2 _GEN_96 // Ignored: Inlined leading underscore at Top2.v:2881
-	vcdp->declBus  (c+62,"Top2 control io_opcode",-1,6,0);
+	vcdp->declBus  (c+47,"Top2 branchforward_io_forward_a",-1,3,0);
+	vcdp->declBus  (c+48,"Top2 branchforward_io_forward_b",-1,3,0);
+	vcdp->declBus  (c+68,"Top2 structdetect_io_rs1_sel",-1,4,0);
+	vcdp->declBus  (c+69,"Top2 structdetect_io_rs2_sel",-1,4,0);
+	vcdp->declBit  (c+66,"Top2 structdetect_io_mem_wb_regwrite",-1);
+	vcdp->declBus  (c+67,"Top2 structdetect_io_mem_wb_rd_sel",-1,4,0);
+	vcdp->declBit  (c+108,"Top2 structdetect_io_forward_rs1",-1);
+	vcdp->declBit  (c+109,"Top2 structdetect_io_forward_rs2",-1);
+	// Tracing: Top2 _T_20 // Ignored: Inlined leading underscore at Top2.v:2784
+	// Tracing: Top2 _T_29 // Ignored: Inlined leading underscore at Top2.v:2785
+	// Tracing: Top2 _T_31 // Ignored: Inlined leading underscore at Top2.v:2786
+	// Tracing: Top2 _T_33 // Ignored: Inlined leading underscore at Top2.v:2787
+	// Tracing: Top2 _T_35 // Ignored: Inlined leading underscore at Top2.v:2788
+	// Tracing: Top2 _T_37 // Ignored: Inlined leading underscore at Top2.v:2789
+	// Tracing: Top2 _T_39 // Ignored: Inlined leading underscore at Top2.v:2790
+	// Tracing: Top2 _T_41 // Ignored: Inlined leading underscore at Top2.v:2791
+	// Tracing: Top2 _T_43 // Ignored: Inlined leading underscore at Top2.v:2792
+	// Tracing: Top2 _T_45 // Ignored: Inlined leading underscore at Top2.v:2793
+	// Tracing: Top2 _T_47 // Ignored: Inlined leading underscore at Top2.v:2794
+	// Tracing: Top2 _T_49 // Ignored: Inlined leading underscore at Top2.v:2795
+	// Tracing: Top2 _GEN_0 // Ignored: Inlined leading underscore at Top2.v:2796
+	// Tracing: Top2 _GEN_1 // Ignored: Inlined leading underscore at Top2.v:2797
+	// Tracing: Top2 _GEN_2 // Ignored: Inlined leading underscore at Top2.v:2798
+	// Tracing: Top2 _GEN_3 // Ignored: Inlined leading underscore at Top2.v:2799
+	// Tracing: Top2 _GEN_4 // Ignored: Inlined leading underscore at Top2.v:2800
+	// Tracing: Top2 _GEN_5 // Ignored: Inlined leading underscore at Top2.v:2801
+	// Tracing: Top2 _GEN_6 // Ignored: Inlined leading underscore at Top2.v:2802
+	// Tracing: Top2 _GEN_7 // Ignored: Inlined leading underscore at Top2.v:2803
+	// Tracing: Top2 _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2804
+	// Tracing: Top2 _GEN_9 // Ignored: Inlined leading underscore at Top2.v:2805
+	// Tracing: Top2 _GEN_10 // Ignored: Inlined leading underscore at Top2.v:2806
+	// Tracing: Top2 _GEN_11 // Ignored: Inlined leading underscore at Top2.v:2807
+	// Tracing: Top2 _GEN_12 // Ignored: Inlined leading underscore at Top2.v:2808
+	// Tracing: Top2 _GEN_13 // Ignored: Inlined leading underscore at Top2.v:2809
+	// Tracing: Top2 _GEN_14 // Ignored: Inlined leading underscore at Top2.v:2810
+	// Tracing: Top2 _GEN_15 // Ignored: Inlined leading underscore at Top2.v:2811
+	// Tracing: Top2 _GEN_16 // Ignored: Inlined leading underscore at Top2.v:2812
+	// Tracing: Top2 _GEN_17 // Ignored: Inlined leading underscore at Top2.v:2813
+	// Tracing: Top2 _GEN_18 // Ignored: Inlined leading underscore at Top2.v:2814
+	// Tracing: Top2 _GEN_19 // Ignored: Inlined leading underscore at Top2.v:2815
+	// Tracing: Top2 _T_51 // Ignored: Inlined leading underscore at Top2.v:2816
+	// Tracing: Top2 _T_53 // Ignored: Inlined leading underscore at Top2.v:2817
+	// Tracing: Top2 _T_55 // Ignored: Inlined leading underscore at Top2.v:2818
+	// Tracing: Top2 _T_57 // Ignored: Inlined leading underscore at Top2.v:2819
+	// Tracing: Top2 _T_59 // Ignored: Inlined leading underscore at Top2.v:2820
+	// Tracing: Top2 _T_61 // Ignored: Inlined leading underscore at Top2.v:2821
+	// Tracing: Top2 _GEN_22 // Ignored: Inlined leading underscore at Top2.v:2822
+	// Tracing: Top2 _GEN_23 // Ignored: Inlined leading underscore at Top2.v:2823
+	// Tracing: Top2 _GEN_24 // Ignored: Inlined leading underscore at Top2.v:2824
+	// Tracing: Top2 _GEN_25 // Ignored: Inlined leading underscore at Top2.v:2825
+	// Tracing: Top2 _GEN_26 // Ignored: Inlined leading underscore at Top2.v:2826
+	// Tracing: Top2 _T_63 // Ignored: Inlined leading underscore at Top2.v:2827
+	// Tracing: Top2 _T_65 // Ignored: Inlined leading underscore at Top2.v:2828
+	// Tracing: Top2 _T_67 // Ignored: Inlined leading underscore at Top2.v:2829
+	// Tracing: Top2 _GEN_28 // Ignored: Inlined leading underscore at Top2.v:2830
+	// Tracing: Top2 _GEN_29 // Ignored: Inlined leading underscore at Top2.v:2831
+	// Tracing: Top2 _T_69 // Ignored: Inlined leading underscore at Top2.v:2832
+	// Tracing: Top2 _GEN_30 // Ignored: Inlined leading underscore at Top2.v:2833
+	// Tracing: Top2 _T_73 // Ignored: Inlined leading underscore at Top2.v:2834
+	// Tracing: Top2 _GEN_32 // Ignored: Inlined leading underscore at Top2.v:2835
+	// Tracing: Top2 _GEN_33 // Ignored: Inlined leading underscore at Top2.v:2836
+	// Tracing: Top2 _T_75 // Ignored: Inlined leading underscore at Top2.v:2837
+	// Tracing: Top2 _T_77 // Ignored: Inlined leading underscore at Top2.v:2838
+	// Tracing: Top2 _T_79 // Ignored: Inlined leading underscore at Top2.v:2839
+	// Tracing: Top2 _T_81 // Ignored: Inlined leading underscore at Top2.v:2840
+	// Tracing: Top2 _T_82 // Ignored: Inlined leading underscore at Top2.v:2841
+	// Tracing: Top2 _T_83 // Ignored: Inlined leading underscore at Top2.v:2842
+	// Tracing: Top2 _T_88 // Ignored: Inlined leading underscore at Top2.v:2843
+	// Tracing: Top2 _T_90 // Ignored: Inlined leading underscore at Top2.v:2844
+	// Tracing: Top2 _T_91 // Ignored: Inlined leading underscore at Top2.v:2845
+	// Tracing: Top2 _GEN_35 // Ignored: Inlined leading underscore at Top2.v:2846
+	// Tracing: Top2 _GEN_36 // Ignored: Inlined leading underscore at Top2.v:2847
+	// Tracing: Top2 _GEN_37 // Ignored: Inlined leading underscore at Top2.v:2848
+	// Tracing: Top2 _GEN_38 // Ignored: Inlined leading underscore at Top2.v:2849
+	// Tracing: Top2 _GEN_39 // Ignored: Inlined leading underscore at Top2.v:2850
+	// Tracing: Top2 _GEN_40 // Ignored: Inlined leading underscore at Top2.v:2851
+	// Tracing: Top2 _GEN_41 // Ignored: Inlined leading underscore at Top2.v:2852
+	// Tracing: Top2 _GEN_42 // Ignored: Inlined leading underscore at Top2.v:2853
+	// Tracing: Top2 _GEN_43 // Ignored: Inlined leading underscore at Top2.v:2854
+	// Tracing: Top2 _T_98 // Ignored: Inlined leading underscore at Top2.v:2855
+	// Tracing: Top2 _T_99 // Ignored: Inlined leading underscore at Top2.v:2856
+	// Tracing: Top2 _T_104 // Ignored: Inlined leading underscore at Top2.v:2857
+	// Tracing: Top2 _T_105 // Ignored: Inlined leading underscore at Top2.v:2858
+	// Tracing: Top2 _T_110 // Ignored: Inlined leading underscore at Top2.v:2859
+	// Tracing: Top2 _T_114 // Ignored: Inlined leading underscore at Top2.v:2860
+	// Tracing: Top2 _GEN_44 // Ignored: Inlined leading underscore at Top2.v:2861
+	// Tracing: Top2 _GEN_45 // Ignored: Inlined leading underscore at Top2.v:2862
+	// Tracing: Top2 _GEN_46 // Ignored: Inlined leading underscore at Top2.v:2863
+	// Tracing: Top2 _GEN_47 // Ignored: Inlined leading underscore at Top2.v:2864
+	// Tracing: Top2 _GEN_48 // Ignored: Inlined leading underscore at Top2.v:2865
+	// Tracing: Top2 _GEN_49 // Ignored: Inlined leading underscore at Top2.v:2866
+	// Tracing: Top2 _GEN_50 // Ignored: Inlined leading underscore at Top2.v:2867
+	// Tracing: Top2 _GEN_51 // Ignored: Inlined leading underscore at Top2.v:2868
+	// Tracing: Top2 _GEN_52 // Ignored: Inlined leading underscore at Top2.v:2869
+	// Tracing: Top2 _GEN_53 // Ignored: Inlined leading underscore at Top2.v:2870
+	// Tracing: Top2 _GEN_54 // Ignored: Inlined leading underscore at Top2.v:2871
+	// Tracing: Top2 _GEN_55 // Ignored: Inlined leading underscore at Top2.v:2872
+	// Tracing: Top2 _GEN_56 // Ignored: Inlined leading underscore at Top2.v:2873
+	// Tracing: Top2 _GEN_57 // Ignored: Inlined leading underscore at Top2.v:2874
+	// Tracing: Top2 _GEN_58 // Ignored: Inlined leading underscore at Top2.v:2875
+	// Tracing: Top2 _GEN_59 // Ignored: Inlined leading underscore at Top2.v:2876
+	// Tracing: Top2 _T_116 // Ignored: Inlined leading underscore at Top2.v:2877
+	// Tracing: Top2 _T_133 // Ignored: Inlined leading underscore at Top2.v:2878
+	// Tracing: Top2 _T_137 // Ignored: Inlined leading underscore at Top2.v:2879
+	// Tracing: Top2 _GEN_76 // Ignored: Inlined leading underscore at Top2.v:2880
+	// Tracing: Top2 _T_141 // Ignored: Inlined leading underscore at Top2.v:2881
+	// Tracing: Top2 _T_142 // Ignored: Inlined leading underscore at Top2.v:2882
+	// Tracing: Top2 _T_144 // Ignored: Inlined leading underscore at Top2.v:2883
+	// Tracing: Top2 _T_145 // Ignored: Inlined leading underscore at Top2.v:2884
+	// Tracing: Top2 _T_147 // Ignored: Inlined leading underscore at Top2.v:2885
+	// Tracing: Top2 _T_149 // Ignored: Inlined leading underscore at Top2.v:2886
+	// Tracing: Top2 _T_151 // Ignored: Inlined leading underscore at Top2.v:2887
+	// Tracing: Top2 _T_153 // Ignored: Inlined leading underscore at Top2.v:2888
+	// Tracing: Top2 _GEN_78 // Ignored: Inlined leading underscore at Top2.v:2889
+	// Tracing: Top2 _GEN_79 // Ignored: Inlined leading underscore at Top2.v:2890
+	// Tracing: Top2 _GEN_80 // Ignored: Inlined leading underscore at Top2.v:2891
+	// Tracing: Top2 _GEN_81 // Ignored: Inlined leading underscore at Top2.v:2892
+	// Tracing: Top2 _GEN_82 // Ignored: Inlined leading underscore at Top2.v:2893
+	// Tracing: Top2 _T_155 // Ignored: Inlined leading underscore at Top2.v:2894
+	// Tracing: Top2 _T_157 // Ignored: Inlined leading underscore at Top2.v:2895
+	// Tracing: Top2 _T_159 // Ignored: Inlined leading underscore at Top2.v:2896
+	// Tracing: Top2 _T_161 // Ignored: Inlined leading underscore at Top2.v:2897
+	// Tracing: Top2 _GEN_84 // Ignored: Inlined leading underscore at Top2.v:2898
+	// Tracing: Top2 _GEN_85 // Ignored: Inlined leading underscore at Top2.v:2899
+	// Tracing: Top2 _GEN_86 // Ignored: Inlined leading underscore at Top2.v:2900
+	// Tracing: Top2 _T_163 // Ignored: Inlined leading underscore at Top2.v:2901
+	// Tracing: Top2 _GEN_87 // Ignored: Inlined leading underscore at Top2.v:2902
+	// Tracing: Top2 _GEN_88 // Ignored: Inlined leading underscore at Top2.v:2903
+	// Tracing: Top2 _GEN_89 // Ignored: Inlined leading underscore at Top2.v:2904
+	// Tracing: Top2 _GEN_90 // Ignored: Inlined leading underscore at Top2.v:2905
+	// Tracing: Top2 _GEN_91 // Ignored: Inlined leading underscore at Top2.v:2906
+	// Tracing: Top2 _GEN_92 // Ignored: Inlined leading underscore at Top2.v:2907
+	// Tracing: Top2 _GEN_93 // Ignored: Inlined leading underscore at Top2.v:2908
+	// Tracing: Top2 _GEN_94 // Ignored: Inlined leading underscore at Top2.v:2909
+	// Tracing: Top2 _T_173 // Ignored: Inlined leading underscore at Top2.v:2910
+	// Tracing: Top2 _T_175 // Ignored: Inlined leading underscore at Top2.v:2911
+	// Tracing: Top2 _GEN_97 // Ignored: Inlined leading underscore at Top2.v:2912
+	vcdp->declBus  (c+65,"Top2 control io_opcode",-1,6,0);
 	vcdp->declBit  (c+1,"Top2 control io_MemoryWrite",-1);
 	vcdp->declBit  (c+2,"Top2 control io_Branch2",-1);
 	vcdp->declBit  (c+3,"Top2 control io_MemRead",-1);
 	vcdp->declBit  (c+4,"Top2 control io_RegWrite",-1);
-	vcdp->declBit  (c+3,"Top2 control io_MemtoReg",-1);
-	vcdp->declBus  (c+5,"Top2 control io_ALUoperation",-1,2,0);
-	vcdp->declBus  (c+6,"Top2 control io_operand_A_sel",-1,1,0);
-	vcdp->declBit  (c+7,"Top2 control io_operand_B_sel",-1);
-	vcdp->declBus  (c+8,"Top2 control io_extend_sel",-1,1,0);
-	vcdp->declBus  (c+9,"Top2 control io_next_PC_sel",-1,1,0);
-	vcdp->declBus  (c+62,"Top2 control InstDecode_io_opcode",-1,6,0);
-	vcdp->declBit  (c+105,"Top2 control InstDecode_io_R_Format",-1);
-	vcdp->declBit  (c+47,"Top2 control InstDecode_io_Load",-1);
-	vcdp->declBit  (c+48,"Top2 control InstDecode_io_Store",-1);
-	vcdp->declBit  (c+49,"Top2 control InstDecode_io_Branch",-1);
-	vcdp->declBit  (c+50,"Top2 control InstDecode_io_I_Type",-1);
-	vcdp->declBit  (c+51,"Top2 control InstDecode_io_JALR",-1);
-	vcdp->declBit  (c+52,"Top2 control InstDecode_io_JAL",-1);
-	vcdp->declBit  (c+53,"Top2 control InstDecode_io_LUI",-1);
-	vcdp->declBit  (c+105,"Top2 control CtrlDecode_io_R_Format",-1);
-	vcdp->declBit  (c+47,"Top2 control CtrlDecode_io_Load",-1);
-	vcdp->declBit  (c+48,"Top2 control CtrlDecode_io_Store",-1);
-	vcdp->declBit  (c+49,"Top2 control CtrlDecode_io_Branch",-1);
-	vcdp->declBit  (c+50,"Top2 control CtrlDecode_io_I_Type",-1);
-	vcdp->declBit  (c+51,"Top2 control CtrlDecode_io_JALR",-1);
-	vcdp->declBit  (c+52,"Top2 control CtrlDecode_io_JAL",-1);
-	vcdp->declBit  (c+53,"Top2 control CtrlDecode_io_LUI",-1);
+	vcdp->declBit  (c+5,"Top2 control io_MemtoReg",-1);
+	vcdp->declBus  (c+6,"Top2 control io_ALUoperation",-1,2,0);
+	vcdp->declBus  (c+7,"Top2 control io_operand_A_sel",-1,1,0);
+	vcdp->declBit  (c+8,"Top2 control io_operand_B_sel",-1);
+	vcdp->declBus  (c+9,"Top2 control io_extend_sel",-1,1,0);
+	vcdp->declBus  (c+10,"Top2 control io_next_PC_sel",-1,1,0);
+	vcdp->declBus  (c+65,"Top2 control InstDecode_io_opcode",-1,6,0);
+	vcdp->declBit  (c+110,"Top2 control InstDecode_io_R_Format",-1);
+	vcdp->declBit  (c+49,"Top2 control InstDecode_io_Load",-1);
+	vcdp->declBit  (c+50,"Top2 control InstDecode_io_Store",-1);
+	vcdp->declBit  (c+51,"Top2 control InstDecode_io_Branch",-1);
+	vcdp->declBit  (c+52,"Top2 control InstDecode_io_I_Type",-1);
+	vcdp->declBit  (c+53,"Top2 control InstDecode_io_JALR",-1);
+	vcdp->declBit  (c+54,"Top2 control InstDecode_io_JAL",-1);
+	vcdp->declBit  (c+55,"Top2 control InstDecode_io_LUI",-1);
+	vcdp->declBit  (c+110,"Top2 control CtrlDecode_io_R_Format",-1);
+	vcdp->declBit  (c+49,"Top2 control CtrlDecode_io_Load",-1);
+	vcdp->declBit  (c+50,"Top2 control CtrlDecode_io_Store",-1);
+	vcdp->declBit  (c+51,"Top2 control CtrlDecode_io_Branch",-1);
+	vcdp->declBit  (c+52,"Top2 control CtrlDecode_io_I_Type",-1);
+	vcdp->declBit  (c+53,"Top2 control CtrlDecode_io_JALR",-1);
+	vcdp->declBit  (c+54,"Top2 control CtrlDecode_io_JAL",-1);
+	vcdp->declBit  (c+55,"Top2 control CtrlDecode_io_LUI",-1);
 	vcdp->declBit  (c+1,"Top2 control CtrlDecode_io_MemWrite",-1);
 	vcdp->declBit  (c+2,"Top2 control CtrlDecode_io_Branch2",-1);
 	vcdp->declBit  (c+3,"Top2 control CtrlDecode_io_MemRead",-1);
 	vcdp->declBit  (c+4,"Top2 control CtrlDecode_io_RegWrite",-1);
-	vcdp->declBit  (c+3,"Top2 control CtrlDecode_io_MemtoReg",-1);
-	vcdp->declBus  (c+5,"Top2 control CtrlDecode_io_ALUoperation",-1,2,0);
-	vcdp->declBus  (c+6,"Top2 control CtrlDecode_io_operand_A_sel",-1,1,0);
-	vcdp->declBus  (c+54,"Top2 control CtrlDecode_io_operand_B_sel",-1,1,0);
-	vcdp->declBus  (c+8,"Top2 control CtrlDecode_io_extend_sel",-1,1,0);
-	vcdp->declBus  (c+9,"Top2 control CtrlDecode_io_next_PC_sel",-1,1,0);
-	vcdp->declBus  (c+62,"Top2 control InstDecode io_opcode",-1,6,0);
-	vcdp->declBit  (c+105,"Top2 control InstDecode io_R_Format",-1);
-	vcdp->declBit  (c+47,"Top2 control InstDecode io_Load",-1);
-	vcdp->declBit  (c+48,"Top2 control InstDecode io_Store",-1);
-	vcdp->declBit  (c+49,"Top2 control InstDecode io_Branch",-1);
-	vcdp->declBit  (c+50,"Top2 control InstDecode io_I_Type",-1);
-	vcdp->declBit  (c+51,"Top2 control InstDecode io_JALR",-1);
-	vcdp->declBit  (c+52,"Top2 control InstDecode io_JAL",-1);
-	vcdp->declBit  (c+53,"Top2 control InstDecode io_LUI",-1);
+	vcdp->declBit  (c+5,"Top2 control CtrlDecode_io_MemtoReg",-1);
+	vcdp->declBus  (c+6,"Top2 control CtrlDecode_io_ALUoperation",-1,2,0);
+	vcdp->declBus  (c+7,"Top2 control CtrlDecode_io_operand_A_sel",-1,1,0);
+	vcdp->declBus  (c+56,"Top2 control CtrlDecode_io_operand_B_sel",-1,1,0);
+	vcdp->declBus  (c+9,"Top2 control CtrlDecode_io_extend_sel",-1,1,0);
+	vcdp->declBus  (c+10,"Top2 control CtrlDecode_io_next_PC_sel",-1,1,0);
+	vcdp->declBus  (c+65,"Top2 control InstDecode io_opcode",-1,6,0);
+	vcdp->declBit  (c+110,"Top2 control InstDecode io_R_Format",-1);
+	vcdp->declBit  (c+49,"Top2 control InstDecode io_Load",-1);
+	vcdp->declBit  (c+50,"Top2 control InstDecode io_Store",-1);
+	vcdp->declBit  (c+51,"Top2 control InstDecode io_Branch",-1);
+	vcdp->declBit  (c+52,"Top2 control InstDecode io_I_Type",-1);
+	vcdp->declBit  (c+53,"Top2 control InstDecode io_JALR",-1);
+	vcdp->declBit  (c+54,"Top2 control InstDecode io_JAL",-1);
+	vcdp->declBit  (c+55,"Top2 control InstDecode io_LUI",-1);
 	// Tracing: Top2 control InstDecode _T_32 // Ignored: Inlined leading underscore at Top2.v:12
 	// Tracing: Top2 control InstDecode _T_35 // Ignored: Inlined leading underscore at Top2.v:13
 	// Tracing: Top2 control InstDecode _T_38 // Ignored: Inlined leading underscore at Top2.v:14
@@ -437,24 +443,24 @@ void VTop2::traceInitThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 	// Tracing: Top2 control InstDecode _GEN_25 // Ignored: Inlined leading underscore at Top2.v:38
 	// Tracing: Top2 control InstDecode _GEN_26 // Ignored: Inlined leading underscore at Top2.v:39
 	// Tracing: Top2 control InstDecode _GEN_27 // Ignored: Inlined leading underscore at Top2.v:40
-	vcdp->declBit  (c+105,"Top2 control CtrlDecode io_R_Format",-1);
-	vcdp->declBit  (c+47,"Top2 control CtrlDecode io_Load",-1);
-	vcdp->declBit  (c+48,"Top2 control CtrlDecode io_Store",-1);
-	vcdp->declBit  (c+49,"Top2 control CtrlDecode io_Branch",-1);
-	vcdp->declBit  (c+50,"Top2 control CtrlDecode io_I_Type",-1);
-	vcdp->declBit  (c+51,"Top2 control CtrlDecode io_JALR",-1);
-	vcdp->declBit  (c+52,"Top2 control CtrlDecode io_JAL",-1);
-	vcdp->declBit  (c+53,"Top2 control CtrlDecode io_LUI",-1);
+	vcdp->declBit  (c+110,"Top2 control CtrlDecode io_R_Format",-1);
+	vcdp->declBit  (c+49,"Top2 control CtrlDecode io_Load",-1);
+	vcdp->declBit  (c+50,"Top2 control CtrlDecode io_Store",-1);
+	vcdp->declBit  (c+51,"Top2 control CtrlDecode io_Branch",-1);
+	vcdp->declBit  (c+52,"Top2 control CtrlDecode io_I_Type",-1);
+	vcdp->declBit  (c+53,"Top2 control CtrlDecode io_JALR",-1);
+	vcdp->declBit  (c+54,"Top2 control CtrlDecode io_JAL",-1);
+	vcdp->declBit  (c+55,"Top2 control CtrlDecode io_LUI",-1);
 	vcdp->declBit  (c+1,"Top2 control CtrlDecode io_MemWrite",-1);
 	vcdp->declBit  (c+2,"Top2 control CtrlDecode io_Branch2",-1);
 	vcdp->declBit  (c+3,"Top2 control CtrlDecode io_MemRead",-1);
 	vcdp->declBit  (c+4,"Top2 control CtrlDecode io_RegWrite",-1);
-	vcdp->declBit  (c+3,"Top2 control CtrlDecode io_MemtoReg",-1);
-	vcdp->declBus  (c+5,"Top2 control CtrlDecode io_ALUoperation",-1,2,0);
-	vcdp->declBus  (c+6,"Top2 control CtrlDecode io_operand_A_sel",-1,1,0);
-	vcdp->declBus  (c+54,"Top2 control CtrlDecode io_operand_B_sel",-1,1,0);
-	vcdp->declBus  (c+8,"Top2 control CtrlDecode io_extend_sel",-1,1,0);
-	vcdp->declBus  (c+9,"Top2 control CtrlDecode io_next_PC_sel",-1,1,0);
+	vcdp->declBit  (c+5,"Top2 control CtrlDecode io_MemtoReg",-1);
+	vcdp->declBus  (c+6,"Top2 control CtrlDecode io_ALUoperation",-1,2,0);
+	vcdp->declBus  (c+7,"Top2 control CtrlDecode io_operand_A_sel",-1,1,0);
+	vcdp->declBus  (c+56,"Top2 control CtrlDecode io_operand_B_sel",-1,1,0);
+	vcdp->declBus  (c+9,"Top2 control CtrlDecode io_extend_sel",-1,1,0);
+	vcdp->declBus  (c+10,"Top2 control CtrlDecode io_next_PC_sel",-1,1,0);
 	// Tracing: Top2 control CtrlDecode _GEN_1 // Ignored: Inlined leading underscore at Top2.v:99
 	// Tracing: Top2 control CtrlDecode _GEN_2 // Ignored: Inlined leading underscore at Top2.v:100
 	// Tracing: Top2 control CtrlDecode _GEN_3 // Ignored: Inlined leading underscore at Top2.v:101
@@ -495,77 +501,77 @@ void VTop2::traceInitThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 	// Tracing: Top2 control CtrlDecode _GEN_41 // Ignored: Inlined leading underscore at Top2.v:136
 	// Tracing: Top2 control CtrlDecode _GEN_42 // Ignored: Inlined leading underscore at Top2.v:137
 	// Tracing: Top2 control CtrlDecode _GEN_45 // Ignored: Inlined leading underscore at Top2.v:138
-	vcdp->declBit  (c+159,"Top2 register clock",-1);
-	vcdp->declBit  (c+63,"Top2 register io_regwrite",-1);
-	vcdp->declBus  (c+64,"Top2 register io_rd_sel",-1,4,0);
-	vcdp->declBus  (c+65,"Top2 register io_rs1_sel",-1,4,0);
-	vcdp->declBus  (c+66,"Top2 register io_rs2_sel",-1,4,0);
-	vcdp->declBus  (c+10,"Top2 register io_WriteData",-1,31,0);
-	vcdp->declBus  (c+11,"Top2 register io_rs1",-1,31,0);
-	vcdp->declBus  (c+12,"Top2 register io_rs2",-1,31,0);
-	vcdp->declBus  (c+106,"Top2 register registers_c_0",-1,31,0);
+	vcdp->declBit  (c+163,"Top2 register clock",-1);
+	vcdp->declBit  (c+66,"Top2 register io_regwrite",-1);
+	vcdp->declBus  (c+67,"Top2 register io_rd_sel",-1,4,0);
+	vcdp->declBus  (c+68,"Top2 register io_rs1_sel",-1,4,0);
+	vcdp->declBus  (c+69,"Top2 register io_rs2_sel",-1,4,0);
+	vcdp->declBus  (c+11,"Top2 register io_WriteData",-1,31,0);
+	vcdp->declBus  (c+12,"Top2 register io_rs1",-1,31,0);
+	vcdp->declBus  (c+13,"Top2 register io_rs2",-1,31,0);
+	vcdp->declBus  (c+111,"Top2 register registers_c_0",-1,31,0);
 	// Tracing: Top2 register _RAND_0 // Ignored: Inlined leading underscore at Top2.v:292
-	vcdp->declBus  (c+107,"Top2 register registers_c_1",-1,31,0);
+	vcdp->declBus  (c+112,"Top2 register registers_c_1",-1,31,0);
 	// Tracing: Top2 register _RAND_1 // Ignored: Inlined leading underscore at Top2.v:294
-	vcdp->declBus  (c+108,"Top2 register registers_c_2",-1,31,0);
+	vcdp->declBus  (c+113,"Top2 register registers_c_2",-1,31,0);
 	// Tracing: Top2 register _RAND_2 // Ignored: Inlined leading underscore at Top2.v:296
-	vcdp->declBus  (c+109,"Top2 register registers_c_3",-1,31,0);
+	vcdp->declBus  (c+114,"Top2 register registers_c_3",-1,31,0);
 	// Tracing: Top2 register _RAND_3 // Ignored: Inlined leading underscore at Top2.v:298
-	vcdp->declBus  (c+110,"Top2 register registers_c_4",-1,31,0);
+	vcdp->declBus  (c+115,"Top2 register registers_c_4",-1,31,0);
 	// Tracing: Top2 register _RAND_4 // Ignored: Inlined leading underscore at Top2.v:300
-	vcdp->declBus  (c+111,"Top2 register registers_c_5",-1,31,0);
+	vcdp->declBus  (c+116,"Top2 register registers_c_5",-1,31,0);
 	// Tracing: Top2 register _RAND_5 // Ignored: Inlined leading underscore at Top2.v:302
-	vcdp->declBus  (c+112,"Top2 register registers_c_6",-1,31,0);
+	vcdp->declBus  (c+117,"Top2 register registers_c_6",-1,31,0);
 	// Tracing: Top2 register _RAND_6 // Ignored: Inlined leading underscore at Top2.v:304
-	vcdp->declBus  (c+113,"Top2 register registers_c_7",-1,31,0);
+	vcdp->declBus  (c+118,"Top2 register registers_c_7",-1,31,0);
 	// Tracing: Top2 register _RAND_7 // Ignored: Inlined leading underscore at Top2.v:306
-	vcdp->declBus  (c+114,"Top2 register registers_c_8",-1,31,0);
+	vcdp->declBus  (c+119,"Top2 register registers_c_8",-1,31,0);
 	// Tracing: Top2 register _RAND_8 // Ignored: Inlined leading underscore at Top2.v:308
-	vcdp->declBus  (c+115,"Top2 register registers_c_9",-1,31,0);
+	vcdp->declBus  (c+120,"Top2 register registers_c_9",-1,31,0);
 	// Tracing: Top2 register _RAND_9 // Ignored: Inlined leading underscore at Top2.v:310
-	vcdp->declBus  (c+116,"Top2 register registers_c_10",-1,31,0);
+	vcdp->declBus  (c+121,"Top2 register registers_c_10",-1,31,0);
 	// Tracing: Top2 register _RAND_10 // Ignored: Inlined leading underscore at Top2.v:312
-	vcdp->declBus  (c+117,"Top2 register registers_c_11",-1,31,0);
+	vcdp->declBus  (c+122,"Top2 register registers_c_11",-1,31,0);
 	// Tracing: Top2 register _RAND_11 // Ignored: Inlined leading underscore at Top2.v:314
-	vcdp->declBus  (c+118,"Top2 register registers_c_12",-1,31,0);
+	vcdp->declBus  (c+123,"Top2 register registers_c_12",-1,31,0);
 	// Tracing: Top2 register _RAND_12 // Ignored: Inlined leading underscore at Top2.v:316
-	vcdp->declBus  (c+119,"Top2 register registers_c_13",-1,31,0);
+	vcdp->declBus  (c+124,"Top2 register registers_c_13",-1,31,0);
 	// Tracing: Top2 register _RAND_13 // Ignored: Inlined leading underscore at Top2.v:318
-	vcdp->declBus  (c+120,"Top2 register registers_c_14",-1,31,0);
+	vcdp->declBus  (c+125,"Top2 register registers_c_14",-1,31,0);
 	// Tracing: Top2 register _RAND_14 // Ignored: Inlined leading underscore at Top2.v:320
-	vcdp->declBus  (c+121,"Top2 register registers_c_15",-1,31,0);
+	vcdp->declBus  (c+126,"Top2 register registers_c_15",-1,31,0);
 	// Tracing: Top2 register _RAND_15 // Ignored: Inlined leading underscore at Top2.v:322
-	vcdp->declBus  (c+122,"Top2 register registers_c_16",-1,31,0);
+	vcdp->declBus  (c+127,"Top2 register registers_c_16",-1,31,0);
 	// Tracing: Top2 register _RAND_16 // Ignored: Inlined leading underscore at Top2.v:324
-	vcdp->declBus  (c+123,"Top2 register registers_c_17",-1,31,0);
+	vcdp->declBus  (c+128,"Top2 register registers_c_17",-1,31,0);
 	// Tracing: Top2 register _RAND_17 // Ignored: Inlined leading underscore at Top2.v:326
-	vcdp->declBus  (c+124,"Top2 register registers_c_18",-1,31,0);
+	vcdp->declBus  (c+129,"Top2 register registers_c_18",-1,31,0);
 	// Tracing: Top2 register _RAND_18 // Ignored: Inlined leading underscore at Top2.v:328
-	vcdp->declBus  (c+125,"Top2 register registers_c_19",-1,31,0);
+	vcdp->declBus  (c+130,"Top2 register registers_c_19",-1,31,0);
 	// Tracing: Top2 register _RAND_19 // Ignored: Inlined leading underscore at Top2.v:330
-	vcdp->declBus  (c+126,"Top2 register registers_c_20",-1,31,0);
+	vcdp->declBus  (c+131,"Top2 register registers_c_20",-1,31,0);
 	// Tracing: Top2 register _RAND_20 // Ignored: Inlined leading underscore at Top2.v:332
-	vcdp->declBus  (c+127,"Top2 register registers_c_21",-1,31,0);
+	vcdp->declBus  (c+132,"Top2 register registers_c_21",-1,31,0);
 	// Tracing: Top2 register _RAND_21 // Ignored: Inlined leading underscore at Top2.v:334
-	vcdp->declBus  (c+128,"Top2 register registers_c_22",-1,31,0);
+	vcdp->declBus  (c+133,"Top2 register registers_c_22",-1,31,0);
 	// Tracing: Top2 register _RAND_22 // Ignored: Inlined leading underscore at Top2.v:336
-	vcdp->declBus  (c+129,"Top2 register registers_c_23",-1,31,0);
+	vcdp->declBus  (c+134,"Top2 register registers_c_23",-1,31,0);
 	// Tracing: Top2 register _RAND_23 // Ignored: Inlined leading underscore at Top2.v:338
-	vcdp->declBus  (c+130,"Top2 register registers_c_24",-1,31,0);
+	vcdp->declBus  (c+135,"Top2 register registers_c_24",-1,31,0);
 	// Tracing: Top2 register _RAND_24 // Ignored: Inlined leading underscore at Top2.v:340
-	vcdp->declBus  (c+131,"Top2 register registers_c_25",-1,31,0);
+	vcdp->declBus  (c+136,"Top2 register registers_c_25",-1,31,0);
 	// Tracing: Top2 register _RAND_25 // Ignored: Inlined leading underscore at Top2.v:342
-	vcdp->declBus  (c+132,"Top2 register registers_c_26",-1,31,0);
+	vcdp->declBus  (c+137,"Top2 register registers_c_26",-1,31,0);
 	// Tracing: Top2 register _RAND_26 // Ignored: Inlined leading underscore at Top2.v:344
-	vcdp->declBus  (c+133,"Top2 register registers_c_27",-1,31,0);
+	vcdp->declBus  (c+138,"Top2 register registers_c_27",-1,31,0);
 	// Tracing: Top2 register _RAND_27 // Ignored: Inlined leading underscore at Top2.v:346
-	vcdp->declBus  (c+134,"Top2 register registers_c_28",-1,31,0);
+	vcdp->declBus  (c+139,"Top2 register registers_c_28",-1,31,0);
 	// Tracing: Top2 register _RAND_28 // Ignored: Inlined leading underscore at Top2.v:348
-	vcdp->declBus  (c+135,"Top2 register registers_c_29",-1,31,0);
+	vcdp->declBus  (c+140,"Top2 register registers_c_29",-1,31,0);
 	// Tracing: Top2 register _RAND_29 // Ignored: Inlined leading underscore at Top2.v:350
-	vcdp->declBus  (c+136,"Top2 register registers_c_30",-1,31,0);
+	vcdp->declBus  (c+141,"Top2 register registers_c_30",-1,31,0);
 	// Tracing: Top2 register _RAND_30 // Ignored: Inlined leading underscore at Top2.v:352
-	vcdp->declBus  (c+137,"Top2 register registers_c_31",-1,31,0);
+	vcdp->declBus  (c+142,"Top2 register registers_c_31",-1,31,0);
 	// Tracing: Top2 register _RAND_31 // Ignored: Inlined leading underscore at Top2.v:354
 	// Tracing: Top2 register _GEN_1 // Ignored: Inlined leading underscore at Top2.v:355
 	// Tracing: Top2 register _GEN_2 // Ignored: Inlined leading underscore at Top2.v:356
@@ -723,510 +729,525 @@ void VTop2::traceInitThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 	// Tracing: Top2 register _GEN_158 // Ignored: Inlined leading underscore at Top2.v:508
 	// Tracing: Top2 register _GEN_159 // Ignored: Inlined leading underscore at Top2.v:509
 	// Tracing: Top2 register _GEN_160 // Ignored: Inlined leading underscore at Top2.v:510
-	vcdp->declBus  (c+13,"Top2 alu io_A",-1,31,0);
-	vcdp->declBus  (c+14,"Top2 alu io_B",-1,31,0);
-	vcdp->declBus  (c+15,"Top2 alu io_x",-1,31,0);
-	vcdp->declBus  (c+16,"Top2 alu io_Aluop",-1,4,0);
+	vcdp->declBus  (c+14,"Top2 alu io_A",-1,31,0);
+	vcdp->declBus  (c+15,"Top2 alu io_B",-1,31,0);
+	vcdp->declBus  (c+16,"Top2 alu io_x",-1,31,0);
+	vcdp->declBus  (c+17,"Top2 alu io_Aluop",-1,4,0);
 	// Tracing: Top2 alu _T_17 // Ignored: Inlined leading underscore at Top2.v:1192
 	// Tracing: Top2 alu _T_18 // Ignored: Inlined leading underscore at Top2.v:1193
 	// Tracing: Top2 alu _T_19 // Ignored: Inlined leading underscore at Top2.v:1194
 	// Tracing: Top2 alu _T_20 // Ignored: Inlined leading underscore at Top2.v:1195
 	// Tracing: Top2 alu _T_22 // Ignored: Inlined leading underscore at Top2.v:1196
 	// Tracing: Top2 alu _T_23 // Ignored: Inlined leading underscore at Top2.v:1197
-	// Tracing: Top2 alu _T_24 // Ignored: Inlined leading underscore at Top2.v:1198
-	// Tracing: Top2 alu _T_25 // Ignored: Inlined leading underscore at Top2.v:1199
+	// Tracing: Top2 alu _T_25 // Ignored: Inlined leading underscore at Top2.v:1198
+	// Tracing: Top2 alu _T_26 // Ignored: Inlined leading underscore at Top2.v:1199
 	// Tracing: Top2 alu _GEN_24 // Ignored: Inlined leading underscore at Top2.v:1200
-	// Tracing: Top2 alu _T_26 // Ignored: Inlined leading underscore at Top2.v:1201
-	// Tracing: Top2 alu _T_27 // Ignored: Inlined leading underscore at Top2.v:1202
-	// Tracing: Top2 alu _T_29 // Ignored: Inlined leading underscore at Top2.v:1203
+	// Tracing: Top2 alu _T_27 // Ignored: Inlined leading underscore at Top2.v:1201
+	// Tracing: Top2 alu _T_29 // Ignored: Inlined leading underscore at Top2.v:1202
+	// Tracing: Top2 alu _T_31 // Ignored: Inlined leading underscore at Top2.v:1203
 	// Tracing: Top2 alu _T_32 // Ignored: Inlined leading underscore at Top2.v:1204
 	// Tracing: Top2 alu _GEN_0 // Ignored: Inlined leading underscore at Top2.v:1205
 	// Tracing: Top2 alu _T_36 // Ignored: Inlined leading underscore at Top2.v:1206
 	// Tracing: Top2 alu _T_38 // Ignored: Inlined leading underscore at Top2.v:1207
 	// Tracing: Top2 alu _T_39 // Ignored: Inlined leading underscore at Top2.v:1208
-	// Tracing: Top2 alu _T_42 // Ignored: Inlined leading underscore at Top2.v:1209
-	// Tracing: Top2 alu _GEN_1 // Ignored: Inlined leading underscore at Top2.v:1210
+	// Tracing: Top2 alu _T_44 // Ignored: Inlined leading underscore at Top2.v:1209
+	// Tracing: Top2 alu _T_45 // Ignored: Inlined leading underscore at Top2.v:1210
 	// Tracing: Top2 alu _T_46 // Ignored: Inlined leading underscore at Top2.v:1211
-	// Tracing: Top2 alu _T_47 // Ignored: Inlined leading underscore at Top2.v:1212
-	// Tracing: Top2 alu _T_48 // Ignored: Inlined leading underscore at Top2.v:1213
-	// Tracing: Top2 alu _T_50 // Ignored: Inlined leading underscore at Top2.v:1214
-	// Tracing: Top2 alu _T_51 // Ignored: Inlined leading underscore at Top2.v:1215
+	// Tracing: Top2 alu _T_48 // Ignored: Inlined leading underscore at Top2.v:1212
+	// Tracing: Top2 alu _T_50 // Ignored: Inlined leading underscore at Top2.v:1213
+	// Tracing: Top2 alu _T_51 // Ignored: Inlined leading underscore at Top2.v:1214
+	// Tracing: Top2 alu _T_53 // Ignored: Inlined leading underscore at Top2.v:1215
 	// Tracing: Top2 alu _T_55 // Ignored: Inlined leading underscore at Top2.v:1216
 	// Tracing: Top2 alu _T_56 // Ignored: Inlined leading underscore at Top2.v:1217
-	// Tracing: Top2 alu _T_58 // Ignored: Inlined leading underscore at Top2.v:1218
+	// Tracing: Top2 alu _T_57 // Ignored: Inlined leading underscore at Top2.v:1218
 	// Tracing: Top2 alu _T_59 // Ignored: Inlined leading underscore at Top2.v:1219
 	// Tracing: Top2 alu _T_60 // Ignored: Inlined leading underscore at Top2.v:1220
-	// Tracing: Top2 alu _T_62 // Ignored: Inlined leading underscore at Top2.v:1221
+	// Tracing: Top2 alu _T_61 // Ignored: Inlined leading underscore at Top2.v:1221
 	// Tracing: Top2 alu _T_63 // Ignored: Inlined leading underscore at Top2.v:1222
 	// Tracing: Top2 alu _T_64 // Ignored: Inlined leading underscore at Top2.v:1223
-	// Tracing: Top2 alu _T_66 // Ignored: Inlined leading underscore at Top2.v:1224
-	// Tracing: Top2 alu _T_67 // Ignored: Inlined leading underscore at Top2.v:1225
+	// Tracing: Top2 alu _T_65 // Ignored: Inlined leading underscore at Top2.v:1224
+	// Tracing: Top2 alu _T_66 // Ignored: Inlined leading underscore at Top2.v:1225
 	// Tracing: Top2 alu _T_68 // Ignored: Inlined leading underscore at Top2.v:1226
 	// Tracing: Top2 alu _T_69 // Ignored: Inlined leading underscore at Top2.v:1227
-	// Tracing: Top2 alu _T_71 // Ignored: Inlined leading underscore at Top2.v:1228
-	// Tracing: Top2 alu _T_74 // Ignored: Inlined leading underscore at Top2.v:1229
+	// Tracing: Top2 alu _GEN_2 // Ignored: Inlined leading underscore at Top2.v:1228
+	// Tracing: Top2 alu _T_73 // Ignored: Inlined leading underscore at Top2.v:1229
 	// Tracing: Top2 alu _T_75 // Ignored: Inlined leading underscore at Top2.v:1230
-	// Tracing: Top2 alu _T_77 // Ignored: Inlined leading underscore at Top2.v:1231
-	// Tracing: Top2 alu _T_78 // Ignored: Inlined leading underscore at Top2.v:1232
-	// Tracing: Top2 alu _GEN_2 // Ignored: Inlined leading underscore at Top2.v:1233
-	// Tracing: Top2 alu _T_82 // Ignored: Inlined leading underscore at Top2.v:1234
-	// Tracing: Top2 alu _GEN_3 // Ignored: Inlined leading underscore at Top2.v:1235
-	// Tracing: Top2 alu _T_87 // Ignored: Inlined leading underscore at Top2.v:1236
-	// Tracing: Top2 alu _T_92 // Ignored: Inlined leading underscore at Top2.v:1237
-	// Tracing: Top2 alu _T_94 // Ignored: Inlined leading underscore at Top2.v:1238
-	// Tracing: Top2 alu _T_95 // Ignored: Inlined leading underscore at Top2.v:1239
-	// Tracing: Top2 alu _GEN_5 // Ignored: Inlined leading underscore at Top2.v:1240
-	// Tracing: Top2 alu _T_99 // Ignored: Inlined leading underscore at Top2.v:1241
-	// Tracing: Top2 alu _T_102 // Ignored: Inlined leading underscore at Top2.v:1242
-	// Tracing: Top2 alu _T_103 // Ignored: Inlined leading underscore at Top2.v:1243
-	// Tracing: Top2 alu _T_104 // Ignored: Inlined leading underscore at Top2.v:1244
-	// Tracing: Top2 alu _GEN_6 // Ignored: Inlined leading underscore at Top2.v:1245
-	// Tracing: Top2 alu _GEN_7 // Ignored: Inlined leading underscore at Top2.v:1246
-	// Tracing: Top2 alu _GEN_8 // Ignored: Inlined leading underscore at Top2.v:1247
-	// Tracing: Top2 alu _GEN_9 // Ignored: Inlined leading underscore at Top2.v:1248
-	// Tracing: Top2 alu _GEN_10 // Ignored: Inlined leading underscore at Top2.v:1249
-	// Tracing: Top2 alu _GEN_11 // Ignored: Inlined leading underscore at Top2.v:1250
-	// Tracing: Top2 alu _GEN_12 // Ignored: Inlined leading underscore at Top2.v:1251
-	// Tracing: Top2 alu _GEN_13 // Ignored: Inlined leading underscore at Top2.v:1252
-	// Tracing: Top2 alu _GEN_14 // Ignored: Inlined leading underscore at Top2.v:1253
-	// Tracing: Top2 alu _GEN_15 // Ignored: Inlined leading underscore at Top2.v:1254
-	// Tracing: Top2 alu _GEN_16 // Ignored: Inlined leading underscore at Top2.v:1255
-	// Tracing: Top2 alu _GEN_17 // Ignored: Inlined leading underscore at Top2.v:1256
-	// Tracing: Top2 alu _GEN_18 // Ignored: Inlined leading underscore at Top2.v:1257
-	// Tracing: Top2 alu _GEN_19 // Ignored: Inlined leading underscore at Top2.v:1258
-	// Tracing: Top2 alu _GEN_20 // Ignored: Inlined leading underscore at Top2.v:1259
-	// Tracing: Top2 alu _GEN_21 // Ignored: Inlined leading underscore at Top2.v:1260
-	// Tracing: Top2 alu _GEN_22 // Ignored: Inlined leading underscore at Top2.v:1261
-	// Tracing: Top2 alu _GEN_25 // Ignored: Inlined leading underscore at Top2.v:1262
-	vcdp->declBus  (c+67,"Top2 alucontrol io_Aluop",-1,2,0);
-	vcdp->declBit  (c+68,"Top2 alucontrol io_Func7",-1);
-	vcdp->declBus  (c+69,"Top2 alucontrol io_Func3",-1,2,0);
-	vcdp->declBus  (c+16,"Top2 alucontrol io_control",-1,4,0);
-	// Tracing: Top2 alucontrol _T_15 // Ignored: Inlined leading underscore at Top2.v:1342
-	// Tracing: Top2 alucontrol _T_18 // Ignored: Inlined leading underscore at Top2.v:1343
-	// Tracing: Top2 alucontrol _T_20 // Ignored: Inlined leading underscore at Top2.v:1344
-	// Tracing: Top2 alucontrol _T_23 // Ignored: Inlined leading underscore at Top2.v:1345
-	// Tracing: Top2 alucontrol _T_26 // Ignored: Inlined leading underscore at Top2.v:1346
-	// Tracing: Top2 alucontrol _T_28 // Ignored: Inlined leading underscore at Top2.v:1347
-	// Tracing: Top2 alucontrol _T_33 // Ignored: Inlined leading underscore at Top2.v:1348
-	// Tracing: Top2 alucontrol _GEN_0 // Ignored: Inlined leading underscore at Top2.v:1349
-	// Tracing: Top2 alucontrol _T_35 // Ignored: Inlined leading underscore at Top2.v:1350
-	// Tracing: Top2 alucontrol _T_37 // Ignored: Inlined leading underscore at Top2.v:1351
-	// Tracing: Top2 alucontrol _T_39 // Ignored: Inlined leading underscore at Top2.v:1352
-	// Tracing: Top2 alucontrol _GEN_2 // Ignored: Inlined leading underscore at Top2.v:1353
-	// Tracing: Top2 alucontrol _GEN_3 // Ignored: Inlined leading underscore at Top2.v:1354
-	// Tracing: Top2 alucontrol _GEN_4 // Ignored: Inlined leading underscore at Top2.v:1355
-	// Tracing: Top2 alucontrol _GEN_5 // Ignored: Inlined leading underscore at Top2.v:1356
-	// Tracing: Top2 alucontrol _GEN_6 // Ignored: Inlined leading underscore at Top2.v:1357
-	vcdp->declBus  (c+70,"Top2 immediate io_Instruction",-1,31,0);
-	vcdp->declBus  (c+71,"Top2 immediate io_PC",-1,31,0);
-	vcdp->declBus  (c+17,"Top2 immediate io_I_Immediate",-1,31,0);
-	vcdp->declBus  (c+18,"Top2 immediate io_S_Immediate",-1,31,0);
-	vcdp->declBus  (c+72,"Top2 immediate io_U_Immediate",-1,31,0);
-	vcdp->declBus  (c+19,"Top2 immediate io_SB_Immediate",-1,31,0);
-	vcdp->declBus  (c+20,"Top2 immediate io_UJ_Immediate",-1,31,0);
-	vcdp->declBus  (c+138,"Top2 immediate sbt1",-1,11,0);
-	// Tracing: Top2 immediate _T_24 // Ignored: Inlined leading underscore at Top2.v:1386
-	// Tracing: Top2 immediate _T_28 // Ignored: Inlined leading underscore at Top2.v:1387
-	vcdp->declBus  (c+139,"Top2 immediate output$",-1,30,0);
-	vcdp->declBus  (c+139,"Top2 immediate output1",-1,30,0);
-	vcdp->declBus  (c+91,"Top2 immediate sbt2",-1,4,0);
-	vcdp->declBus  (c+140,"Top2 immediate sbt3",-1,6,0);
-	vcdp->declBus  (c+141,"Top2 immediate sbt4",-1,11,0);
-	// Tracing: Top2 immediate _T_29 // Ignored: Inlined leading underscore at Top2.v:1393
-	// Tracing: Top2 immediate _T_33 // Ignored: Inlined leading underscore at Top2.v:1394
-	vcdp->declBus  (c+55,"Top2 immediate output2",-1,30,0);
-	vcdp->declBus  (c+56,"Top2 immediate output3",-1,30,0);
-	vcdp->declBus  (c+142,"Top2 immediate sbt5",-1,19,0);
-	// Tracing: Top2 immediate _T_34 // Ignored: Inlined leading underscore at Top2.v:1398
-	// Tracing: Top2 immediate _T_38 // Ignored: Inlined leading underscore at Top2.v:1399
-	vcdp->declBus  (c+143,"Top2 immediate sbt6",-1,30,0);
-	// Tracing: Top2 immediate _GEN_0 // Ignored: Inlined leading underscore at Top2.v:1401
-	vcdp->declQuad (c+144,"Top2 immediate sbt7",-1,45,0);
-	vcdp->declQuad (c+144,"Top2 immediate output4",-1,45,0);
-	vcdp->declBit  (c+146,"Top2 immediate sbt8",-1);
-	vcdp->declBus  (c+147,"Top2 immediate sbt9",-1,3,0);
-	vcdp->declBus  (c+148,"Top2 immediate sbt10",-1,5,0);
-	vcdp->declBit  (c+149,"Top2 immediate sbt11",-1);
-	vcdp->declBus  (c+150,"Top2 immediate sbt12",-1,12,0);
-	// Tracing: Top2 immediate _T_44 // Ignored: Inlined leading underscore at Top2.v:1409
-	// Tracing: Top2 immediate _T_48 // Ignored: Inlined leading underscore at Top2.v:1410
-	vcdp->declBus  (c+57,"Top2 immediate sbt13",-1,31,0);
-	// Tracing: Top2 immediate _T_49 // Ignored: Inlined leading underscore at Top2.v:1412
-	vcdp->declBus  (c+19,"Top2 immediate output5",-1,31,0);
-	vcdp->declBus  (c+151,"Top2 immediate sbt14",-1,7,0);
-	vcdp->declBit  (c+152,"Top2 immediate sbt15",-1);
-	vcdp->declBus  (c+153,"Top2 immediate sbt16",-1,9,0);
-	vcdp->declBus  (c+154,"Top2 immediate sbt18",-1,20,0);
-	// Tracing: Top2 immediate _T_54 // Ignored: Inlined leading underscore at Top2.v:1418
-	// Tracing: Top2 immediate _T_58 // Ignored: Inlined leading underscore at Top2.v:1419
-	vcdp->declBus  (c+58,"Top2 immediate sbt19",-1,31,0);
-	// Tracing: Top2 immediate _T_59 // Ignored: Inlined leading underscore at Top2.v:1421
-	vcdp->declBus  (c+20,"Top2 immediate output8",-1,31,0);
-	// Tracing: Top2 immediate _GEN_3 // Ignored: Inlined leading underscore at Top2.v:1423
-	vcdp->declBit  (c+159,"Top2 PC clock",-1);
-	vcdp->declBit  (c+160,"Top2 PC reset",-1);
-	vcdp->declBus  (c+21,"Top2 PC io_input",-1,31,0);
-	vcdp->declBus  (c+73,"Top2 PC io_pc",-1,31,0);
-	vcdp->declBus  (c+74,"Top2 PC io_pc4",-1,31,0);
-	vcdp->declBus  (c+73,"Top2 PC pc1",-1,31,0);
-	// Tracing: Top2 PC _RAND_0 // Ignored: Inlined leading underscore at Top2.v:1477
-	// Tracing: Top2 PC _T_14 // Ignored: Inlined leading underscore at Top2.v:1478
-	vcdp->declBit  (c+159,"Top2 instmem clock",-1);
-	vcdp->declBus  (c+75,"Top2 instmem io_wrAddr",-1,31,0);
-	vcdp->declBus  (c+22,"Top2 instmem io_rdData",-1,31,0);
-	// Tracing: Top2 instmem mem // Ignored: Wide memory > --trace-max-array ents at Top2.v:1525
-	// Tracing: Top2 instmem _RAND_0 // Ignored: Inlined leading underscore at Top2.v:1526
-	vcdp->declBus  (c+22,"Top2 instmem mem__T_12_data",-1,31,0);
-	vcdp->declBus  (c+155,"Top2 instmem mem__T_12_addr",-1,9,0);
-	vcdp->declBit  (c+159,"Top2 instmem BindsTo_0_InstructionMemory_Inst clock",-1);
-	vcdp->declBus  (c+75,"Top2 instmem BindsTo_0_InstructionMemory_Inst io_wrAddr",-1,31,0);
-	vcdp->declBus  (c+22,"Top2 instmem BindsTo_0_InstructionMemory_Inst io_rdData",-1,31,0);
-	vcdp->declBit  (c+159,"Top2 DataMemory clock",-1);
-	vcdp->declBus  (c+76,"Top2 DataMemory io_wrAddr",-1,7,0);
-	vcdp->declBus  (c+77,"Top2 DataMemory io_wrData",-1,31,0);
-	vcdp->declBit  (c+78,"Top2 DataMemory io_MemRead",-1);
-	vcdp->declBus  (c+23,"Top2 DataMemory io_Data",-1,31,0);
-	vcdp->declBit  (c+79,"Top2 DataMemory io_MemWrite",-1);
-	// Tracing: Top2 DataMemory mem // Ignored: Wide memory > --trace-max-array ents at Top2.v:1572
-	// Tracing: Top2 DataMemory _RAND_0 // Ignored: Inlined leading underscore at Top2.v:1573
-	vcdp->declBus  (c+156,"Top2 DataMemory mem__T_23_data",-1,31,0);
-	vcdp->declBus  (c+157,"Top2 DataMemory mem__T_23_addr",-1,9,0);
-	vcdp->declBus  (c+77,"Top2 DataMemory mem__T_20_data",-1,31,0);
-	vcdp->declBus  (c+157,"Top2 DataMemory mem__T_20_addr",-1,9,0);
-	vcdp->declBit  (c+163,"Top2 DataMemory mem__T_20_mask",-1);
-	vcdp->declBit  (c+79,"Top2 DataMemory mem__T_20_en",-1);
-	vcdp->declBit  (c+159,"Top2 mem_wb clock",-1);
-	vcdp->declBit  (c+160,"Top2 mem_wb reset",-1);
-	vcdp->declBit  (c+80,"Top2 mem_wb io_Regwr",-1);
-	vcdp->declBit  (c+78,"Top2 mem_wb io_MemtoReg",-1);
-	vcdp->declBus  (c+81,"Top2 mem_wb io_Rd_sel",-1,4,0);
-	vcdp->declBus  (c+23,"Top2 mem_wb io_data_mem_in",-1,31,0);
-	vcdp->declBus  (c+82,"Top2 mem_wb io_Aluout",-1,31,0);
-	vcdp->declBit  (c+63,"Top2 mem_wb io_Regwr_out",-1);
-	vcdp->declBit  (c+83,"Top2 mem_wb io_MemtoReg_out",-1);
-	vcdp->declBus  (c+64,"Top2 mem_wb io_Rd_sel_out",-1,4,0);
-	vcdp->declBus  (c+84,"Top2 mem_wb io_data_mem_out",-1,31,0);
-	vcdp->declBus  (c+85,"Top2 mem_wb io_Aluout_2",-1,31,0);
-	vcdp->declBit  (c+63,"Top2 mem_wb Regwr_Reg",-1);
-	// Tracing: Top2 mem_wb _RAND_0 // Ignored: Inlined leading underscore at Top2.v:1639
-	vcdp->declBit  (c+83,"Top2 mem_wb MemtoReg_Reg",-1);
-	// Tracing: Top2 mem_wb _RAND_1 // Ignored: Inlined leading underscore at Top2.v:1641
-	vcdp->declBus  (c+64,"Top2 mem_wb Rd_sel_Reg",-1,4,0);
-	// Tracing: Top2 mem_wb _RAND_2 // Ignored: Inlined leading underscore at Top2.v:1643
-	vcdp->declBus  (c+84,"Top2 mem_wb data_mem_Reg",-1,31,0);
-	// Tracing: Top2 mem_wb _RAND_3 // Ignored: Inlined leading underscore at Top2.v:1645
-	vcdp->declBus  (c+85,"Top2 mem_wb Aluout_Reg",-1,31,0);
-	// Tracing: Top2 mem_wb _RAND_4 // Ignored: Inlined leading underscore at Top2.v:1647
-	vcdp->declBit  (c+159,"Top2 ex_mem clock",-1);
-	vcdp->declBit  (c+160,"Top2 ex_mem reset",-1);
-	vcdp->declBit  (c+86,"Top2 ex_mem io_Memwr",-1);
-	vcdp->declBit  (c+87,"Top2 ex_mem io_Memrd",-1);
-	vcdp->declBit  (c+88,"Top2 ex_mem io_Regwr",-1);
-	vcdp->declBit  (c+87,"Top2 ex_mem io_MemtoReg",-1);
-	vcdp->declBus  (c+24,"Top2 ex_mem io_Rs2",-1,31,0);
-	vcdp->declBus  (c+89,"Top2 ex_mem io_Rd_sel",-1,4,0);
-	vcdp->declBus  (c+15,"Top2 ex_mem io_Alu_out",-1,31,0);
-	vcdp->declBit  (c+79,"Top2 ex_mem io_Memwr_out",-1);
-	vcdp->declBit  (c+78,"Top2 ex_mem io_Memrd_out",-1);
-	vcdp->declBit  (c+80,"Top2 ex_mem io_Regwr_out",-1);
-	vcdp->declBit  (c+78,"Top2 ex_mem io_MemtoReg_out",-1);
-	vcdp->declBus  (c+77,"Top2 ex_mem io_Rs2_out",-1,31,0);
-	vcdp->declBus  (c+81,"Top2 ex_mem io_Rd_sel_out",-1,4,0);
-	vcdp->declBus  (c+82,"Top2 ex_mem io_Alu_out2",-1,31,0);
-	vcdp->declBit  (c+79,"Top2 ex_mem Memwr_Reg",-1);
-	// Tracing: Top2 ex_mem _RAND_0 // Ignored: Inlined leading underscore at Top2.v:1746
-	vcdp->declBit  (c+78,"Top2 ex_mem Memrd_Reg",-1);
-	// Tracing: Top2 ex_mem _RAND_1 // Ignored: Inlined leading underscore at Top2.v:1748
-	vcdp->declBit  (c+80,"Top2 ex_mem Regwr_Reg",-1);
-	// Tracing: Top2 ex_mem _RAND_2 // Ignored: Inlined leading underscore at Top2.v:1750
-	vcdp->declBit  (c+78,"Top2 ex_mem MemtoReg_Reg",-1);
-	// Tracing: Top2 ex_mem _RAND_3 // Ignored: Inlined leading underscore at Top2.v:1752
-	vcdp->declBus  (c+77,"Top2 ex_mem Rs2_Reg",-1,31,0);
-	// Tracing: Top2 ex_mem _RAND_4 // Ignored: Inlined leading underscore at Top2.v:1754
-	vcdp->declBus  (c+81,"Top2 ex_mem Rd_sel_Reg",-1,4,0);
-	// Tracing: Top2 ex_mem _RAND_5 // Ignored: Inlined leading underscore at Top2.v:1756
-	vcdp->declBus  (c+82,"Top2 ex_mem Alu_out_Reg",-1,31,0);
-	// Tracing: Top2 ex_mem _RAND_6 // Ignored: Inlined leading underscore at Top2.v:1758
-	vcdp->declBit  (c+159,"Top2 id_ex clock",-1);
-	vcdp->declBit  (c+160,"Top2 id_ex reset",-1);
-	vcdp->declBus  (c+71,"Top2 id_ex io_PC",-1,31,0);
-	vcdp->declBus  (c+90,"Top2 id_ex io_PC4",-1,31,0);
-	vcdp->declBus  (c+25,"Top2 id_ex io_Immediate",-1,31,0);
-	vcdp->declBus  (c+26,"Top2 id_ex io_rs1_in",-1,31,0);
-	vcdp->declBus  (c+27,"Top2 id_ex io_rs2_in",-1,31,0);
-	vcdp->declBus  (c+91,"Top2 id_ex io_rd_sel_in",-1,4,0);
-	vcdp->declBus  (c+92,"Top2 id_ex io_func3_in",-1,2,0);
-	vcdp->declBit  (c+93,"Top2 id_ex io_func7_in",-1);
-	vcdp->declBit  (c+28,"Top2 id_ex io_ctMemWr_in",-1);
-	vcdp->declBit  (c+29,"Top2 id_ex io_ctMemRd_in",-1);
-	vcdp->declBit  (c+30,"Top2 id_ex io_ctRegWr_in",-1);
-	vcdp->declBit  (c+29,"Top2 id_ex io_ctMemToReg_in",-1);
-	vcdp->declBus  (c+31,"Top2 id_ex io_ctAluOp_in",-1,2,0);
-	vcdp->declBus  (c+32,"Top2 id_ex io_ctOpA_sel_in",-1,1,0);
-	vcdp->declBit  (c+33,"Top2 id_ex io_ctOpB_sel_in",-1);
-	vcdp->declBus  (c+65,"Top2 id_ex io_rs1_sel_in",-1,4,0);
-	vcdp->declBus  (c+66,"Top2 id_ex io_rs2_sel_in",-1,4,0);
-	vcdp->declBus  (c+94,"Top2 id_ex io_pc_out",-1,31,0);
-	vcdp->declBus  (c+95,"Top2 id_ex io_pc4_out",-1,31,0);
-	vcdp->declBus  (c+96,"Top2 id_ex io_rs1",-1,31,0);
-	vcdp->declBus  (c+97,"Top2 id_ex io_rs2",-1,31,0);
-	vcdp->declBus  (c+98,"Top2 id_ex io_Immediate_out",-1,31,0);
-	vcdp->declBus  (c+69,"Top2 id_ex io_func3_out",-1,2,0);
-	vcdp->declBit  (c+68,"Top2 id_ex io_func7_out",-1);
-	vcdp->declBus  (c+89,"Top2 id_ex io_rd_sel_out",-1,4,0);
-	vcdp->declBit  (c+86,"Top2 id_ex io_MemWrite",-1);
-	vcdp->declBit  (c+87,"Top2 id_ex io_MemRead",-1);
-	vcdp->declBit  (c+88,"Top2 id_ex io_RegWrite",-1);
-	vcdp->declBit  (c+87,"Top2 id_ex io_MemtoReg",-1);
-	vcdp->declBus  (c+67,"Top2 id_ex io_ALUoperation",-1,2,0);
-	vcdp->declBus  (c+99,"Top2 id_ex io_operand_A_sel",-1,1,0);
-	vcdp->declBit  (c+100,"Top2 id_ex io_operand_B_sel",-1);
-	vcdp->declBus  (c+101,"Top2 id_ex io_rs1_sel_out",-1,4,0);
-	vcdp->declBus  (c+102,"Top2 id_ex io_rs2_sel_out",-1,4,0);
-	vcdp->declBus  (c+94,"Top2 id_ex pcr",-1,31,0);
-	// Tracing: Top2 id_ex _RAND_0 // Ignored: Inlined leading underscore at Top2.v:1897
-	vcdp->declBus  (c+95,"Top2 id_ex pc4r",-1,31,0);
-	// Tracing: Top2 id_ex _RAND_1 // Ignored: Inlined leading underscore at Top2.v:1899
-	vcdp->declBus  (c+96,"Top2 id_ex rs1r",-1,31,0);
-	// Tracing: Top2 id_ex _RAND_2 // Ignored: Inlined leading underscore at Top2.v:1901
-	vcdp->declBus  (c+97,"Top2 id_ex rs2r",-1,31,0);
-	// Tracing: Top2 id_ex _RAND_3 // Ignored: Inlined leading underscore at Top2.v:1903
-	vcdp->declBus  (c+98,"Top2 id_ex immr",-1,31,0);
-	// Tracing: Top2 id_ex _RAND_4 // Ignored: Inlined leading underscore at Top2.v:1905
-	vcdp->declBus  (c+89,"Top2 id_ex rd_sel_r",-1,4,0);
-	// Tracing: Top2 id_ex _RAND_5 // Ignored: Inlined leading underscore at Top2.v:1907
-	vcdp->declBus  (c+101,"Top2 id_ex rs1_sel_r",-1,4,0);
-	// Tracing: Top2 id_ex _RAND_6 // Ignored: Inlined leading underscore at Top2.v:1909
-	vcdp->declBus  (c+102,"Top2 id_ex rs2_sel_r",-1,4,0);
-	// Tracing: Top2 id_ex _RAND_7 // Ignored: Inlined leading underscore at Top2.v:1911
-	vcdp->declBus  (c+69,"Top2 id_ex func3_r",-1,2,0);
-	// Tracing: Top2 id_ex _RAND_8 // Ignored: Inlined leading underscore at Top2.v:1913
-	vcdp->declBit  (c+68,"Top2 id_ex func7_r",-1);
-	// Tracing: Top2 id_ex _RAND_9 // Ignored: Inlined leading underscore at Top2.v:1915
-	vcdp->declBit  (c+86,"Top2 id_ex MemWr_r",-1);
-	// Tracing: Top2 id_ex _RAND_10 // Ignored: Inlined leading underscore at Top2.v:1917
-	vcdp->declBit  (c+87,"Top2 id_ex MemRd_r",-1);
-	// Tracing: Top2 id_ex _RAND_11 // Ignored: Inlined leading underscore at Top2.v:1919
-	vcdp->declBit  (c+88,"Top2 id_ex RegWr_r",-1);
-	// Tracing: Top2 id_ex _RAND_12 // Ignored: Inlined leading underscore at Top2.v:1921
-	vcdp->declBit  (c+87,"Top2 id_ex MemToReg_r",-1);
-	// Tracing: Top2 id_ex _RAND_13 // Ignored: Inlined leading underscore at Top2.v:1923
-	vcdp->declBus  (c+67,"Top2 id_ex AluOp_r",-1,2,0);
-	// Tracing: Top2 id_ex _RAND_14 // Ignored: Inlined leading underscore at Top2.v:1925
-	vcdp->declBus  (c+99,"Top2 id_ex OpA_sel_r",-1,1,0);
-	// Tracing: Top2 id_ex _RAND_15 // Ignored: Inlined leading underscore at Top2.v:1927
-	vcdp->declBus  (c+158,"Top2 id_ex OpB_sel_r",-1,1,0);
-	// Tracing: Top2 id_ex _RAND_16 // Ignored: Inlined leading underscore at Top2.v:1929
-	vcdp->declBit  (c+159,"Top2 if_id clock",-1);
-	vcdp->declBit  (c+160,"Top2 if_id reset",-1);
-	vcdp->declBus  (c+34,"Top2 if_id io_pc_in",-1,31,0);
-	vcdp->declBus  (c+35,"Top2 if_id io_pc4_in",-1,31,0);
-	vcdp->declBus  (c+36,"Top2 if_id io_data_in",-1,31,0);
-	vcdp->declBus  (c+71,"Top2 if_id io_pc_out",-1,31,0);
-	vcdp->declBus  (c+90,"Top2 if_id io_pc4_out",-1,31,0);
-	vcdp->declBus  (c+70,"Top2 if_id io_rdData",-1,31,0);
-	vcdp->declBus  (c+71,"Top2 if_id pc_reg",-1,31,0);
-	// Tracing: Top2 if_id _RAND_0 // Ignored: Inlined leading underscore at Top2.v:2140
-	vcdp->declBus  (c+90,"Top2 if_id pc4_reg",-1,31,0);
-	// Tracing: Top2 if_id _RAND_1 // Ignored: Inlined leading underscore at Top2.v:2142
-	vcdp->declBus  (c+70,"Top2 if_id inst_reg",-1,31,0);
-	// Tracing: Top2 if_id _RAND_2 // Ignored: Inlined leading underscore at Top2.v:2144
-	vcdp->declBus  (c+37,"Top2 JALR io_A",-1,31,0);
-	vcdp->declBus  (c+17,"Top2 JALR io_B",-1,31,0);
-	vcdp->declBus  (c+38,"Top2 JALR io_x",-1,31,0);
-	// Tracing: Top2 JALR _T_11 // Ignored: Inlined leading underscore at Top2.v:2209
-	// Tracing: Top2 JALR _T_12 // Ignored: Inlined leading underscore at Top2.v:2210
-	vcdp->declBus  (c+59,"Top2 JALR ab",-1,31,0);
-	// Tracing: Top2 JALR _GEN_0 // Ignored: Inlined leading underscore at Top2.v:2212
-	// Tracing: Top2 JALR _T_14 // Ignored: Inlined leading underscore at Top2.v:2213
-	vcdp->declQuad (c+60,"Top2 JALR bc",-1,32,0);
-	// Tracing: Top2 JALR _GEN_1 // Ignored: Inlined leading underscore at Top2.v:2215
-	vcdp->declBus  (c+101,"Top2 forward io_rs1_sel_id",-1,4,0);
-	vcdp->declBus  (c+102,"Top2 forward io_rs2_sel_id",-1,4,0);
-	vcdp->declBus  (c+81,"Top2 forward io_ex_mem_rd",-1,4,0);
-	vcdp->declBus  (c+64,"Top2 forward io_mem_wb_rd",-1,4,0);
-	vcdp->declBit  (c+80,"Top2 forward io_ex_mem_regwrite",-1);
-	vcdp->declBit  (c+63,"Top2 forward io_mem_wb_regwrite",-1);
-	vcdp->declBus  (c+39,"Top2 forward io_forward_a",-1,1,0);
-	vcdp->declBus  (c+40,"Top2 forward io_forward_b",-1,1,0);
-	// Tracing: Top2 forward _T_28 // Ignored: Inlined leading underscore at Top2.v:2235
-	// Tracing: Top2 forward _T_29 // Ignored: Inlined leading underscore at Top2.v:2236
-	// Tracing: Top2 forward _T_30 // Ignored: Inlined leading underscore at Top2.v:2237
-	// Tracing: Top2 forward _T_31 // Ignored: Inlined leading underscore at Top2.v:2238
-	// Tracing: Top2 forward _T_32 // Ignored: Inlined leading underscore at Top2.v:2239
-	// Tracing: Top2 forward _GEN_0 // Ignored: Inlined leading underscore at Top2.v:2240
-	// Tracing: Top2 forward _GEN_1 // Ignored: Inlined leading underscore at Top2.v:2241
-	// Tracing: Top2 forward _GEN_2 // Ignored: Inlined leading underscore at Top2.v:2242
-	// Tracing: Top2 forward _GEN_3 // Ignored: Inlined leading underscore at Top2.v:2243
-	// Tracing: Top2 forward _GEN_4 // Ignored: Inlined leading underscore at Top2.v:2244
-	// Tracing: Top2 forward _GEN_5 // Ignored: Inlined leading underscore at Top2.v:2245
-	// Tracing: Top2 forward _GEN_6 // Ignored: Inlined leading underscore at Top2.v:2246
-	// Tracing: Top2 forward _T_42 // Ignored: Inlined leading underscore at Top2.v:2247
-	// Tracing: Top2 forward _T_43 // Ignored: Inlined leading underscore at Top2.v:2248
-	// Tracing: Top2 forward _T_44 // Ignored: Inlined leading underscore at Top2.v:2249
-	// Tracing: Top2 forward _T_45 // Ignored: Inlined leading underscore at Top2.v:2250
-	// Tracing: Top2 forward _T_46 // Ignored: Inlined leading underscore at Top2.v:2251
-	// Tracing: Top2 forward _T_52 // Ignored: Inlined leading underscore at Top2.v:2252
-	// Tracing: Top2 forward _T_53 // Ignored: Inlined leading underscore at Top2.v:2253
-	// Tracing: Top2 forward _T_54 // Ignored: Inlined leading underscore at Top2.v:2254
-	// Tracing: Top2 forward _T_55 // Ignored: Inlined leading underscore at Top2.v:2255
-	// Tracing: Top2 forward _T_56 // Ignored: Inlined leading underscore at Top2.v:2256
-	// Tracing: Top2 forward _T_57 // Ignored: Inlined leading underscore at Top2.v:2257
-	// Tracing: Top2 forward _T_68 // Ignored: Inlined leading underscore at Top2.v:2258
-	// Tracing: Top2 forward _T_69 // Ignored: Inlined leading underscore at Top2.v:2259
-	// Tracing: Top2 forward _T_78 // Ignored: Inlined leading underscore at Top2.v:2260
-	// Tracing: Top2 forward _T_79 // Ignored: Inlined leading underscore at Top2.v:2261
-	// Tracing: Top2 forward _T_80 // Ignored: Inlined leading underscore at Top2.v:2262
-	// Tracing: Top2 forward _GEN_7 // Ignored: Inlined leading underscore at Top2.v:2263
-	// Tracing: Top2 forward _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2264
-	// Tracing: Top2 forward _GEN_9 // Ignored: Inlined leading underscore at Top2.v:2265
-	// Tracing: Top2 forward _GEN_10 // Ignored: Inlined leading underscore at Top2.v:2266
-	// Tracing: Top2 forward _GEN_11 // Ignored: Inlined leading underscore at Top2.v:2267
-	vcdp->declBus  (c+70,"Top2 hazardDetection io_if_id_inst",-1,31,0);
-	vcdp->declBit  (c+87,"Top2 hazardDetection io_id_ex_memread",-1);
-	vcdp->declBus  (c+89,"Top2 hazardDetection io_id_ex_rd_sel",-1,4,0);
-	vcdp->declBus  (c+90,"Top2 hazardDetection io_if_id_pc_in",-1,31,0);
-	vcdp->declBus  (c+71,"Top2 hazardDetection io_current_pc_in",-1,31,0);
-	vcdp->declBit  (c+41,"Top2 hazardDetection io_inst_forward",-1);
-	vcdp->declBit  (c+41,"Top2 hazardDetection io_pc_forward",-1);
-	vcdp->declBit  (c+41,"Top2 hazardDetection io_ctrl_forward",-1);
-	vcdp->declBus  (c+70,"Top2 hazardDetection io_inst_out",-1,31,0);
-	vcdp->declBus  (c+90,"Top2 hazardDetection io_pc_out",-1,31,0);
-	vcdp->declBus  (c+71,"Top2 hazardDetection io_current_pc_out",-1,31,0);
-	vcdp->declBus  (c+65,"Top2 hazardDetection io_rs1_sel",-1,4,0);
-	vcdp->declBus  (c+66,"Top2 hazardDetection io_rs2_sel",-1,4,0);
-	// Tracing: Top2 hazardDetection _T_35 // Ignored: Inlined leading underscore at Top2.v:2319
-	// Tracing: Top2 hazardDetection _T_36 // Ignored: Inlined leading underscore at Top2.v:2320
-	// Tracing: Top2 hazardDetection _T_37 // Ignored: Inlined leading underscore at Top2.v:2321
-	vcdp->declBus  (c+42,"Top2 branchlogic io_rs1_in",-1,31,0);
-	vcdp->declBus  (c+43,"Top2 branchlogic io_rs2_in",-1,31,0);
-	vcdp->declBus  (c+92,"Top2 branchlogic io_func3_in",-1,2,0);
+	// Tracing: Top2 alu _GEN_3 // Ignored: Inlined leading underscore at Top2.v:1231
+	// Tracing: Top2 alu _T_79 // Ignored: Inlined leading underscore at Top2.v:1232
+	// Tracing: Top2 alu _T_84 // Ignored: Inlined leading underscore at Top2.v:1233
+	// Tracing: Top2 alu _T_85 // Ignored: Inlined leading underscore at Top2.v:1234
+	// Tracing: Top2 alu _GEN_5 // Ignored: Inlined leading underscore at Top2.v:1235
+	// Tracing: Top2 alu _T_90 // Ignored: Inlined leading underscore at Top2.v:1236
+	// Tracing: Top2 alu _T_91 // Ignored: Inlined leading underscore at Top2.v:1237
+	// Tracing: Top2 alu _T_92 // Ignored: Inlined leading underscore at Top2.v:1238
+	// Tracing: Top2 alu _GEN_6 // Ignored: Inlined leading underscore at Top2.v:1239
+	// Tracing: Top2 alu _GEN_8 // Ignored: Inlined leading underscore at Top2.v:1240
+	// Tracing: Top2 alu _GEN_9 // Ignored: Inlined leading underscore at Top2.v:1241
+	// Tracing: Top2 alu _GEN_10 // Ignored: Inlined leading underscore at Top2.v:1242
+	// Tracing: Top2 alu _GEN_11 // Ignored: Inlined leading underscore at Top2.v:1243
+	// Tracing: Top2 alu _GEN_12 // Ignored: Inlined leading underscore at Top2.v:1244
+	// Tracing: Top2 alu _GEN_13 // Ignored: Inlined leading underscore at Top2.v:1245
+	// Tracing: Top2 alu _GEN_14 // Ignored: Inlined leading underscore at Top2.v:1246
+	// Tracing: Top2 alu _GEN_15 // Ignored: Inlined leading underscore at Top2.v:1247
+	// Tracing: Top2 alu _GEN_16 // Ignored: Inlined leading underscore at Top2.v:1248
+	// Tracing: Top2 alu _GEN_17 // Ignored: Inlined leading underscore at Top2.v:1249
+	// Tracing: Top2 alu _GEN_18 // Ignored: Inlined leading underscore at Top2.v:1250
+	// Tracing: Top2 alu _GEN_19 // Ignored: Inlined leading underscore at Top2.v:1251
+	// Tracing: Top2 alu _GEN_20 // Ignored: Inlined leading underscore at Top2.v:1252
+	// Tracing: Top2 alu _GEN_21 // Ignored: Inlined leading underscore at Top2.v:1253
+	// Tracing: Top2 alu _GEN_22 // Ignored: Inlined leading underscore at Top2.v:1254
+	// Tracing: Top2 alu _GEN_25 // Ignored: Inlined leading underscore at Top2.v:1255
+	vcdp->declBus  (c+70,"Top2 alucontrol io_Aluop",-1,2,0);
+	vcdp->declBus  (c+71,"Top2 alucontrol io_Func7",-1,6,0);
+	vcdp->declBus  (c+72,"Top2 alucontrol io_Func3",-1,2,0);
+	vcdp->declBus  (c+17,"Top2 alucontrol io_control",-1,4,0);
+	// Tracing: Top2 alucontrol _T_15 // Ignored: Inlined leading underscore at Top2.v:1328
+	// Tracing: Top2 alucontrol _T_17 // Ignored: Inlined leading underscore at Top2.v:1329
+	// Tracing: Top2 alucontrol _T_21 // Ignored: Inlined leading underscore at Top2.v:1330
+	// Tracing: Top2 alucontrol _GEN_0 // Ignored: Inlined leading underscore at Top2.v:1331
+	// Tracing: Top2 alucontrol _T_23 // Ignored: Inlined leading underscore at Top2.v:1332
+	// Tracing: Top2 alucontrol _T_26 // Ignored: Inlined leading underscore at Top2.v:1333
+	// Tracing: Top2 alucontrol _T_29 // Ignored: Inlined leading underscore at Top2.v:1334
+	// Tracing: Top2 alucontrol _T_31 // Ignored: Inlined leading underscore at Top2.v:1335
+	// Tracing: Top2 alucontrol _T_38 // Ignored: Inlined leading underscore at Top2.v:1336
+	// Tracing: Top2 alucontrol _GEN_1 // Ignored: Inlined leading underscore at Top2.v:1337
+	// Tracing: Top2 alucontrol _T_40 // Ignored: Inlined leading underscore at Top2.v:1338
+	// Tracing: Top2 alucontrol _T_42 // Ignored: Inlined leading underscore at Top2.v:1339
+	// Tracing: Top2 alucontrol _T_44 // Ignored: Inlined leading underscore at Top2.v:1340
+	// Tracing: Top2 alucontrol _GEN_3 // Ignored: Inlined leading underscore at Top2.v:1341
+	// Tracing: Top2 alucontrol _GEN_4 // Ignored: Inlined leading underscore at Top2.v:1342
+	// Tracing: Top2 alucontrol _GEN_5 // Ignored: Inlined leading underscore at Top2.v:1343
+	// Tracing: Top2 alucontrol _GEN_6 // Ignored: Inlined leading underscore at Top2.v:1344
+	// Tracing: Top2 alucontrol _GEN_7 // Ignored: Inlined leading underscore at Top2.v:1345
+	// Tracing: Top2 alucontrol _GEN_8 // Ignored: Inlined leading underscore at Top2.v:1346
+	vcdp->declBus  (c+73,"Top2 immediate io_Instruction",-1,31,0);
+	vcdp->declBus  (c+74,"Top2 immediate io_PC",-1,31,0);
+	vcdp->declBus  (c+18,"Top2 immediate io_I_Immediate",-1,31,0);
+	vcdp->declBus  (c+19,"Top2 immediate io_S_Immediate",-1,31,0);
+	vcdp->declBus  (c+75,"Top2 immediate io_U_Immediate",-1,31,0);
+	vcdp->declBus  (c+20,"Top2 immediate io_SB_Immediate",-1,31,0);
+	vcdp->declBus  (c+21,"Top2 immediate io_UJ_Immediate",-1,31,0);
+	vcdp->declBus  (c+143,"Top2 immediate sbt1",-1,11,0);
+	// Tracing: Top2 immediate _T_24 // Ignored: Inlined leading underscore at Top2.v:1378
+	// Tracing: Top2 immediate _T_28 // Ignored: Inlined leading underscore at Top2.v:1379
+	vcdp->declBus  (c+144,"Top2 immediate output$",-1,30,0);
+	vcdp->declBus  (c+144,"Top2 immediate output1",-1,30,0);
+	vcdp->declBus  (c+96,"Top2 immediate sbt2",-1,4,0);
+	vcdp->declBus  (c+98,"Top2 immediate sbt3",-1,6,0);
+	vcdp->declBus  (c+145,"Top2 immediate sbt4",-1,11,0);
+	// Tracing: Top2 immediate _T_29 // Ignored: Inlined leading underscore at Top2.v:1385
+	// Tracing: Top2 immediate _T_33 // Ignored: Inlined leading underscore at Top2.v:1386
+	vcdp->declBus  (c+57,"Top2 immediate output2",-1,30,0);
+	vcdp->declBus  (c+58,"Top2 immediate output3",-1,30,0);
+	vcdp->declBus  (c+146,"Top2 immediate sbt5",-1,19,0);
+	// Tracing: Top2 immediate _T_34 // Ignored: Inlined leading underscore at Top2.v:1390
+	// Tracing: Top2 immediate _T_38 // Ignored: Inlined leading underscore at Top2.v:1391
+	vcdp->declBus  (c+147,"Top2 immediate sbt6",-1,30,0);
+	// Tracing: Top2 immediate _GEN_0 // Ignored: Inlined leading underscore at Top2.v:1393
+	vcdp->declQuad (c+148,"Top2 immediate sbt7",-1,45,0);
+	vcdp->declQuad (c+148,"Top2 immediate output4",-1,45,0);
+	vcdp->declBit  (c+150,"Top2 immediate sbt8",-1);
+	vcdp->declBus  (c+151,"Top2 immediate sbt9",-1,3,0);
+	vcdp->declBus  (c+152,"Top2 immediate sbt10",-1,5,0);
+	vcdp->declBit  (c+153,"Top2 immediate sbt11",-1);
+	vcdp->declBus  (c+154,"Top2 immediate sbt12",-1,12,0);
+	// Tracing: Top2 immediate _T_44 // Ignored: Inlined leading underscore at Top2.v:1401
+	// Tracing: Top2 immediate _T_48 // Ignored: Inlined leading underscore at Top2.v:1402
+	vcdp->declBus  (c+59,"Top2 immediate sbt13",-1,31,0);
+	// Tracing: Top2 immediate _T_49 // Ignored: Inlined leading underscore at Top2.v:1404
+	vcdp->declBus  (c+60,"Top2 immediate output5",-1,31,0);
+	vcdp->declBus  (c+155,"Top2 immediate sbt14",-1,7,0);
+	vcdp->declBit  (c+156,"Top2 immediate sbt15",-1);
+	vcdp->declBus  (c+157,"Top2 immediate sbt16",-1,9,0);
+	vcdp->declBus  (c+158,"Top2 immediate sbt18",-1,20,0);
+	// Tracing: Top2 immediate _T_54 // Ignored: Inlined leading underscore at Top2.v:1410
+	// Tracing: Top2 immediate _T_58 // Ignored: Inlined leading underscore at Top2.v:1411
+	vcdp->declBus  (c+61,"Top2 immediate sbt19",-1,31,0);
+	// Tracing: Top2 immediate _T_59 // Ignored: Inlined leading underscore at Top2.v:1413
+	vcdp->declBus  (c+21,"Top2 immediate output8",-1,31,0);
+	// Tracing: Top2 immediate _GEN_3 // Ignored: Inlined leading underscore at Top2.v:1415
+	vcdp->declBit  (c+163,"Top2 PC clock",-1);
+	vcdp->declBit  (c+164,"Top2 PC reset",-1);
+	vcdp->declBus  (c+22,"Top2 PC io_input",-1,31,0);
+	vcdp->declBus  (c+76,"Top2 PC io_pc",-1,31,0);
+	vcdp->declBus  (c+77,"Top2 PC io_pc4",-1,31,0);
+	vcdp->declBus  (c+76,"Top2 PC pc1",-1,31,0);
+	// Tracing: Top2 PC _RAND_0 // Ignored: Inlined leading underscore at Top2.v:1469
+	// Tracing: Top2 PC _T_14 // Ignored: Inlined leading underscore at Top2.v:1470
+	vcdp->declBit  (c+163,"Top2 instmem clock",-1);
+	vcdp->declBus  (c+78,"Top2 instmem io_wrAddr",-1,31,0);
+	vcdp->declBus  (c+23,"Top2 instmem io_rdData",-1,31,0);
+	// Tracing: Top2 instmem mem // Ignored: Wide memory > --trace-max-array ents at Top2.v:1517
+	// Tracing: Top2 instmem _RAND_0 // Ignored: Inlined leading underscore at Top2.v:1518
+	vcdp->declBus  (c+23,"Top2 instmem mem__T_12_data",-1,31,0);
+	vcdp->declBus  (c+159,"Top2 instmem mem__T_12_addr",-1,13,0);
+	vcdp->declBit  (c+163,"Top2 instmem BindsTo_0_InstructionMemory_Inst clock",-1);
+	vcdp->declBus  (c+78,"Top2 instmem BindsTo_0_InstructionMemory_Inst io_wrAddr",-1,31,0);
+	vcdp->declBus  (c+23,"Top2 instmem BindsTo_0_InstructionMemory_Inst io_rdData",-1,31,0);
+	vcdp->declBit  (c+163,"Top2 DataMemory clock",-1);
+	vcdp->declBus  (c+79,"Top2 DataMemory io_wrAddr",-1,7,0);
+	vcdp->declBus  (c+80,"Top2 DataMemory io_wrData",-1,31,0);
+	vcdp->declBit  (c+81,"Top2 DataMemory io_MemRead",-1);
+	vcdp->declBus  (c+24,"Top2 DataMemory io_Data",-1,31,0);
+	vcdp->declBit  (c+82,"Top2 DataMemory io_MemWrite",-1);
+	// Tracing: Top2 DataMemory mem // Ignored: Wide memory > --trace-max-array ents at Top2.v:1564
+	// Tracing: Top2 DataMemory _RAND_0 // Ignored: Inlined leading underscore at Top2.v:1565
+	vcdp->declBus  (c+160,"Top2 DataMemory mem__T_23_data",-1,31,0);
+	vcdp->declBus  (c+161,"Top2 DataMemory mem__T_23_addr",-1,13,0);
+	vcdp->declBus  (c+80,"Top2 DataMemory mem__T_20_data",-1,31,0);
+	vcdp->declBus  (c+161,"Top2 DataMemory mem__T_20_addr",-1,13,0);
+	vcdp->declBit  (c+168,"Top2 DataMemory mem__T_20_mask",-1);
+	vcdp->declBit  (c+82,"Top2 DataMemory mem__T_20_en",-1);
+	vcdp->declBit  (c+163,"Top2 mem_wb clock",-1);
+	vcdp->declBit  (c+164,"Top2 mem_wb reset",-1);
+	vcdp->declBit  (c+83,"Top2 mem_wb io_Regwr",-1);
+	vcdp->declBit  (c+84,"Top2 mem_wb io_MemtoReg",-1);
+	vcdp->declBus  (c+85,"Top2 mem_wb io_Rd_sel",-1,4,0);
+	vcdp->declBus  (c+24,"Top2 mem_wb io_data_mem_in",-1,31,0);
+	vcdp->declBus  (c+86,"Top2 mem_wb io_Aluout",-1,31,0);
+	vcdp->declBit  (c+66,"Top2 mem_wb io_Regwr_out",-1);
+	vcdp->declBit  (c+87,"Top2 mem_wb io_MemtoReg_out",-1);
+	vcdp->declBus  (c+67,"Top2 mem_wb io_Rd_sel_out",-1,4,0);
+	vcdp->declBus  (c+88,"Top2 mem_wb io_data_mem_out",-1,31,0);
+	vcdp->declBus  (c+89,"Top2 mem_wb io_Aluout_2",-1,31,0);
+	vcdp->declBit  (c+66,"Top2 mem_wb Regwr_Reg",-1);
+	// Tracing: Top2 mem_wb _RAND_0 // Ignored: Inlined leading underscore at Top2.v:1631
+	vcdp->declBit  (c+87,"Top2 mem_wb MemtoReg_Reg",-1);
+	// Tracing: Top2 mem_wb _RAND_1 // Ignored: Inlined leading underscore at Top2.v:1633
+	vcdp->declBus  (c+67,"Top2 mem_wb Rd_sel_Reg",-1,4,0);
+	// Tracing: Top2 mem_wb _RAND_2 // Ignored: Inlined leading underscore at Top2.v:1635
+	vcdp->declBus  (c+88,"Top2 mem_wb data_mem_Reg",-1,31,0);
+	// Tracing: Top2 mem_wb _RAND_3 // Ignored: Inlined leading underscore at Top2.v:1637
+	vcdp->declBus  (c+89,"Top2 mem_wb Aluout_Reg",-1,31,0);
+	// Tracing: Top2 mem_wb _RAND_4 // Ignored: Inlined leading underscore at Top2.v:1639
+	vcdp->declBit  (c+163,"Top2 ex_mem clock",-1);
+	vcdp->declBit  (c+164,"Top2 ex_mem reset",-1);
+	vcdp->declBit  (c+90,"Top2 ex_mem io_Memwr",-1);
+	vcdp->declBit  (c+91,"Top2 ex_mem io_Memrd",-1);
+	vcdp->declBit  (c+92,"Top2 ex_mem io_Regwr",-1);
+	vcdp->declBit  (c+93,"Top2 ex_mem io_MemtoReg",-1);
+	vcdp->declBus  (c+25,"Top2 ex_mem io_Rs2",-1,31,0);
+	vcdp->declBus  (c+94,"Top2 ex_mem io_Rd_sel",-1,4,0);
+	vcdp->declBus  (c+16,"Top2 ex_mem io_Alu_out",-1,31,0);
+	vcdp->declBit  (c+82,"Top2 ex_mem io_Memwr_out",-1);
+	vcdp->declBit  (c+81,"Top2 ex_mem io_Memrd_out",-1);
+	vcdp->declBit  (c+83,"Top2 ex_mem io_Regwr_out",-1);
+	vcdp->declBit  (c+84,"Top2 ex_mem io_MemtoReg_out",-1);
+	vcdp->declBus  (c+80,"Top2 ex_mem io_Rs2_out",-1,31,0);
+	vcdp->declBus  (c+85,"Top2 ex_mem io_Rd_sel_out",-1,4,0);
+	vcdp->declBus  (c+86,"Top2 ex_mem io_Alu_out2",-1,31,0);
+	vcdp->declBit  (c+82,"Top2 ex_mem Memwr_Reg",-1);
+	// Tracing: Top2 ex_mem _RAND_0 // Ignored: Inlined leading underscore at Top2.v:1738
+	vcdp->declBit  (c+81,"Top2 ex_mem Memrd_Reg",-1);
+	// Tracing: Top2 ex_mem _RAND_1 // Ignored: Inlined leading underscore at Top2.v:1740
+	vcdp->declBit  (c+83,"Top2 ex_mem Regwr_Reg",-1);
+	// Tracing: Top2 ex_mem _RAND_2 // Ignored: Inlined leading underscore at Top2.v:1742
+	vcdp->declBit  (c+84,"Top2 ex_mem MemtoReg_Reg",-1);
+	// Tracing: Top2 ex_mem _RAND_3 // Ignored: Inlined leading underscore at Top2.v:1744
+	vcdp->declBus  (c+80,"Top2 ex_mem Rs2_Reg",-1,31,0);
+	// Tracing: Top2 ex_mem _RAND_4 // Ignored: Inlined leading underscore at Top2.v:1746
+	vcdp->declBus  (c+85,"Top2 ex_mem Rd_sel_Reg",-1,4,0);
+	// Tracing: Top2 ex_mem _RAND_5 // Ignored: Inlined leading underscore at Top2.v:1748
+	vcdp->declBus  (c+86,"Top2 ex_mem Alu_out_Reg",-1,31,0);
+	// Tracing: Top2 ex_mem _RAND_6 // Ignored: Inlined leading underscore at Top2.v:1750
+	vcdp->declBit  (c+163,"Top2 id_ex clock",-1);
+	vcdp->declBit  (c+164,"Top2 id_ex reset",-1);
+	vcdp->declBus  (c+74,"Top2 id_ex io_PC",-1,31,0);
+	vcdp->declBus  (c+95,"Top2 id_ex io_PC4",-1,31,0);
+	vcdp->declBus  (c+26,"Top2 id_ex io_Immediate",-1,31,0);
+	vcdp->declBus  (c+27,"Top2 id_ex io_rs1_in",-1,31,0);
+	vcdp->declBus  (c+28,"Top2 id_ex io_rs2_in",-1,31,0);
+	vcdp->declBus  (c+96,"Top2 id_ex io_rd_sel_in",-1,4,0);
+	vcdp->declBus  (c+97,"Top2 id_ex io_func3_in",-1,2,0);
+	vcdp->declBus  (c+98,"Top2 id_ex io_func7_in",-1,6,0);
+	vcdp->declBit  (c+29,"Top2 id_ex io_ctMemWr_in",-1);
+	vcdp->declBit  (c+30,"Top2 id_ex io_ctMemRd_in",-1);
+	vcdp->declBit  (c+31,"Top2 id_ex io_ctRegWr_in",-1);
+	vcdp->declBit  (c+32,"Top2 id_ex io_ctMemToReg_in",-1);
+	vcdp->declBus  (c+33,"Top2 id_ex io_ctAluOp_in",-1,2,0);
+	vcdp->declBus  (c+34,"Top2 id_ex io_ctOpA_sel_in",-1,1,0);
+	vcdp->declBit  (c+35,"Top2 id_ex io_ctOpB_sel_in",-1);
+	vcdp->declBus  (c+68,"Top2 id_ex io_rs1_sel_in",-1,4,0);
+	vcdp->declBus  (c+69,"Top2 id_ex io_rs2_sel_in",-1,4,0);
+	vcdp->declBus  (c+99,"Top2 id_ex io_pc_out",-1,31,0);
+	vcdp->declBus  (c+100,"Top2 id_ex io_pc4_out",-1,31,0);
+	vcdp->declBus  (c+101,"Top2 id_ex io_rs1",-1,31,0);
+	vcdp->declBus  (c+102,"Top2 id_ex io_rs2",-1,31,0);
+	vcdp->declBus  (c+103,"Top2 id_ex io_Immediate_out",-1,31,0);
+	vcdp->declBus  (c+72,"Top2 id_ex io_func3_out",-1,2,0);
+	vcdp->declBus  (c+71,"Top2 id_ex io_func7_out",-1,6,0);
+	vcdp->declBus  (c+94,"Top2 id_ex io_rd_sel_out",-1,4,0);
+	vcdp->declBit  (c+90,"Top2 id_ex io_MemWrite",-1);
+	vcdp->declBit  (c+91,"Top2 id_ex io_MemRead",-1);
+	vcdp->declBit  (c+92,"Top2 id_ex io_RegWrite",-1);
+	vcdp->declBit  (c+93,"Top2 id_ex io_MemtoReg",-1);
+	vcdp->declBus  (c+70,"Top2 id_ex io_ALUoperation",-1,2,0);
+	vcdp->declBus  (c+104,"Top2 id_ex io_operand_A_sel",-1,1,0);
+	vcdp->declBit  (c+105,"Top2 id_ex io_operand_B_sel",-1);
+	vcdp->declBus  (c+106,"Top2 id_ex io_rs1_sel_out",-1,4,0);
+	vcdp->declBus  (c+107,"Top2 id_ex io_rs2_sel_out",-1,4,0);
+	vcdp->declBus  (c+99,"Top2 id_ex pcr",-1,31,0);
+	// Tracing: Top2 id_ex _RAND_0 // Ignored: Inlined leading underscore at Top2.v:1889
+	vcdp->declBus  (c+100,"Top2 id_ex pc4r",-1,31,0);
+	// Tracing: Top2 id_ex _RAND_1 // Ignored: Inlined leading underscore at Top2.v:1891
+	vcdp->declBus  (c+101,"Top2 id_ex rs1r",-1,31,0);
+	// Tracing: Top2 id_ex _RAND_2 // Ignored: Inlined leading underscore at Top2.v:1893
+	vcdp->declBus  (c+102,"Top2 id_ex rs2r",-1,31,0);
+	// Tracing: Top2 id_ex _RAND_3 // Ignored: Inlined leading underscore at Top2.v:1895
+	vcdp->declBus  (c+103,"Top2 id_ex immr",-1,31,0);
+	// Tracing: Top2 id_ex _RAND_4 // Ignored: Inlined leading underscore at Top2.v:1897
+	vcdp->declBus  (c+94,"Top2 id_ex rd_sel_r",-1,4,0);
+	// Tracing: Top2 id_ex _RAND_5 // Ignored: Inlined leading underscore at Top2.v:1899
+	vcdp->declBus  (c+106,"Top2 id_ex rs1_sel_r",-1,4,0);
+	// Tracing: Top2 id_ex _RAND_6 // Ignored: Inlined leading underscore at Top2.v:1901
+	vcdp->declBus  (c+107,"Top2 id_ex rs2_sel_r",-1,4,0);
+	// Tracing: Top2 id_ex _RAND_7 // Ignored: Inlined leading underscore at Top2.v:1903
+	vcdp->declBus  (c+72,"Top2 id_ex func3_r",-1,2,0);
+	// Tracing: Top2 id_ex _RAND_8 // Ignored: Inlined leading underscore at Top2.v:1905
+	vcdp->declBus  (c+71,"Top2 id_ex func7_r",-1,6,0);
+	// Tracing: Top2 id_ex _RAND_9 // Ignored: Inlined leading underscore at Top2.v:1907
+	vcdp->declBit  (c+90,"Top2 id_ex MemWr_r",-1);
+	// Tracing: Top2 id_ex _RAND_10 // Ignored: Inlined leading underscore at Top2.v:1909
+	vcdp->declBit  (c+91,"Top2 id_ex MemRd_r",-1);
+	// Tracing: Top2 id_ex _RAND_11 // Ignored: Inlined leading underscore at Top2.v:1911
+	vcdp->declBit  (c+92,"Top2 id_ex RegWr_r",-1);
+	// Tracing: Top2 id_ex _RAND_12 // Ignored: Inlined leading underscore at Top2.v:1913
+	vcdp->declBit  (c+93,"Top2 id_ex MemToReg_r",-1);
+	// Tracing: Top2 id_ex _RAND_13 // Ignored: Inlined leading underscore at Top2.v:1915
+	vcdp->declBus  (c+70,"Top2 id_ex AluOp_r",-1,2,0);
+	// Tracing: Top2 id_ex _RAND_14 // Ignored: Inlined leading underscore at Top2.v:1917
+	vcdp->declBus  (c+104,"Top2 id_ex OpA_sel_r",-1,1,0);
+	// Tracing: Top2 id_ex _RAND_15 // Ignored: Inlined leading underscore at Top2.v:1919
+	vcdp->declBus  (c+162,"Top2 id_ex OpB_sel_r",-1,1,0);
+	// Tracing: Top2 id_ex _RAND_16 // Ignored: Inlined leading underscore at Top2.v:1921
+	vcdp->declBit  (c+163,"Top2 if_id clock",-1);
+	vcdp->declBit  (c+164,"Top2 if_id reset",-1);
+	vcdp->declBus  (c+36,"Top2 if_id io_pc_in",-1,31,0);
+	vcdp->declBus  (c+37,"Top2 if_id io_pc4_in",-1,31,0);
+	vcdp->declBus  (c+38,"Top2 if_id io_data_in",-1,31,0);
+	vcdp->declBus  (c+74,"Top2 if_id io_pc_out",-1,31,0);
+	vcdp->declBus  (c+95,"Top2 if_id io_pc4_out",-1,31,0);
+	vcdp->declBus  (c+73,"Top2 if_id io_rdData",-1,31,0);
+	vcdp->declBus  (c+74,"Top2 if_id pc_reg",-1,31,0);
+	// Tracing: Top2 if_id _RAND_0 // Ignored: Inlined leading underscore at Top2.v:2132
+	vcdp->declBus  (c+95,"Top2 if_id pc4_reg",-1,31,0);
+	// Tracing: Top2 if_id _RAND_1 // Ignored: Inlined leading underscore at Top2.v:2134
+	vcdp->declBus  (c+73,"Top2 if_id inst_reg",-1,31,0);
+	// Tracing: Top2 if_id _RAND_2 // Ignored: Inlined leading underscore at Top2.v:2136
+	vcdp->declBus  (c+39,"Top2 JALR io_A",-1,31,0);
+	vcdp->declBus  (c+18,"Top2 JALR io_B",-1,31,0);
+	vcdp->declBus  (c+40,"Top2 JALR io_x",-1,31,0);
+	// Tracing: Top2 JALR _T_11 // Ignored: Inlined leading underscore at Top2.v:2201
+	// Tracing: Top2 JALR _T_12 // Ignored: Inlined leading underscore at Top2.v:2202
+	vcdp->declBus  (c+62,"Top2 JALR ab",-1,31,0);
+	// Tracing: Top2 JALR _GEN_0 // Ignored: Inlined leading underscore at Top2.v:2204
+	// Tracing: Top2 JALR _T_14 // Ignored: Inlined leading underscore at Top2.v:2205
+	vcdp->declQuad (c+63,"Top2 JALR bc",-1,32,0);
+	// Tracing: Top2 JALR _GEN_1 // Ignored: Inlined leading underscore at Top2.v:2207
+	vcdp->declBus  (c+106,"Top2 forward io_rs1_sel_id",-1,4,0);
+	vcdp->declBus  (c+107,"Top2 forward io_rs2_sel_id",-1,4,0);
+	vcdp->declBus  (c+85,"Top2 forward io_ex_mem_rd",-1,4,0);
+	vcdp->declBus  (c+67,"Top2 forward io_mem_wb_rd",-1,4,0);
+	vcdp->declBit  (c+83,"Top2 forward io_ex_mem_regwrite",-1);
+	vcdp->declBit  (c+66,"Top2 forward io_mem_wb_regwrite",-1);
+	vcdp->declBus  (c+41,"Top2 forward io_forward_a",-1,1,0);
+	vcdp->declBus  (c+42,"Top2 forward io_forward_b",-1,1,0);
+	// Tracing: Top2 forward _T_28 // Ignored: Inlined leading underscore at Top2.v:2227
+	// Tracing: Top2 forward _T_29 // Ignored: Inlined leading underscore at Top2.v:2228
+	// Tracing: Top2 forward _T_30 // Ignored: Inlined leading underscore at Top2.v:2229
+	// Tracing: Top2 forward _T_31 // Ignored: Inlined leading underscore at Top2.v:2230
+	// Tracing: Top2 forward _T_32 // Ignored: Inlined leading underscore at Top2.v:2231
+	// Tracing: Top2 forward _GEN_0 // Ignored: Inlined leading underscore at Top2.v:2232
+	// Tracing: Top2 forward _GEN_1 // Ignored: Inlined leading underscore at Top2.v:2233
+	// Tracing: Top2 forward _GEN_2 // Ignored: Inlined leading underscore at Top2.v:2234
+	// Tracing: Top2 forward _GEN_3 // Ignored: Inlined leading underscore at Top2.v:2235
+	// Tracing: Top2 forward _GEN_4 // Ignored: Inlined leading underscore at Top2.v:2236
+	// Tracing: Top2 forward _GEN_5 // Ignored: Inlined leading underscore at Top2.v:2237
+	// Tracing: Top2 forward _GEN_6 // Ignored: Inlined leading underscore at Top2.v:2238
+	// Tracing: Top2 forward _T_42 // Ignored: Inlined leading underscore at Top2.v:2239
+	// Tracing: Top2 forward _T_43 // Ignored: Inlined leading underscore at Top2.v:2240
+	// Tracing: Top2 forward _T_44 // Ignored: Inlined leading underscore at Top2.v:2241
+	// Tracing: Top2 forward _T_45 // Ignored: Inlined leading underscore at Top2.v:2242
+	// Tracing: Top2 forward _T_46 // Ignored: Inlined leading underscore at Top2.v:2243
+	// Tracing: Top2 forward _T_52 // Ignored: Inlined leading underscore at Top2.v:2244
+	// Tracing: Top2 forward _T_53 // Ignored: Inlined leading underscore at Top2.v:2245
+	// Tracing: Top2 forward _T_54 // Ignored: Inlined leading underscore at Top2.v:2246
+	// Tracing: Top2 forward _T_55 // Ignored: Inlined leading underscore at Top2.v:2247
+	// Tracing: Top2 forward _T_56 // Ignored: Inlined leading underscore at Top2.v:2248
+	// Tracing: Top2 forward _T_57 // Ignored: Inlined leading underscore at Top2.v:2249
+	// Tracing: Top2 forward _T_68 // Ignored: Inlined leading underscore at Top2.v:2250
+	// Tracing: Top2 forward _T_69 // Ignored: Inlined leading underscore at Top2.v:2251
+	// Tracing: Top2 forward _T_78 // Ignored: Inlined leading underscore at Top2.v:2252
+	// Tracing: Top2 forward _T_79 // Ignored: Inlined leading underscore at Top2.v:2253
+	// Tracing: Top2 forward _T_80 // Ignored: Inlined leading underscore at Top2.v:2254
+	// Tracing: Top2 forward _GEN_7 // Ignored: Inlined leading underscore at Top2.v:2255
+	// Tracing: Top2 forward _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2256
+	// Tracing: Top2 forward _GEN_9 // Ignored: Inlined leading underscore at Top2.v:2257
+	// Tracing: Top2 forward _GEN_10 // Ignored: Inlined leading underscore at Top2.v:2258
+	// Tracing: Top2 forward _GEN_11 // Ignored: Inlined leading underscore at Top2.v:2259
+	vcdp->declBus  (c+73,"Top2 hazardDetection io_if_id_inst",-1,31,0);
+	vcdp->declBit  (c+3,"Top2 hazardDetection io_if_id_memread",-1);
+	vcdp->declBit  (c+91,"Top2 hazardDetection io_id_ex_memread",-1);
+	vcdp->declBus  (c+94,"Top2 hazardDetection io_id_ex_rd_sel",-1,4,0);
+	vcdp->declBus  (c+95,"Top2 hazardDetection io_if_id_pc_in",-1,31,0);
+	vcdp->declBus  (c+74,"Top2 hazardDetection io_current_pc_in",-1,31,0);
+	vcdp->declBit  (c+43,"Top2 hazardDetection io_inst_forward",-1);
+	vcdp->declBit  (c+43,"Top2 hazardDetection io_pc_forward",-1);
+	vcdp->declBit  (c+43,"Top2 hazardDetection io_ctrl_forward",-1);
+	vcdp->declBus  (c+73,"Top2 hazardDetection io_inst_out",-1,31,0);
+	vcdp->declBus  (c+95,"Top2 hazardDetection io_pc_out",-1,31,0);
+	vcdp->declBus  (c+74,"Top2 hazardDetection io_current_pc_out",-1,31,0);
+	vcdp->declBus  (c+68,"Top2 hazardDetection io_rs1_sel",-1,4,0);
+	vcdp->declBus  (c+69,"Top2 hazardDetection io_rs2_sel",-1,4,0);
+	vcdp->declBit  (c+2,"Top2 hazardDetection io_control_branch",-1);
+	// Tracing: Top2 hazardDetection _T_39 // Ignored: Inlined leading underscore at Top2.v:2313
+	// Tracing: Top2 hazardDetection _T_40 // Ignored: Inlined leading underscore at Top2.v:2314
+	// Tracing: Top2 hazardDetection _T_51 // Ignored: Inlined leading underscore at Top2.v:2315
+	// Tracing: Top2 hazardDetection _T_58 // Ignored: Inlined leading underscore at Top2.v:2316
+	// Tracing: Top2 hazardDetection _T_59 // Ignored: Inlined leading underscore at Top2.v:2317
+	// Tracing: Top2 hazardDetection _T_60 // Ignored: Inlined leading underscore at Top2.v:2318
+	// Tracing: Top2 hazardDetection _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2319
+	vcdp->declBus  (c+44,"Top2 branchlogic io_rs1_in",-1,31,0);
+	vcdp->declBus  (c+45,"Top2 branchlogic io_rs2_in",-1,31,0);
+	vcdp->declBus  (c+97,"Top2 branchlogic io_func3_in",-1,2,0);
 	vcdp->declBit  (c+2,"Top2 branchlogic io_branch",-1);
-	vcdp->declBit  (c+44,"Top2 branchlogic io_output_x",-1);
+	vcdp->declBit  (c+46,"Top2 branchlogic io_output_x",-1);
 	vcdp->declBit  (c+2,"Top2 branchlogic io_branch2",-1);
-	// Tracing: Top2 branchlogic _T_19 // Ignored: Inlined leading underscore at Top2.v:2340
-	// Tracing: Top2 branchlogic _T_20 // Ignored: Inlined leading underscore at Top2.v:2341
-	// Tracing: Top2 branchlogic _T_24 // Ignored: Inlined leading underscore at Top2.v:2342
-	// Tracing: Top2 branchlogic _T_25 // Ignored: Inlined leading underscore at Top2.v:2343
-	// Tracing: Top2 branchlogic _T_29 // Ignored: Inlined leading underscore at Top2.v:2344
-	// Tracing: Top2 branchlogic _T_30 // Ignored: Inlined leading underscore at Top2.v:2345
-	// Tracing: Top2 branchlogic _T_34 // Ignored: Inlined leading underscore at Top2.v:2346
-	// Tracing: Top2 branchlogic _T_35 // Ignored: Inlined leading underscore at Top2.v:2347
-	// Tracing: Top2 branchlogic _T_39 // Ignored: Inlined leading underscore at Top2.v:2348
-	// Tracing: Top2 branchlogic _T_40 // Ignored: Inlined leading underscore at Top2.v:2349
-	// Tracing: Top2 branchlogic _T_41 // Ignored: Inlined leading underscore at Top2.v:2350
-	// Tracing: Top2 branchlogic _T_42 // Ignored: Inlined leading underscore at Top2.v:2351
-	// Tracing: Top2 branchlogic _T_46 // Ignored: Inlined leading underscore at Top2.v:2352
-	// Tracing: Top2 branchlogic _T_49 // Ignored: Inlined leading underscore at Top2.v:2353
-	// Tracing: Top2 branchlogic _GEN_6 // Ignored: Inlined leading underscore at Top2.v:2354
-	// Tracing: Top2 branchlogic _GEN_7 // Ignored: Inlined leading underscore at Top2.v:2355
-	// Tracing: Top2 branchlogic _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2356
-	// Tracing: Top2 branchlogic _GEN_9 // Ignored: Inlined leading underscore at Top2.v:2357
-	// Tracing: Top2 branchlogic _GEN_10 // Ignored: Inlined leading underscore at Top2.v:2358
-	vcdp->declBus  (c+89,"Top2 branchforward io_id_ex_rd_sel",-1,4,0);
-	vcdp->declBit  (c+87,"Top2 branchforward io_id_ex_memread",-1);
-	vcdp->declBus  (c+81,"Top2 branchforward io_ex_mem_rd_sel",-1,4,0);
-	vcdp->declBit  (c+87,"Top2 branchforward io_ex_mem_memread",-1);
-	vcdp->declBus  (c+64,"Top2 branchforward io_mem_wb_rd_sel",-1,4,0);
-	vcdp->declBit  (c+63,"Top2 branchforward io_mem_wb_regwrite",-1);
-	vcdp->declBus  (c+65,"Top2 branchforward io_rs1_sel",-1,4,0);
-	vcdp->declBus  (c+66,"Top2 branchforward io_rs2_sel",-1,4,0);
+	// Tracing: Top2 branchlogic _T_19 // Ignored: Inlined leading underscore at Top2.v:2342
+	// Tracing: Top2 branchlogic _T_20 // Ignored: Inlined leading underscore at Top2.v:2343
+	// Tracing: Top2 branchlogic _T_24 // Ignored: Inlined leading underscore at Top2.v:2344
+	// Tracing: Top2 branchlogic _T_25 // Ignored: Inlined leading underscore at Top2.v:2345
+	// Tracing: Top2 branchlogic _T_29 // Ignored: Inlined leading underscore at Top2.v:2346
+	// Tracing: Top2 branchlogic _T_30 // Ignored: Inlined leading underscore at Top2.v:2347
+	// Tracing: Top2 branchlogic _T_34 // Ignored: Inlined leading underscore at Top2.v:2348
+	// Tracing: Top2 branchlogic _T_35 // Ignored: Inlined leading underscore at Top2.v:2349
+	// Tracing: Top2 branchlogic _T_39 // Ignored: Inlined leading underscore at Top2.v:2350
+	// Tracing: Top2 branchlogic _T_40 // Ignored: Inlined leading underscore at Top2.v:2351
+	// Tracing: Top2 branchlogic _T_41 // Ignored: Inlined leading underscore at Top2.v:2352
+	// Tracing: Top2 branchlogic _T_42 // Ignored: Inlined leading underscore at Top2.v:2353
+	// Tracing: Top2 branchlogic _T_46 // Ignored: Inlined leading underscore at Top2.v:2354
+	// Tracing: Top2 branchlogic _T_49 // Ignored: Inlined leading underscore at Top2.v:2355
+	// Tracing: Top2 branchlogic _GEN_6 // Ignored: Inlined leading underscore at Top2.v:2356
+	// Tracing: Top2 branchlogic _GEN_7 // Ignored: Inlined leading underscore at Top2.v:2357
+	// Tracing: Top2 branchlogic _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2358
+	// Tracing: Top2 branchlogic _GEN_9 // Ignored: Inlined leading underscore at Top2.v:2359
+	// Tracing: Top2 branchlogic _GEN_10 // Ignored: Inlined leading underscore at Top2.v:2360
+	vcdp->declBus  (c+94,"Top2 branchforward io_id_ex_rd_sel",-1,4,0);
+	vcdp->declBit  (c+91,"Top2 branchforward io_id_ex_memread",-1);
+	vcdp->declBit  (c+92,"Top2 branchforward io_id_ex_regwrite",-1);
+	vcdp->declBit  (c+83,"Top2 branchforward io_ex_mem_regwrite",-1);
+	vcdp->declBus  (c+85,"Top2 branchforward io_ex_mem_rd_sel",-1,4,0);
+	vcdp->declBit  (c+91,"Top2 branchforward io_ex_mem_memread",-1);
+	vcdp->declBus  (c+67,"Top2 branchforward io_mem_wb_rd_sel",-1,4,0);
+	vcdp->declBit  (c+66,"Top2 branchforward io_mem_wb_regwrite",-1);
+	vcdp->declBus  (c+68,"Top2 branchforward io_rs1_sel",-1,4,0);
+	vcdp->declBus  (c+69,"Top2 branchforward io_rs2_sel",-1,4,0);
 	vcdp->declBit  (c+2,"Top2 branchforward io_ctrl_branch",-1);
-	vcdp->declBus  (c+45,"Top2 branchforward io_forward_a",-1,3,0);
-	vcdp->declBus  (c+46,"Top2 branchforward io_forward_b",-1,3,0);
-	// Tracing: Top2 branchforward _T_38 // Ignored: Inlined leading underscore at Top2.v:2394
-	// Tracing: Top2 branchforward _T_40 // Ignored: Inlined leading underscore at Top2.v:2395
-	// Tracing: Top2 branchforward _T_41 // Ignored: Inlined leading underscore at Top2.v:2396
-	// Tracing: Top2 branchforward _T_42 // Ignored: Inlined leading underscore at Top2.v:2397
-	// Tracing: Top2 branchforward _T_43 // Ignored: Inlined leading underscore at Top2.v:2398
-	// Tracing: Top2 branchforward _T_44 // Ignored: Inlined leading underscore at Top2.v:2399
-	// Tracing: Top2 branchforward _T_45 // Ignored: Inlined leading underscore at Top2.v:2400
-	// Tracing: Top2 branchforward _T_62 // Ignored: Inlined leading underscore at Top2.v:2401
-	// Tracing: Top2 branchforward _GEN_2 // Ignored: Inlined leading underscore at Top2.v:2402
-	// Tracing: Top2 branchforward _GEN_3 // Ignored: Inlined leading underscore at Top2.v:2403
-	// Tracing: Top2 branchforward _GEN_4 // Ignored: Inlined leading underscore at Top2.v:2404
-	// Tracing: Top2 branchforward _T_65 // Ignored: Inlined leading underscore at Top2.v:2405
-	// Tracing: Top2 branchforward _T_67 // Ignored: Inlined leading underscore at Top2.v:2406
-	// Tracing: Top2 branchforward _T_68 // Ignored: Inlined leading underscore at Top2.v:2407
-	// Tracing: Top2 branchforward _T_72 // Ignored: Inlined leading underscore at Top2.v:2408
-	// Tracing: Top2 branchforward _T_74 // Ignored: Inlined leading underscore at Top2.v:2409
-	// Tracing: Top2 branchforward _T_75 // Ignored: Inlined leading underscore at Top2.v:2410
-	// Tracing: Top2 branchforward _T_76 // Ignored: Inlined leading underscore at Top2.v:2411
-	// Tracing: Top2 branchforward _T_77 // Ignored: Inlined leading underscore at Top2.v:2412
-	// Tracing: Top2 branchforward _T_78 // Ignored: Inlined leading underscore at Top2.v:2413
-	// Tracing: Top2 branchforward _T_79 // Ignored: Inlined leading underscore at Top2.v:2414
-	// Tracing: Top2 branchforward _T_80 // Ignored: Inlined leading underscore at Top2.v:2415
-	// Tracing: Top2 branchforward _T_91 // Ignored: Inlined leading underscore at Top2.v:2416
-	// Tracing: Top2 branchforward _T_92 // Ignored: Inlined leading underscore at Top2.v:2417
-	// Tracing: Top2 branchforward _T_93 // Ignored: Inlined leading underscore at Top2.v:2418
-	// Tracing: Top2 branchforward _T_95 // Ignored: Inlined leading underscore at Top2.v:2419
-	// Tracing: Top2 branchforward _T_106 // Ignored: Inlined leading underscore at Top2.v:2420
-	// Tracing: Top2 branchforward _T_107 // Ignored: Inlined leading underscore at Top2.v:2421
-	// Tracing: Top2 branchforward _T_109 // Ignored: Inlined leading underscore at Top2.v:2422
-	// Tracing: Top2 branchforward _T_115 // Ignored: Inlined leading underscore at Top2.v:2423
-	// Tracing: Top2 branchforward _T_123 // Ignored: Inlined leading underscore at Top2.v:2424
-	// Tracing: Top2 branchforward _T_125 // Ignored: Inlined leading underscore at Top2.v:2425
-	// Tracing: Top2 branchforward _T_127 // Ignored: Inlined leading underscore at Top2.v:2426
-	// Tracing: Top2 branchforward _T_140 // Ignored: Inlined leading underscore at Top2.v:2427
-	// Tracing: Top2 branchforward _T_142 // Ignored: Inlined leading underscore at Top2.v:2428
-	// Tracing: Top2 branchforward _T_148 // Ignored: Inlined leading underscore at Top2.v:2429
-	// Tracing: Top2 branchforward _T_151 // Ignored: Inlined leading underscore at Top2.v:2430
-	// Tracing: Top2 branchforward _T_157 // Ignored: Inlined leading underscore at Top2.v:2431
-	// Tracing: Top2 branchforward _T_159 // Ignored: Inlined leading underscore at Top2.v:2432
-	// Tracing: Top2 branchforward _GEN_5 // Ignored: Inlined leading underscore at Top2.v:2433
-	// Tracing: Top2 branchforward _GEN_6 // Ignored: Inlined leading underscore at Top2.v:2434
-	// Tracing: Top2 branchforward _GEN_7 // Ignored: Inlined leading underscore at Top2.v:2435
-	// Tracing: Top2 branchforward _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2436
-	// Tracing: Top2 branchforward _GEN_9 // Ignored: Inlined leading underscore at Top2.v:2437
-	// Tracing: Top2 branchforward _GEN_10 // Ignored: Inlined leading underscore at Top2.v:2438
-	// Tracing: Top2 branchforward _GEN_11 // Ignored: Inlined leading underscore at Top2.v:2439
-	// Tracing: Top2 branchforward _GEN_12 // Ignored: Inlined leading underscore at Top2.v:2440
-	// Tracing: Top2 branchforward _GEN_13 // Ignored: Inlined leading underscore at Top2.v:2441
-	// Tracing: Top2 branchforward _GEN_14 // Ignored: Inlined leading underscore at Top2.v:2442
-	// Tracing: Top2 branchforward _GEN_15 // Ignored: Inlined leading underscore at Top2.v:2443
-	// Tracing: Top2 branchforward _T_162 // Ignored: Inlined leading underscore at Top2.v:2444
-	// Tracing: Top2 branchforward _T_173 // Ignored: Inlined leading underscore at Top2.v:2445
-	// Tracing: Top2 branchforward _T_177 // Ignored: Inlined leading underscore at Top2.v:2446
-	// Tracing: Top2 branchforward _T_179 // Ignored: Inlined leading underscore at Top2.v:2447
-	// Tracing: Top2 branchforward _T_180 // Ignored: Inlined leading underscore at Top2.v:2448
-	// Tracing: Top2 branchforward _T_181 // Ignored: Inlined leading underscore at Top2.v:2449
-	// Tracing: Top2 branchforward _T_182 // Ignored: Inlined leading underscore at Top2.v:2450
-	// Tracing: Top2 branchforward _T_183 // Ignored: Inlined leading underscore at Top2.v:2451
-	// Tracing: Top2 branchforward _T_184 // Ignored: Inlined leading underscore at Top2.v:2452
-	// Tracing: Top2 branchforward _T_185 // Ignored: Inlined leading underscore at Top2.v:2453
-	// Tracing: Top2 branchforward _T_192 // Ignored: Inlined leading underscore at Top2.v:2454
-	// Tracing: Top2 branchforward _T_201 // Ignored: Inlined leading underscore at Top2.v:2455
-	// Tracing: Top2 branchforward _T_205 // Ignored: Inlined leading underscore at Top2.v:2456
-	// Tracing: Top2 branchforward _T_206 // Ignored: Inlined leading underscore at Top2.v:2457
-	// Tracing: Top2 branchforward _T_207 // Ignored: Inlined leading underscore at Top2.v:2458
-	// Tracing: Top2 branchforward _T_209 // Ignored: Inlined leading underscore at Top2.v:2459
-	// Tracing: Top2 branchforward _T_221 // Ignored: Inlined leading underscore at Top2.v:2460
-	// Tracing: Top2 branchforward _T_226 // Ignored: Inlined leading underscore at Top2.v:2461
-	// Tracing: Top2 branchforward _T_227 // Ignored: Inlined leading underscore at Top2.v:2462
-	// Tracing: Top2 branchforward _T_229 // Ignored: Inlined leading underscore at Top2.v:2463
-	// Tracing: Top2 branchforward _GEN_21 // Ignored: Inlined leading underscore at Top2.v:2464
-	// Tracing: Top2 branchforward _GEN_23 // Ignored: Inlined leading underscore at Top2.v:2465
-	// Tracing: Top2 branchforward _GEN_24 // Ignored: Inlined leading underscore at Top2.v:2466
-	// Tracing: Top2 branchforward _GEN_25 // Ignored: Inlined leading underscore at Top2.v:2467
-	// Tracing: Top2 branchforward _GEN_26 // Ignored: Inlined leading underscore at Top2.v:2468
-	// Tracing: Top2 branchforward _T_299 // Ignored: Inlined leading underscore at Top2.v:2469
-	// Tracing: Top2 branchforward _GEN_27 // Ignored: Inlined leading underscore at Top2.v:2470
-	// Tracing: Top2 branchforward _T_332 // Ignored: Inlined leading underscore at Top2.v:2471
-	// Tracing: Top2 branchforward _T_334 // Ignored: Inlined leading underscore at Top2.v:2472
-	// Tracing: Top2 branchforward _GEN_28 // Ignored: Inlined leading underscore at Top2.v:2473
-	// Tracing: Top2 branchforward _GEN_29 // Ignored: Inlined leading underscore at Top2.v:2474
-	// Tracing: Top2 branchforward _GEN_31 // Ignored: Inlined leading underscore at Top2.v:2475
-	// Tracing: Top2 branchforward _GEN_32 // Ignored: Inlined leading underscore at Top2.v:2476
-	// Tracing: Top2 branchforward _GEN_34 // Ignored: Inlined leading underscore at Top2.v:2477
-	vcdp->declBus  (c+65,"Top2 structdetect io_rs1_sel",-1,4,0);
-	vcdp->declBus  (c+66,"Top2 structdetect io_rs2_sel",-1,4,0);
-	vcdp->declBit  (c+63,"Top2 structdetect io_mem_wb_regwrite",-1);
-	vcdp->declBus  (c+64,"Top2 structdetect io_mem_wb_rd_sel",-1,4,0);
-	vcdp->declBit  (c+103,"Top2 structdetect io_forward_rs1",-1);
-	vcdp->declBit  (c+104,"Top2 structdetect io_forward_rs2",-1);
-	// Tracing: Top2 structdetect _T_19 // Ignored: Inlined leading underscore at Top2.v:2573
-	// Tracing: Top2 structdetect _T_25 // Ignored: Inlined leading underscore at Top2.v:2574
+	vcdp->declBus  (c+47,"Top2 branchforward io_forward_a",-1,3,0);
+	vcdp->declBus  (c+48,"Top2 branchforward io_forward_b",-1,3,0);
+	// Tracing: Top2 branchforward _T_38 // Ignored: Inlined leading underscore at Top2.v:2398
+	// Tracing: Top2 branchforward _T_40 // Ignored: Inlined leading underscore at Top2.v:2399
+	// Tracing: Top2 branchforward _T_41 // Ignored: Inlined leading underscore at Top2.v:2400
+	// Tracing: Top2 branchforward _T_42 // Ignored: Inlined leading underscore at Top2.v:2401
+	// Tracing: Top2 branchforward _T_43 // Ignored: Inlined leading underscore at Top2.v:2402
+	// Tracing: Top2 branchforward _T_44 // Ignored: Inlined leading underscore at Top2.v:2403
+	// Tracing: Top2 branchforward _T_45 // Ignored: Inlined leading underscore at Top2.v:2404
+	// Tracing: Top2 branchforward _T_62 // Ignored: Inlined leading underscore at Top2.v:2405
+	// Tracing: Top2 branchforward _GEN_2 // Ignored: Inlined leading underscore at Top2.v:2406
+	// Tracing: Top2 branchforward _GEN_3 // Ignored: Inlined leading underscore at Top2.v:2407
+	// Tracing: Top2 branchforward _GEN_4 // Ignored: Inlined leading underscore at Top2.v:2408
+	// Tracing: Top2 branchforward _T_65 // Ignored: Inlined leading underscore at Top2.v:2409
+	// Tracing: Top2 branchforward _T_67 // Ignored: Inlined leading underscore at Top2.v:2410
+	// Tracing: Top2 branchforward _T_68 // Ignored: Inlined leading underscore at Top2.v:2411
+	// Tracing: Top2 branchforward _T_72 // Ignored: Inlined leading underscore at Top2.v:2412
+	// Tracing: Top2 branchforward _T_74 // Ignored: Inlined leading underscore at Top2.v:2413
+	// Tracing: Top2 branchforward _T_75 // Ignored: Inlined leading underscore at Top2.v:2414
+	// Tracing: Top2 branchforward _T_76 // Ignored: Inlined leading underscore at Top2.v:2415
+	// Tracing: Top2 branchforward _T_77 // Ignored: Inlined leading underscore at Top2.v:2416
+	// Tracing: Top2 branchforward _T_78 // Ignored: Inlined leading underscore at Top2.v:2417
+	// Tracing: Top2 branchforward _T_79 // Ignored: Inlined leading underscore at Top2.v:2418
+	// Tracing: Top2 branchforward _T_80 // Ignored: Inlined leading underscore at Top2.v:2419
+	// Tracing: Top2 branchforward _T_91 // Ignored: Inlined leading underscore at Top2.v:2420
+	// Tracing: Top2 branchforward _T_92 // Ignored: Inlined leading underscore at Top2.v:2421
+	// Tracing: Top2 branchforward _T_93 // Ignored: Inlined leading underscore at Top2.v:2422
+	// Tracing: Top2 branchforward _T_95 // Ignored: Inlined leading underscore at Top2.v:2423
+	// Tracing: Top2 branchforward _T_106 // Ignored: Inlined leading underscore at Top2.v:2424
+	// Tracing: Top2 branchforward _T_107 // Ignored: Inlined leading underscore at Top2.v:2425
+	// Tracing: Top2 branchforward _T_109 // Ignored: Inlined leading underscore at Top2.v:2426
+	// Tracing: Top2 branchforward _T_115 // Ignored: Inlined leading underscore at Top2.v:2427
+	// Tracing: Top2 branchforward _T_123 // Ignored: Inlined leading underscore at Top2.v:2428
+	// Tracing: Top2 branchforward _T_125 // Ignored: Inlined leading underscore at Top2.v:2429
+	// Tracing: Top2 branchforward _T_127 // Ignored: Inlined leading underscore at Top2.v:2430
+	// Tracing: Top2 branchforward _T_140 // Ignored: Inlined leading underscore at Top2.v:2431
+	// Tracing: Top2 branchforward _T_142 // Ignored: Inlined leading underscore at Top2.v:2432
+	// Tracing: Top2 branchforward _T_148 // Ignored: Inlined leading underscore at Top2.v:2433
+	// Tracing: Top2 branchforward _T_151 // Ignored: Inlined leading underscore at Top2.v:2434
+	// Tracing: Top2 branchforward _T_157 // Ignored: Inlined leading underscore at Top2.v:2435
+	// Tracing: Top2 branchforward _T_159 // Ignored: Inlined leading underscore at Top2.v:2436
+	// Tracing: Top2 branchforward _GEN_5 // Ignored: Inlined leading underscore at Top2.v:2437
+	// Tracing: Top2 branchforward _GEN_6 // Ignored: Inlined leading underscore at Top2.v:2438
+	// Tracing: Top2 branchforward _GEN_7 // Ignored: Inlined leading underscore at Top2.v:2439
+	// Tracing: Top2 branchforward _GEN_8 // Ignored: Inlined leading underscore at Top2.v:2440
+	// Tracing: Top2 branchforward _GEN_9 // Ignored: Inlined leading underscore at Top2.v:2441
+	// Tracing: Top2 branchforward _GEN_10 // Ignored: Inlined leading underscore at Top2.v:2442
+	// Tracing: Top2 branchforward _GEN_11 // Ignored: Inlined leading underscore at Top2.v:2443
+	// Tracing: Top2 branchforward _GEN_12 // Ignored: Inlined leading underscore at Top2.v:2444
+	// Tracing: Top2 branchforward _GEN_13 // Ignored: Inlined leading underscore at Top2.v:2445
+	// Tracing: Top2 branchforward _GEN_14 // Ignored: Inlined leading underscore at Top2.v:2446
+	// Tracing: Top2 branchforward _GEN_15 // Ignored: Inlined leading underscore at Top2.v:2447
+	// Tracing: Top2 branchforward _T_162 // Ignored: Inlined leading underscore at Top2.v:2448
+	// Tracing: Top2 branchforward _T_173 // Ignored: Inlined leading underscore at Top2.v:2449
+	// Tracing: Top2 branchforward _T_177 // Ignored: Inlined leading underscore at Top2.v:2450
+	// Tracing: Top2 branchforward _T_179 // Ignored: Inlined leading underscore at Top2.v:2451
+	// Tracing: Top2 branchforward _T_180 // Ignored: Inlined leading underscore at Top2.v:2452
+	// Tracing: Top2 branchforward _T_181 // Ignored: Inlined leading underscore at Top2.v:2453
+	// Tracing: Top2 branchforward _T_182 // Ignored: Inlined leading underscore at Top2.v:2454
+	// Tracing: Top2 branchforward _T_183 // Ignored: Inlined leading underscore at Top2.v:2455
+	// Tracing: Top2 branchforward _T_184 // Ignored: Inlined leading underscore at Top2.v:2456
+	// Tracing: Top2 branchforward _T_185 // Ignored: Inlined leading underscore at Top2.v:2457
+	// Tracing: Top2 branchforward _T_192 // Ignored: Inlined leading underscore at Top2.v:2458
+	// Tracing: Top2 branchforward _T_201 // Ignored: Inlined leading underscore at Top2.v:2459
+	// Tracing: Top2 branchforward _T_205 // Ignored: Inlined leading underscore at Top2.v:2460
+	// Tracing: Top2 branchforward _T_206 // Ignored: Inlined leading underscore at Top2.v:2461
+	// Tracing: Top2 branchforward _T_207 // Ignored: Inlined leading underscore at Top2.v:2462
+	// Tracing: Top2 branchforward _T_209 // Ignored: Inlined leading underscore at Top2.v:2463
+	// Tracing: Top2 branchforward _T_221 // Ignored: Inlined leading underscore at Top2.v:2464
+	// Tracing: Top2 branchforward _T_226 // Ignored: Inlined leading underscore at Top2.v:2465
+	// Tracing: Top2 branchforward _T_227 // Ignored: Inlined leading underscore at Top2.v:2466
+	// Tracing: Top2 branchforward _T_229 // Ignored: Inlined leading underscore at Top2.v:2467
+	// Tracing: Top2 branchforward _GEN_21 // Ignored: Inlined leading underscore at Top2.v:2468
+	// Tracing: Top2 branchforward _GEN_23 // Ignored: Inlined leading underscore at Top2.v:2469
+	// Tracing: Top2 branchforward _GEN_24 // Ignored: Inlined leading underscore at Top2.v:2470
+	// Tracing: Top2 branchforward _GEN_25 // Ignored: Inlined leading underscore at Top2.v:2471
+	// Tracing: Top2 branchforward _GEN_26 // Ignored: Inlined leading underscore at Top2.v:2472
+	// Tracing: Top2 branchforward _T_299 // Ignored: Inlined leading underscore at Top2.v:2473
+	// Tracing: Top2 branchforward _T_304 // Ignored: Inlined leading underscore at Top2.v:2474
+	// Tracing: Top2 branchforward _T_307 // Ignored: Inlined leading underscore at Top2.v:2475
+	// Tracing: Top2 branchforward _T_309 // Ignored: Inlined leading underscore at Top2.v:2476
+	// Tracing: Top2 branchforward _GEN_27 // Ignored: Inlined leading underscore at Top2.v:2477
+	// Tracing: Top2 branchforward _T_315 // Ignored: Inlined leading underscore at Top2.v:2478
+	// Tracing: Top2 branchforward _T_318 // Ignored: Inlined leading underscore at Top2.v:2479
+	// Tracing: Top2 branchforward _T_324 // Ignored: Inlined leading underscore at Top2.v:2480
+	// Tracing: Top2 branchforward _T_326 // Ignored: Inlined leading underscore at Top2.v:2481
+	// Tracing: Top2 branchforward _T_335 // Ignored: Inlined leading underscore at Top2.v:2482
+	// Tracing: Top2 branchforward _T_341 // Ignored: Inlined leading underscore at Top2.v:2483
+	// Tracing: Top2 branchforward _T_343 // Ignored: Inlined leading underscore at Top2.v:2484
+	// Tracing: Top2 branchforward _GEN_28 // Ignored: Inlined leading underscore at Top2.v:2485
+	// Tracing: Top2 branchforward _GEN_29 // Ignored: Inlined leading underscore at Top2.v:2486
+	// Tracing: Top2 branchforward _T_358 // Ignored: Inlined leading underscore at Top2.v:2487
+	// Tracing: Top2 branchforward _T_364 // Ignored: Inlined leading underscore at Top2.v:2488
+	// Tracing: Top2 branchforward _T_366 // Ignored: Inlined leading underscore at Top2.v:2489
+	// Tracing: Top2 branchforward _GEN_31 // Ignored: Inlined leading underscore at Top2.v:2490
+	// Tracing: Top2 branchforward _GEN_32 // Ignored: Inlined leading underscore at Top2.v:2491
+	// Tracing: Top2 branchforward _GEN_34 // Ignored: Inlined leading underscore at Top2.v:2492
+	vcdp->declBus  (c+68,"Top2 structdetect io_rs1_sel",-1,4,0);
+	vcdp->declBus  (c+69,"Top2 structdetect io_rs2_sel",-1,4,0);
+	vcdp->declBit  (c+66,"Top2 structdetect io_mem_wb_regwrite",-1);
+	vcdp->declBus  (c+67,"Top2 structdetect io_mem_wb_rd_sel",-1,4,0);
+	vcdp->declBit  (c+108,"Top2 structdetect io_forward_rs1",-1);
+	vcdp->declBit  (c+109,"Top2 structdetect io_forward_rs2",-1);
+	// Tracing: Top2 structdetect _T_19 // Ignored: Inlined leading underscore at Top2.v:2599
+	// Tracing: Top2 structdetect _T_25 // Ignored: Inlined leading underscore at Top2.v:2600
     }
 }
 
@@ -1240,8 +1261,7 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 			      & ((~ (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Load)) 
 				 & (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Store)))));
 	vcdp->fullBit  (c+2,(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_Branch2));
-	vcdp->fullBit  (c+3,(((0x33U != (0x7fU & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)) 
-			      & (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Load))));
+	vcdp->fullBit  (c+3,(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_MemRead));
 	vcdp->fullBit  (c+4,(((0x33U == (0x7fU & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)) 
 			      | ((IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Load) 
 				 | ((~ (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Store)) 
@@ -1250,7 +1270,9 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 					  | ((IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_JALR) 
 					     | ((IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_JAL) 
 						| (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_LUI))))))))));
-	vcdp->fullBus  (c+5,(((0x33U == (0x7fU & vlTOPp->Top2__DOT__if_id__DOT__inst_reg))
+	vcdp->fullBit  (c+5,(((0x33U != (0x7fU & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)) 
+			      & (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Load))));
+	vcdp->fullBus  (c+6,(((0x33U == (0x7fU & vlTOPp->Top2__DOT__if_id__DOT__inst_reg))
 			       ? 0U : ((IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Load)
 				        ? 4U : ((IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Store)
 						 ? 5U
@@ -1270,35 +1292,33 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 						    ((IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_LUI)
 						      ? 6U
 						      : 0U))))))))),3);
-	vcdp->fullBus  (c+6,(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_operand_A_sel),2);
-	vcdp->fullBit  (c+7,(vlTOPp->Top2__DOT__control__DOT__CtrlDecode__DOT___GEN_45));
-	vcdp->fullBus  (c+8,(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_extend_sel),2);
-	vcdp->fullBus  (c+9,(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel),2);
-	vcdp->fullBus  (c+10,(vlTOPp->Top2__DOT__register_io_WriteData),32);
-	vcdp->fullBus  (c+11,(vlTOPp->Top2__DOT__register_io_rs1),32);
-	vcdp->fullBus  (c+12,(vlTOPp->Top2__DOT__register_io_rs2),32);
-	vcdp->fullBus  (c+13,(vlTOPp->Top2__DOT__alu_io_A),32);
-	vcdp->fullBus  (c+14,(vlTOPp->Top2__DOT__alu_io_B),32);
-	vcdp->fullBus  (c+15,((IData)(vlTOPp->Top2__DOT__alu__DOT___GEN_22)),32);
-	vcdp->fullBus  (c+16,(vlTOPp->Top2__DOT__alucontrol_io_control),5);
-	vcdp->fullBus  (c+17,(vlTOPp->Top2__DOT__immediate_io_I_Immediate),32);
-	vcdp->fullBus  (c+18,(((0x80000000U & (vlTOPp->Top2__DOT__immediate__DOT__output2 
+	vcdp->fullBus  (c+7,(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_operand_A_sel),2);
+	vcdp->fullBit  (c+8,(vlTOPp->Top2__DOT__control__DOT__CtrlDecode__DOT___GEN_45));
+	vcdp->fullBus  (c+9,(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_extend_sel),2);
+	vcdp->fullBus  (c+10,(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel),2);
+	vcdp->fullBus  (c+11,(vlTOPp->Top2__DOT__register_io_WriteData),32);
+	vcdp->fullBus  (c+12,(vlTOPp->Top2__DOT__register_io_rs1),32);
+	vcdp->fullBus  (c+13,(vlTOPp->Top2__DOT__register_io_rs2),32);
+	vcdp->fullBus  (c+14,(vlTOPp->Top2__DOT__alu_io_A),32);
+	vcdp->fullBus  (c+15,(vlTOPp->Top2__DOT__alu_io_B),32);
+	vcdp->fullBus  (c+16,((IData)(vlTOPp->Top2__DOT__alu__DOT___GEN_22)),32);
+	vcdp->fullBus  (c+17,((0x1fU & (IData)(vlTOPp->Top2__DOT__alucontrol__DOT___GEN_8))),5);
+	vcdp->fullBus  (c+18,(vlTOPp->Top2__DOT__immediate_io_I_Immediate),32);
+	vcdp->fullBus  (c+19,(((0x80000000U & (vlTOPp->Top2__DOT__immediate__DOT__output2 
 					       << 1U)) 
 			       | vlTOPp->Top2__DOT__immediate__DOT__output2)),32);
-	vcdp->fullBus  (c+19,((vlTOPp->Top2__DOT__immediate__DOT__sbt13 
+	vcdp->fullBus  (c+20,(vlTOPp->Top2__DOT__immediate__DOT__output5),32);
+	vcdp->fullBus  (c+21,((vlTOPp->Top2__DOT__immediate__DOT__sbt19 
 			       + vlTOPp->Top2__DOT__if_id__DOT__pc_reg)),32);
-	vcdp->fullBus  (c+20,((vlTOPp->Top2__DOT__immediate__DOT__sbt19 
-			       + vlTOPp->Top2__DOT__if_id__DOT__pc_reg)),32);
-	vcdp->fullBus  (c+21,(((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
+	vcdp->fullBus  (c+22,(((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
 			        ? vlTOPp->Top2__DOT__if_id__DOT__pc4_reg
 			        : ((1U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
-				    ? ((IData)(vlTOPp->Top2__DOT___T_79)
-				        ? (vlTOPp->Top2__DOT__immediate__DOT__sbt13 
-					   + vlTOPp->Top2__DOT__if_id__DOT__pc_reg)
-				        : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
-					    ? 0U : 
-					   ((IData)(4U) 
-					    + vlTOPp->Top2__DOT__PC__DOT__pc1)))
+				    ? ((IData)(vlTOPp->Top2__DOT___T_82)
+				        ? vlTOPp->Top2__DOT__immediate__DOT__output5
+				        : ((IData)(vlTOPp->Top2__DOT___T_91)
+					    ? vlTOPp->Top2__DOT__immediate__DOT__output5
+					    : ((IData)(4U) 
+					       + vlTOPp->Top2__DOT__PC__DOT__pc1)))
 				    : ((2U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				        ? (vlTOPp->Top2__DOT__immediate__DOT__sbt19 
 					   + vlTOPp->Top2__DOT__if_id__DOT__pc_reg)
@@ -1317,11 +1337,11 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 						    ((IData)(4U) 
 						     + vlTOPp->Top2__DOT__PC__DOT__pc1)))
 					        : 0U)))))),32);
-	vcdp->fullBus  (c+22,(vlTOPp->Top2__DOT__instmem__DOT__mem
+	vcdp->fullBus  (c+23,(vlTOPp->Top2__DOT__instmem__DOT__mem
 			      [(0x3ffU & (vlTOPp->Top2__DOT__PC__DOT__pc1 
 					  >> 2U))]),32);
-	vcdp->fullBus  (c+23,(vlTOPp->Top2__DOT__DataMemory_io_Data),32);
-	vcdp->fullBus  (c+24,(((1U & (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpB_sel_r))
+	vcdp->fullBus  (c+24,(vlTOPp->Top2__DOT__DataMemory_io_Data),32);
+	vcdp->fullBus  (c+25,(((1U & (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpB_sel_r))
 			        ? ((1U == (IData)(vlTOPp->Top2__DOT__forward_io_forward_b))
 				    ? vlTOPp->Top2__DOT__register_io_WriteData
 				    : ((2U == (IData)(vlTOPp->Top2__DOT__forward_io_forward_b))
@@ -1337,7 +1357,7 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 						== (IData)(vlTOPp->Top2__DOT__forward_io_forward_b))
 					        ? vlTOPp->Top2__DOT__ex_mem__DOT__Alu_out_Reg
 					        : vlTOPp->Top2__DOT__id_ex__DOT__rs2r)))))),32);
-	vcdp->fullBus  (c+25,(((1U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_extend_sel))
+	vcdp->fullBus  (c+26,(((1U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_extend_sel))
 			        ? ((3U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_operand_A_sel))
 				    ? ((IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode__DOT___GEN_45)
 				        ? (IData)((VL_ULL(0x3fffffffffff) 
@@ -1358,28 +1378,26 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 					   << 1U)) 
 				       | vlTOPp->Top2__DOT__immediate__DOT__output2)
 				    : vlTOPp->Top2__DOT__immediate_io_I_Immediate))),32);
-	vcdp->fullBus  (c+26,((((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Regwr_Reg) 
+	vcdp->fullBus  (c+27,((((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Regwr_Reg) 
 				& ((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg) 
 				   == (0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 						>> 0xfU))))
 			        ? vlTOPp->Top2__DOT__register_io_WriteData
 			        : vlTOPp->Top2__DOT__register_io_rs1)),32);
-	vcdp->fullBus  (c+27,((((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Regwr_Reg) 
+	vcdp->fullBus  (c+28,((((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Regwr_Reg) 
 				& ((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg) 
 				   == (0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 						>> 0x14U))))
 			        ? vlTOPp->Top2__DOT__register_io_WriteData
 			        : vlTOPp->Top2__DOT__register_io_rs2)),32);
-	vcdp->fullBit  (c+28,(((~ (IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)) 
+	vcdp->fullBit  (c+29,(((~ (IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)) 
 			       & ((0x33U != (0x7fU 
 					     & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)) 
 				  & ((~ (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Load)) 
 				     & (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Store))))));
-	vcdp->fullBit  (c+29,(((~ (IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)) 
-			       & ((0x33U != (0x7fU 
-					     & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)) 
-				  & (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Load)))));
 	vcdp->fullBit  (c+30,(((~ (IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)) 
+			       & (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_MemRead))));
+	vcdp->fullBit  (c+31,(((~ (IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)) 
 			       & ((0x33U == (0x7fU 
 					     & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)) 
 				  | ((IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Load) 
@@ -1389,7 +1407,11 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 					      | ((IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_JALR) 
 						 | ((IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_JAL) 
 						    | (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_LUI)))))))))));
-	vcdp->fullBus  (c+31,(((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
+	vcdp->fullBit  (c+32,(((~ (IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)) 
+			       & ((0x33U != (0x7fU 
+					     & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)) 
+				  & (IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Load)))));
+	vcdp->fullBus  (c+33,(((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
 			        ? 0U : ((0x33U == (0x7fU 
 						   & vlTOPp->Top2__DOT__if_id__DOT__inst_reg))
 					 ? 0U : ((IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Load)
@@ -1413,36 +1435,28 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 						      ((IData)(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_LUI)
 						        ? 6U
 						        : 0U)))))))))),3);
-	vcdp->fullBus  (c+32,(((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
-			        ? 0U : (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_operand_A_sel))),2);
-	vcdp->fullBit  (c+33,(((~ (IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)) 
-			       & (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode__DOT___GEN_45))));
 	vcdp->fullBus  (c+34,(((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
+			        ? 0U : (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_operand_A_sel))),2);
+	vcdp->fullBit  (c+35,(((~ (IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)) 
+			       & (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode__DOT___GEN_45))));
+	vcdp->fullBus  (c+36,(((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
 			        ? vlTOPp->Top2__DOT___GEN_33
 			        : ((1U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
-				    ? ((IData)(vlTOPp->Top2__DOT___T_79)
-				        ? 0U : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
-						 ? 
-						((IData)(vlTOPp->Top2__DOT___T_86)
-						  ? 0U
-						  : vlTOPp->Top2__DOT___GEN_33)
+				    ? ((IData)(vlTOPp->Top2__DOT___T_82)
+				        ? 0U : ((IData)(vlTOPp->Top2__DOT___T_91)
+						 ? 0U
 						 : vlTOPp->Top2__DOT___GEN_33))
 				    : ((2U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				        ? 0U : ((3U 
 						 == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 						 ? 0U
 						 : vlTOPp->Top2__DOT___GEN_33))))),32);
-	vcdp->fullBus  (c+35,(((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
+	vcdp->fullBus  (c+37,(((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
 			        ? ((IData)(4U) + vlTOPp->Top2__DOT__PC__DOT__pc1)
 			        : ((1U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
-				    ? ((IData)(vlTOPp->Top2__DOT___T_79)
-				        ? 0U : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
-						 ? 
-						((IData)(vlTOPp->Top2__DOT___T_86)
-						  ? 0U
-						  : 
-						 ((IData)(4U) 
-						  + vlTOPp->Top2__DOT__PC__DOT__pc1))
+				    ? ((IData)(vlTOPp->Top2__DOT___T_82)
+				        ? 0U : ((IData)(vlTOPp->Top2__DOT___T_91)
+						 ? 0U
 						 : 
 						((IData)(4U) 
 						 + vlTOPp->Top2__DOT__PC__DOT__pc1)))
@@ -1453,30 +1467,27 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 						 : 
 						((IData)(4U) 
 						 + vlTOPp->Top2__DOT__PC__DOT__pc1)))))),32);
-	vcdp->fullBus  (c+36,(((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
+	vcdp->fullBus  (c+38,(((IData)(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward)
 			        ? vlTOPp->Top2__DOT___GEN_32
 			        : ((1U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
-				    ? ((IData)(vlTOPp->Top2__DOT___T_79)
-				        ? 0U : ((IData)(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r)
-						 ? 
-						((IData)(vlTOPp->Top2__DOT___T_86)
-						  ? 0U
-						  : vlTOPp->Top2__DOT___GEN_32)
+				    ? ((IData)(vlTOPp->Top2__DOT___T_82)
+				        ? 0U : ((IData)(vlTOPp->Top2__DOT___T_91)
+						 ? 0U
 						 : vlTOPp->Top2__DOT___GEN_32))
 				    : ((2U == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 				        ? 0U : ((3U 
 						 == (IData)(vlTOPp->Top2__DOT__control__DOT__CtrlDecode_io_next_PC_sel))
 						 ? 0U
 						 : vlTOPp->Top2__DOT___GEN_32))))),32);
-	vcdp->fullBus  (c+37,(vlTOPp->Top2__DOT__JALR_io_A),32);
-	vcdp->fullBus  (c+38,((0xfffffffeU & (vlTOPp->Top2__DOT__JALR_io_A 
+	vcdp->fullBus  (c+39,(vlTOPp->Top2__DOT__JALR_io_A),32);
+	vcdp->fullBus  (c+40,((0xfffffffeU & (vlTOPp->Top2__DOT__JALR_io_A 
 					      + vlTOPp->Top2__DOT__immediate_io_I_Immediate))),32);
-	vcdp->fullBus  (c+39,(vlTOPp->Top2__DOT__forward_io_forward_a),2);
-	vcdp->fullBus  (c+40,(vlTOPp->Top2__DOT__forward_io_forward_b),2);
-	vcdp->fullBit  (c+41,(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward));
-	vcdp->fullBus  (c+42,(vlTOPp->Top2__DOT__branchlogic_io_rs1_in),32);
-	vcdp->fullBus  (c+43,(vlTOPp->Top2__DOT__branchlogic_io_rs2_in),32);
-	vcdp->fullBit  (c+44,(((0U == (7U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBus  (c+41,(vlTOPp->Top2__DOT__forward_io_forward_a),2);
+	vcdp->fullBus  (c+42,(vlTOPp->Top2__DOT__forward_io_forward_b),2);
+	vcdp->fullBit  (c+43,(vlTOPp->Top2__DOT__hazardDetection_io_ctrl_forward));
+	vcdp->fullBus  (c+44,(vlTOPp->Top2__DOT__branchlogic_io_rs1_in),32);
+	vcdp->fullBus  (c+45,(vlTOPp->Top2__DOT__branchlogic_io_rs2_in),32);
+	vcdp->fullBit  (c+46,(((0U == (7U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					     >> 0xcU)))
 			        ? (vlTOPp->Top2__DOT__branchlogic_io_rs1_in 
 				   == vlTOPp->Top2__DOT__branchlogic_io_rs2_in)
@@ -1507,23 +1518,24 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 							>> 0xcU))) 
 						   & (vlTOPp->Top2__DOT__branchlogic_io_rs1_in 
 						      >= vlTOPp->Top2__DOT__branchlogic_io_rs2_in)))))))));
-	vcdp->fullBus  (c+45,(vlTOPp->Top2__DOT__branchforward_io_forward_a),4);
-	vcdp->fullBus  (c+46,(vlTOPp->Top2__DOT__branchforward__DOT___GEN_34),4);
-	vcdp->fullBit  (c+47,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Load));
-	vcdp->fullBit  (c+48,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Store));
-	vcdp->fullBit  (c+49,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Branch));
-	vcdp->fullBit  (c+50,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_I_Type));
-	vcdp->fullBit  (c+51,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_JALR));
-	vcdp->fullBit  (c+52,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_JAL));
-	vcdp->fullBit  (c+53,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_LUI));
-	vcdp->fullBus  (c+54,(vlTOPp->Top2__DOT__control__DOT__CtrlDecode__DOT___GEN_45),2);
-	vcdp->fullBus  (c+55,(vlTOPp->Top2__DOT__immediate__DOT__output2),31);
-	vcdp->fullBus  (c+56,(vlTOPp->Top2__DOT__immediate__DOT__output2),31);
-	vcdp->fullBus  (c+57,(vlTOPp->Top2__DOT__immediate__DOT__sbt13),32);
-	vcdp->fullBus  (c+58,(vlTOPp->Top2__DOT__immediate__DOT__sbt19),32);
-	vcdp->fullBus  (c+59,((vlTOPp->Top2__DOT__JALR_io_A 
+	vcdp->fullBus  (c+47,(vlTOPp->Top2__DOT__branchforward_io_forward_a),4);
+	vcdp->fullBus  (c+48,(vlTOPp->Top2__DOT__branchforward__DOT___GEN_34),4);
+	vcdp->fullBit  (c+49,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Load));
+	vcdp->fullBit  (c+50,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Store));
+	vcdp->fullBit  (c+51,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_Branch));
+	vcdp->fullBit  (c+52,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_I_Type));
+	vcdp->fullBit  (c+53,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_JALR));
+	vcdp->fullBit  (c+54,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_JAL));
+	vcdp->fullBit  (c+55,(vlTOPp->Top2__DOT__control__DOT__InstDecode_io_LUI));
+	vcdp->fullBus  (c+56,(vlTOPp->Top2__DOT__control__DOT__CtrlDecode__DOT___GEN_45),2);
+	vcdp->fullBus  (c+57,(vlTOPp->Top2__DOT__immediate__DOT__output2),31);
+	vcdp->fullBus  (c+58,(vlTOPp->Top2__DOT__immediate__DOT__output2),31);
+	vcdp->fullBus  (c+59,(vlTOPp->Top2__DOT__immediate__DOT__sbt13),32);
+	vcdp->fullBus  (c+60,(vlTOPp->Top2__DOT__immediate__DOT__output5),32);
+	vcdp->fullBus  (c+61,(vlTOPp->Top2__DOT__immediate__DOT__sbt19),32);
+	vcdp->fullBus  (c+62,((vlTOPp->Top2__DOT__JALR_io_A 
 			       + vlTOPp->Top2__DOT__immediate_io_I_Immediate)),32);
-	vcdp->fullQuad (c+60,((VL_ULL(0xfffffffe) & 
+	vcdp->fullQuad (c+63,((VL_ULL(0xfffffffe) & 
 			       (((QData)((IData)((1U 
 						  & ((vlTOPp->Top2__DOT__JALR_io_A 
 						      + vlTOPp->Top2__DOT__immediate_io_I_Immediate) 
@@ -1531,19 +1543,19 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 				 << 0x20U) | (QData)((IData)(
 							     (vlTOPp->Top2__DOT__JALR_io_A 
 							      + vlTOPp->Top2__DOT__immediate_io_I_Immediate)))))),33);
-	vcdp->fullBus  (c+62,((0x7fU & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)),7);
-	vcdp->fullBit  (c+63,(vlTOPp->Top2__DOT__mem_wb__DOT__Regwr_Reg));
-	vcdp->fullBus  (c+64,(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg),5);
-	vcdp->fullBus  (c+65,((0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBus  (c+65,((0x7fU & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)),7);
+	vcdp->fullBit  (c+66,(vlTOPp->Top2__DOT__mem_wb__DOT__Regwr_Reg));
+	vcdp->fullBus  (c+67,(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg),5);
+	vcdp->fullBus  (c+68,((0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					>> 0xfU))),5);
-	vcdp->fullBus  (c+66,((0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBus  (c+69,((0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					>> 0x14U))),5);
-	vcdp->fullBus  (c+67,(vlTOPp->Top2__DOT__id_ex__DOT__AluOp_r),3);
-	vcdp->fullBit  (c+68,(vlTOPp->Top2__DOT__id_ex__DOT__func7_r));
-	vcdp->fullBus  (c+69,(vlTOPp->Top2__DOT__id_ex__DOT__func3_r),3);
-	vcdp->fullBus  (c+70,(vlTOPp->Top2__DOT__if_id__DOT__inst_reg),32);
-	vcdp->fullBus  (c+71,(vlTOPp->Top2__DOT__if_id__DOT__pc_reg),32);
-	vcdp->fullBus  (c+72,((IData)((VL_ULL(0x3fffffffffff) 
+	vcdp->fullBus  (c+70,(vlTOPp->Top2__DOT__id_ex__DOT__AluOp_r),3);
+	vcdp->fullBus  (c+71,(vlTOPp->Top2__DOT__id_ex__DOT__func7_r),7);
+	vcdp->fullBus  (c+72,(vlTOPp->Top2__DOT__id_ex__DOT__func3_r),3);
+	vcdp->fullBus  (c+73,(vlTOPp->Top2__DOT__if_id__DOT__inst_reg),32);
+	vcdp->fullBus  (c+74,(vlTOPp->Top2__DOT__if_id__DOT__pc_reg),32);
+	vcdp->fullBus  (c+75,((IData)((VL_ULL(0x3fffffffffff) 
 				       & ((QData)((IData)(
 							  ((((0x80000000U 
 							      & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)
@@ -1554,102 +1566,102 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 							      & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 								 >> 0xcU))))) 
 					  << 0xcU)))),32);
-	vcdp->fullBus  (c+73,(vlTOPp->Top2__DOT__PC__DOT__pc1),32);
-	vcdp->fullBus  (c+74,(((IData)(4U) + vlTOPp->Top2__DOT__PC__DOT__pc1)),32);
-	vcdp->fullBus  (c+75,((0x3ffU & (vlTOPp->Top2__DOT__PC__DOT__pc1 
+	vcdp->fullBus  (c+76,(vlTOPp->Top2__DOT__PC__DOT__pc1),32);
+	vcdp->fullBus  (c+77,(((IData)(4U) + vlTOPp->Top2__DOT__PC__DOT__pc1)),32);
+	vcdp->fullBus  (c+78,((0x3ffU & (vlTOPp->Top2__DOT__PC__DOT__pc1 
 					 >> 2U))),32);
-	vcdp->fullBus  (c+76,((0xffU & (vlTOPp->Top2__DOT__ex_mem__DOT__Alu_out_Reg 
+	vcdp->fullBus  (c+79,((0xffU & (vlTOPp->Top2__DOT__ex_mem__DOT__Alu_out_Reg 
 					>> 2U))),8);
-	vcdp->fullBus  (c+77,(vlTOPp->Top2__DOT__ex_mem__DOT__Rs2_Reg),32);
-	vcdp->fullBit  (c+78,(vlTOPp->Top2__DOT__ex_mem__DOT__MemtoReg_Reg));
-	vcdp->fullBit  (c+79,(vlTOPp->Top2__DOT__ex_mem__DOT__Memwr_Reg));
-	vcdp->fullBit  (c+80,(vlTOPp->Top2__DOT__ex_mem__DOT__Regwr_Reg));
-	vcdp->fullBus  (c+81,(vlTOPp->Top2__DOT__ex_mem__DOT__Rd_sel_Reg),5);
-	vcdp->fullBus  (c+82,(vlTOPp->Top2__DOT__ex_mem__DOT__Alu_out_Reg),32);
-	vcdp->fullBit  (c+83,(vlTOPp->Top2__DOT__mem_wb__DOT__MemtoReg_Reg));
-	vcdp->fullBus  (c+84,(vlTOPp->Top2__DOT__mem_wb__DOT__data_mem_Reg),32);
-	vcdp->fullBus  (c+85,(vlTOPp->Top2__DOT__mem_wb__DOT__Aluout_Reg),32);
-	vcdp->fullBit  (c+86,(vlTOPp->Top2__DOT__id_ex__DOT__MemWr_r));
-	vcdp->fullBit  (c+87,(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r));
-	vcdp->fullBit  (c+88,(vlTOPp->Top2__DOT__id_ex__DOT__RegWr_r));
-	vcdp->fullBus  (c+89,(vlTOPp->Top2__DOT__id_ex__DOT__rd_sel_r),5);
-	vcdp->fullBus  (c+90,(vlTOPp->Top2__DOT__if_id__DOT__pc4_reg),32);
-	vcdp->fullBus  (c+91,((0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBus  (c+80,(vlTOPp->Top2__DOT__ex_mem__DOT__Rs2_Reg),32);
+	vcdp->fullBit  (c+81,(vlTOPp->Top2__DOT__ex_mem__DOT__Memrd_Reg));
+	vcdp->fullBit  (c+82,(vlTOPp->Top2__DOT__ex_mem__DOT__Memwr_Reg));
+	vcdp->fullBit  (c+83,(vlTOPp->Top2__DOT__ex_mem__DOT__Regwr_Reg));
+	vcdp->fullBit  (c+84,(vlTOPp->Top2__DOT__ex_mem__DOT__MemtoReg_Reg));
+	vcdp->fullBus  (c+85,(vlTOPp->Top2__DOT__ex_mem__DOT__Rd_sel_Reg),5);
+	vcdp->fullBus  (c+86,(vlTOPp->Top2__DOT__ex_mem__DOT__Alu_out_Reg),32);
+	vcdp->fullBit  (c+87,(vlTOPp->Top2__DOT__mem_wb__DOT__MemtoReg_Reg));
+	vcdp->fullBus  (c+88,(vlTOPp->Top2__DOT__mem_wb__DOT__data_mem_Reg),32);
+	vcdp->fullBus  (c+89,(vlTOPp->Top2__DOT__mem_wb__DOT__Aluout_Reg),32);
+	vcdp->fullBit  (c+90,(vlTOPp->Top2__DOT__id_ex__DOT__MemWr_r));
+	vcdp->fullBit  (c+91,(vlTOPp->Top2__DOT__id_ex__DOT__MemRd_r));
+	vcdp->fullBit  (c+92,(vlTOPp->Top2__DOT__id_ex__DOT__RegWr_r));
+	vcdp->fullBit  (c+93,(vlTOPp->Top2__DOT__id_ex__DOT__MemToReg_r));
+	vcdp->fullBus  (c+94,(vlTOPp->Top2__DOT__id_ex__DOT__rd_sel_r),5);
+	vcdp->fullBus  (c+95,(vlTOPp->Top2__DOT__if_id__DOT__pc4_reg),32);
+	vcdp->fullBus  (c+96,((0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					>> 7U))),5);
-	vcdp->fullBus  (c+92,((7U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBus  (c+97,((7U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 				     >> 0xcU))),3);
-	vcdp->fullBit  (c+93,((1U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
-				     >> 0x1eU))));
-	vcdp->fullBus  (c+94,(vlTOPp->Top2__DOT__id_ex__DOT__pcr),32);
-	vcdp->fullBus  (c+95,(vlTOPp->Top2__DOT__id_ex__DOT__pc4r),32);
-	vcdp->fullBus  (c+96,(vlTOPp->Top2__DOT__id_ex__DOT__rs1r),32);
-	vcdp->fullBus  (c+97,(vlTOPp->Top2__DOT__id_ex__DOT__rs2r),32);
-	vcdp->fullBus  (c+98,(vlTOPp->Top2__DOT__id_ex__DOT__immr),32);
-	vcdp->fullBus  (c+99,(vlTOPp->Top2__DOT__id_ex__DOT__OpA_sel_r),2);
-	vcdp->fullBit  (c+100,((1U & (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpB_sel_r))));
-	vcdp->fullBus  (c+101,(vlTOPp->Top2__DOT__id_ex__DOT__rs1_sel_r),5);
-	vcdp->fullBus  (c+102,(vlTOPp->Top2__DOT__id_ex__DOT__rs2_sel_r),5);
-	vcdp->fullBit  (c+103,(((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Regwr_Reg) 
+	vcdp->fullBus  (c+98,((0x7fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+					>> 0x19U))),7);
+	vcdp->fullBus  (c+99,(vlTOPp->Top2__DOT__id_ex__DOT__pcr),32);
+	vcdp->fullBus  (c+100,(vlTOPp->Top2__DOT__id_ex__DOT__pc4r),32);
+	vcdp->fullBus  (c+101,(vlTOPp->Top2__DOT__id_ex__DOT__rs1r),32);
+	vcdp->fullBus  (c+102,(vlTOPp->Top2__DOT__id_ex__DOT__rs2r),32);
+	vcdp->fullBus  (c+103,(vlTOPp->Top2__DOT__id_ex__DOT__immr),32);
+	vcdp->fullBus  (c+104,(vlTOPp->Top2__DOT__id_ex__DOT__OpA_sel_r),2);
+	vcdp->fullBit  (c+105,((1U & (IData)(vlTOPp->Top2__DOT__id_ex__DOT__OpB_sel_r))));
+	vcdp->fullBus  (c+106,(vlTOPp->Top2__DOT__id_ex__DOT__rs1_sel_r),5);
+	vcdp->fullBus  (c+107,(vlTOPp->Top2__DOT__id_ex__DOT__rs2_sel_r),5);
+	vcdp->fullBit  (c+108,(((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Regwr_Reg) 
 				& ((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg) 
 				   == (0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 						>> 0xfU))))));
-	vcdp->fullBit  (c+104,(((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Regwr_Reg) 
+	vcdp->fullBit  (c+109,(((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Regwr_Reg) 
 				& ((IData)(vlTOPp->Top2__DOT__mem_wb__DOT__Rd_sel_Reg) 
 				   == (0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 						>> 0x14U))))));
-	vcdp->fullBit  (c+105,((0x33U == (0x7fU & vlTOPp->Top2__DOT__if_id__DOT__inst_reg))));
-	vcdp->fullBus  (c+106,(vlTOPp->Top2__DOT__register__DOT__registers_c_0),32);
-	vcdp->fullBus  (c+107,(vlTOPp->Top2__DOT__register__DOT__registers_c_1),32);
-	vcdp->fullBus  (c+108,(vlTOPp->Top2__DOT__register__DOT__registers_c_2),32);
-	vcdp->fullBus  (c+109,(vlTOPp->Top2__DOT__register__DOT__registers_c_3),32);
-	vcdp->fullBus  (c+110,(vlTOPp->Top2__DOT__register__DOT__registers_c_4),32);
-	vcdp->fullBus  (c+111,(vlTOPp->Top2__DOT__register__DOT__registers_c_5),32);
-	vcdp->fullBus  (c+112,(vlTOPp->Top2__DOT__register__DOT__registers_c_6),32);
-	vcdp->fullBus  (c+113,(vlTOPp->Top2__DOT__register__DOT__registers_c_7),32);
-	vcdp->fullBus  (c+114,(vlTOPp->Top2__DOT__register__DOT__registers_c_8),32);
-	vcdp->fullBus  (c+115,(vlTOPp->Top2__DOT__register__DOT__registers_c_9),32);
-	vcdp->fullBus  (c+116,(vlTOPp->Top2__DOT__register__DOT__registers_c_10),32);
-	vcdp->fullBus  (c+117,(vlTOPp->Top2__DOT__register__DOT__registers_c_11),32);
-	vcdp->fullBus  (c+118,(vlTOPp->Top2__DOT__register__DOT__registers_c_12),32);
-	vcdp->fullBus  (c+119,(vlTOPp->Top2__DOT__register__DOT__registers_c_13),32);
-	vcdp->fullBus  (c+120,(vlTOPp->Top2__DOT__register__DOT__registers_c_14),32);
-	vcdp->fullBus  (c+121,(vlTOPp->Top2__DOT__register__DOT__registers_c_15),32);
-	vcdp->fullBus  (c+122,(vlTOPp->Top2__DOT__register__DOT__registers_c_16),32);
-	vcdp->fullBus  (c+123,(vlTOPp->Top2__DOT__register__DOT__registers_c_17),32);
-	vcdp->fullBus  (c+124,(vlTOPp->Top2__DOT__register__DOT__registers_c_18),32);
-	vcdp->fullBus  (c+125,(vlTOPp->Top2__DOT__register__DOT__registers_c_19),32);
-	vcdp->fullBus  (c+126,(vlTOPp->Top2__DOT__register__DOT__registers_c_20),32);
-	vcdp->fullBus  (c+127,(vlTOPp->Top2__DOT__register__DOT__registers_c_21),32);
-	vcdp->fullBus  (c+128,(vlTOPp->Top2__DOT__register__DOT__registers_c_22),32);
-	vcdp->fullBus  (c+129,(vlTOPp->Top2__DOT__register__DOT__registers_c_23),32);
-	vcdp->fullBus  (c+130,(vlTOPp->Top2__DOT__register__DOT__registers_c_24),32);
-	vcdp->fullBus  (c+131,(vlTOPp->Top2__DOT__register__DOT__registers_c_25),32);
-	vcdp->fullBus  (c+132,(vlTOPp->Top2__DOT__register__DOT__registers_c_26),32);
-	vcdp->fullBus  (c+133,(vlTOPp->Top2__DOT__register__DOT__registers_c_27),32);
-	vcdp->fullBus  (c+134,(vlTOPp->Top2__DOT__register__DOT__registers_c_28),32);
-	vcdp->fullBus  (c+135,(vlTOPp->Top2__DOT__register__DOT__registers_c_29),32);
-	vcdp->fullBus  (c+136,(vlTOPp->Top2__DOT__register__DOT__registers_c_30),32);
-	vcdp->fullBus  (c+137,(vlTOPp->Top2__DOT__register__DOT__registers_c_31),32);
-	vcdp->fullBus  (c+138,((0xfffU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBit  (c+110,((0x33U == (0x7fU & vlTOPp->Top2__DOT__if_id__DOT__inst_reg))));
+	vcdp->fullBus  (c+111,(vlTOPp->Top2__DOT__register__DOT__registers_c_0),32);
+	vcdp->fullBus  (c+112,(vlTOPp->Top2__DOT__register__DOT__registers_c_1),32);
+	vcdp->fullBus  (c+113,(vlTOPp->Top2__DOT__register__DOT__registers_c_2),32);
+	vcdp->fullBus  (c+114,(vlTOPp->Top2__DOT__register__DOT__registers_c_3),32);
+	vcdp->fullBus  (c+115,(vlTOPp->Top2__DOT__register__DOT__registers_c_4),32);
+	vcdp->fullBus  (c+116,(vlTOPp->Top2__DOT__register__DOT__registers_c_5),32);
+	vcdp->fullBus  (c+117,(vlTOPp->Top2__DOT__register__DOT__registers_c_6),32);
+	vcdp->fullBus  (c+118,(vlTOPp->Top2__DOT__register__DOT__registers_c_7),32);
+	vcdp->fullBus  (c+119,(vlTOPp->Top2__DOT__register__DOT__registers_c_8),32);
+	vcdp->fullBus  (c+120,(vlTOPp->Top2__DOT__register__DOT__registers_c_9),32);
+	vcdp->fullBus  (c+121,(vlTOPp->Top2__DOT__register__DOT__registers_c_10),32);
+	vcdp->fullBus  (c+122,(vlTOPp->Top2__DOT__register__DOT__registers_c_11),32);
+	vcdp->fullBus  (c+123,(vlTOPp->Top2__DOT__register__DOT__registers_c_12),32);
+	vcdp->fullBus  (c+124,(vlTOPp->Top2__DOT__register__DOT__registers_c_13),32);
+	vcdp->fullBus  (c+125,(vlTOPp->Top2__DOT__register__DOT__registers_c_14),32);
+	vcdp->fullBus  (c+126,(vlTOPp->Top2__DOT__register__DOT__registers_c_15),32);
+	vcdp->fullBus  (c+127,(vlTOPp->Top2__DOT__register__DOT__registers_c_16),32);
+	vcdp->fullBus  (c+128,(vlTOPp->Top2__DOT__register__DOT__registers_c_17),32);
+	vcdp->fullBus  (c+129,(vlTOPp->Top2__DOT__register__DOT__registers_c_18),32);
+	vcdp->fullBus  (c+130,(vlTOPp->Top2__DOT__register__DOT__registers_c_19),32);
+	vcdp->fullBus  (c+131,(vlTOPp->Top2__DOT__register__DOT__registers_c_20),32);
+	vcdp->fullBus  (c+132,(vlTOPp->Top2__DOT__register__DOT__registers_c_21),32);
+	vcdp->fullBus  (c+133,(vlTOPp->Top2__DOT__register__DOT__registers_c_22),32);
+	vcdp->fullBus  (c+134,(vlTOPp->Top2__DOT__register__DOT__registers_c_23),32);
+	vcdp->fullBus  (c+135,(vlTOPp->Top2__DOT__register__DOT__registers_c_24),32);
+	vcdp->fullBus  (c+136,(vlTOPp->Top2__DOT__register__DOT__registers_c_25),32);
+	vcdp->fullBus  (c+137,(vlTOPp->Top2__DOT__register__DOT__registers_c_26),32);
+	vcdp->fullBus  (c+138,(vlTOPp->Top2__DOT__register__DOT__registers_c_27),32);
+	vcdp->fullBus  (c+139,(vlTOPp->Top2__DOT__register__DOT__registers_c_28),32);
+	vcdp->fullBus  (c+140,(vlTOPp->Top2__DOT__register__DOT__registers_c_29),32);
+	vcdp->fullBus  (c+141,(vlTOPp->Top2__DOT__register__DOT__registers_c_30),32);
+	vcdp->fullBus  (c+142,(vlTOPp->Top2__DOT__register__DOT__registers_c_31),32);
+	vcdp->fullBus  (c+143,((0xfffU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					  >> 0x14U))),12);
-	vcdp->fullBus  (c+139,(((((0x80000000U & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)
+	vcdp->fullBus  (c+144,(((((0x80000000U & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)
 				   ? 0x7ffffU : 0U) 
 				 << 0xcU) | (0xfffU 
 					     & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 						>> 0x14U)))),31);
-	vcdp->fullBus  (c+140,((0x7fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
-					 >> 0x19U))),7);
-	vcdp->fullBus  (c+141,(((0xfe0U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBus  (c+145,(((0xfe0U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					   >> 0x14U)) 
 				| (0x1fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					    >> 7U)))),12);
-	vcdp->fullBus  (c+142,((0xfffffU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBus  (c+146,((0xfffffU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					    >> 0xcU))),20);
-	vcdp->fullBus  (c+143,(((((0x80000000U & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)
+	vcdp->fullBus  (c+147,(((((0x80000000U & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)
 				   ? 0x7ffU : 0U) << 0x14U) 
 				| (0xfffffU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					       >> 0xcU)))),31);
-	vcdp->fullQuad (c+144,((VL_ULL(0x3fffffffffff) 
+	vcdp->fullQuad (c+148,((VL_ULL(0x3fffffffffff) 
 				& ((QData)((IData)(
 						   ((((0x80000000U 
 						       & vlTOPp->Top2__DOT__if_id__DOT__inst_reg)
@@ -1660,15 +1672,15 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 						       & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 							  >> 0xcU))))) 
 				   << 0xcU))),46);
-	vcdp->fullBit  (c+146,((1U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBit  (c+150,((1U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 				      >> 7U))));
-	vcdp->fullBus  (c+147,((0xfU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBus  (c+151,((0xfU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					>> 8U))),4);
-	vcdp->fullBus  (c+148,((0x3fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBus  (c+152,((0x3fU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					 >> 0x19U))),6);
-	vcdp->fullBit  (c+149,((1U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBit  (c+153,((1U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 				      >> 0x1fU))));
-	vcdp->fullBus  (c+150,(((0x1000U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBus  (c+154,(((0x1000U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					    >> 0x13U)) 
 				| ((0x800U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					      << 4U)) 
@@ -1676,31 +1688,32 @@ void VTop2::traceFullThis__1(VTop2__Syms* __restrict vlSymsp, VerilatedVcd* vcdp
 						 >> 0x14U)) 
 				      | (0x1eU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 						  >> 7U)))))),13);
-	vcdp->fullBus  (c+151,((0xffU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBus  (c+155,((0xffU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					 >> 0xcU))),8);
-	vcdp->fullBit  (c+152,((1U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBit  (c+156,((1U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 				      >> 0x14U))));
-	vcdp->fullBus  (c+153,((0x3ffU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBus  (c+157,((0x3ffU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					  >> 0x15U))),10);
-	vcdp->fullBus  (c+154,(((0x100000U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
+	vcdp->fullBus  (c+158,(((0x100000U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 					      >> 0xbU)) 
 				| ((0xff000U & vlTOPp->Top2__DOT__if_id__DOT__inst_reg) 
 				   | ((0x800U & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 						 >> 9U)) 
 				      | (0x7feU & (vlTOPp->Top2__DOT__if_id__DOT__inst_reg 
 						   >> 0x14U)))))),21);
-	vcdp->fullBus  (c+155,((0x3ffU & (vlTOPp->Top2__DOT__PC__DOT__pc1 
-					  >> 2U))),10);
-	vcdp->fullBus  (c+156,(vlTOPp->Top2__DOT__DataMemory__DOT__mem
+	vcdp->fullBus  (c+159,((0x3ffU & (vlTOPp->Top2__DOT__PC__DOT__pc1 
+					  >> 2U))),14);
+	vcdp->fullBus  (c+160,(vlTOPp->Top2__DOT__DataMemory__DOT__mem
 			       [(0xffU & (vlTOPp->Top2__DOT__ex_mem__DOT__Alu_out_Reg 
 					  >> 2U))]),32);
-	vcdp->fullBus  (c+157,((0xffU & (vlTOPp->Top2__DOT__ex_mem__DOT__Alu_out_Reg 
-					 >> 2U))),10);
-	vcdp->fullBus  (c+158,(vlTOPp->Top2__DOT__id_ex__DOT__OpB_sel_r),2);
-	vcdp->fullBit  (c+159,(vlTOPp->clock));
-	vcdp->fullBit  (c+160,(vlTOPp->reset));
-	vcdp->fullBus  (c+161,(vlTOPp->io_instruction),32);
-	vcdp->fullBus  (c+162,(vlTOPp->io_reg_out),32);
-	vcdp->fullBit  (c+163,(1U));
+	vcdp->fullBus  (c+161,((0xffU & (vlTOPp->Top2__DOT__ex_mem__DOT__Alu_out_Reg 
+					 >> 2U))),14);
+	vcdp->fullBus  (c+162,(vlTOPp->Top2__DOT__id_ex__DOT__OpB_sel_r),2);
+	vcdp->fullBit  (c+163,(vlTOPp->clock));
+	vcdp->fullBit  (c+164,(vlTOPp->reset));
+	vcdp->fullBus  (c+165,(vlTOPp->io_instruction),32);
+	vcdp->fullBus  (c+166,(vlTOPp->io_reg_out),32);
+	vcdp->fullBit  (c+167,(vlTOPp->io_branch_stall));
+	vcdp->fullBit  (c+168,(1U));
     }
 }

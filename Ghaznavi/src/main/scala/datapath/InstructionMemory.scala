@@ -10,7 +10,7 @@ class InstructionMemory extends Module{
 		
 			
 	})
-		val mem=Mem(1024,UInt(32.W))
+		val mem=Mem(16384,UInt(32.W))
 		io.rdData:=mem.read(io.wrAddr)
 
 
