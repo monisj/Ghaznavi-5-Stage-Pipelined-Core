@@ -7,7 +7,7 @@ My work is mostly done in designing the core using the ISA of Risc V.
 
 ## First of all get started by Cloning this repository in your machine
 ```ruby
-git clone https://github.com/monisj/PracticeScala.git
+git clone https://github.com/monisj/Ghaznavi-5-Stage-Pipelined-Core.git
 ```
 
 Create a .txt file and place the instruction(Hexa-Decimal) code simulated on ***Venus*** (RISC-V Simulator)\
@@ -54,7 +54,3 @@ After success you will get a folder naming ***test_run_dir*** on root of your fo
 There you will find the folder named Top. Enter in it and you can find the Top.vcd file which you visualise on **gtkwave** to\
 see your program running.
 
-
-
-# Backup
-# Backup
